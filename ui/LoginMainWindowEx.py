@@ -1,6 +1,11 @@
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
 
-class LoginMainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)  # Gọi setupUi đúng cách
+from LoginMainWindow import Ui_MainWindow
+
+class LoginMainWindowExt(Ui_MainWindow):
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow=MainWindow
+        self.setupSignalAndSlot()
+    def showWindow(self):
+        self.MainWindow.show()
