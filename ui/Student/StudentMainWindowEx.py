@@ -1,7 +1,7 @@
 from PyQt6.QtCore import Qt
-from ui.LoginMainWindow.LoginMainWindow import Ui_MainWindow
+from ui.Student.StudentMainWindow import Ui_MainWindow
 
-class LoginMainWindowExt(Ui_MainWindow):
+class StudentMainWindowExt(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow

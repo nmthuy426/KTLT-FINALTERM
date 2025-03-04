@@ -19,10 +19,6 @@
   <property name="windowTitle">
    <string/>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgba(128, 149, 197, 150);
-</string>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -40,9 +36,9 @@
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 87 25pt &quot;Arial Black&quot;;
+     <string notr="true">font: 10000 35pt &quot;Arial&quot;;
 background-color: rgb(255, 255, 255,0);
-color: rgb(0,0,0);</string>
+color: rgb(255,255,255);</string>
     </property>
     <property name="text">
      <string>LOGIN</string>
@@ -65,7 +61,7 @@ color: rgb(0,0,0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-	font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 50 12pt &quot;Cambria&quot;;
     border-radius: 25px; /* Bo góc 10px */
     padding: 5px; /* Tạo khoảng cách bên trong */
 	padding-left: 60px; /* Đẩy chữ vào bên phải để icon che phía trước */
@@ -74,6 +70,9 @@ color: rgb(0,0,0);</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Your school email</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
@@ -87,7 +86,7 @@ color: rgb(0,0,0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QLineEdit {
-	font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+	font: 50 12pt &quot;Cambria&quot;;
     border-radius: 25px; /* Bo góc 10px */
     padding: 5px; /* Tạo khoảng cách bên trong */
 	padding-left: 60px; /* Đẩy chữ vào bên phải để icon che phía trước */
@@ -96,6 +95,9 @@ color: rgb(0,0,0);</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Password</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -108,9 +110,9 @@ color: rgb(0,0,0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0,0,0);
+     <string notr="true">color: rgb(255,255,255);
 background-color: rgba(255, 255, 255,0);
-font: 75 10pt &quot;Arial Black&quot;;</string>
+font: 2000 10pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>Username:</string>
@@ -120,62 +122,18 @@ font: 75 10pt &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>190</y>
+      <y>189</y>
       <width>121</width>
-      <height>20</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(0,0,0);
+     <string notr="true">color: rgb(255,255,255);
 background-color: rgba(255, 255, 255,0);
-font: 75 10pt &quot;Arial Black&quot;;</string>
+font: 2000 10pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>Password:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>32</x>
-      <y>126</y>
-      <width>30</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(170, 0, 0,0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../../../Downloads/Screenshot_2025-02-26_180616-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>29</x>
-      <y>228</y>
-      <width>37</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(170, 0, 0,0);</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../../../Downloads/Screenshot_2025-02-26_173531-removebg-preview.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox">
@@ -183,14 +141,14 @@ font: 75 10pt &quot;Arial Black&quot;;</string>
      <rect>
       <x>20</x>
       <y>290</y>
-      <width>251</width>
+      <width>281</width>
       <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255,0);
-font: 10pt &quot;Arial Rounded MT Bold&quot;;
-color: rgb(0,0,0)</string>
+font: 2000 10pt &quot;Arial Rounded MT Bold&quot;;
+color: rgb(255,255,255);</string>
     </property>
     <property name="text">
      <string>Save my login information</string>
@@ -199,17 +157,16 @@ color: rgb(0,0,0)</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
+      <x>370</x>
       <y>280</y>
-      <width>161</width>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255,0);
-font: 10pt &quot;Arial Rounded MT Bold&quot;;
-text-decoration: underline;
-color: rgb(0,0,0)</string>
+font: 2000 10pt &quot;Arial Rounded MT Bold&quot;;
+color: rgb(255,255,255)</string>
     </property>
     <property name="text">
      <string>Forget password?</string>
@@ -232,7 +189,7 @@ color: rgb(0,0,0)</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    font: 14pt &quot;Arial Black&quot;; /* Font Arial Black, size 12 */
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
     color: rgb(0,0,90); /* Màu chữ trắng */
     border-radius: 25px; /* Bo góc 20px */
@@ -254,6 +211,50 @@ QPushButton:pressed {
     </property>
     <property name="text">
      <string>LOGIN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../image/user.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../image/password.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
