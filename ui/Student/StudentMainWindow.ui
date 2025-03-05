@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1055</width>
-    <height>750</height>
+    <width>808</width>
+    <height>684</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1056</width>
+    <height>752</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -41,8 +47,8 @@ border: none;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1033</width>
-         <height>728</height>
+         <width>790</width>
+         <height>641</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -56,8 +62,8 @@ border: none;</string>
           </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
-            <height>300</height>
+            <width>933</width>
+            <height>250</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -70,18 +76,23 @@ border: none;</string>
            <widget class="QLabel" name="label_2">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>0</y>
-              <width>1011</width>
-              <height>41</height>
+              <width>768</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: white;
 color: rgb(0, 0, 90);
-border-radius: 20px;
 font-weight: bold;
-font: 5000 18pt &quot;Arial&quot;;</string>
+font: 5000 18pt &quot;Arial&quot;;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 10px;
+</string>
             </property>
             <property name="text">
              <string>STUDENT</string>
@@ -93,10 +104,10 @@ font: 5000 18pt &quot;Arial&quot;;</string>
            <widget class="QLabel" name="label">
             <property name="geometry">
              <rect>
-              <x>0</x>
-              <y>50</y>
-              <width>1011</width>
-              <height>300</height>
+              <x>1</x>
+              <y>20</y>
+              <width>768</width>
+              <height>281</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -130,6 +141,8 @@ font: 5000 18pt &quot;Arial&quot;;</string>
              <set>Qt::LinksAccessibleByMouse|Qt::TextEditable</set>
             </property>
            </widget>
+           <zorder>label</zorder>
+           <zorder>label_2</zorder>
           </widget>
          </widget>
         </item>
@@ -137,14 +150,14 @@ font: 5000 18pt &quot;Arial&quot;;</string>
          <widget class="QTabWidget" name="tabWidget">
           <property name="minimumSize">
            <size>
-            <width>3</width>
-            <height>300</height>
+            <width>768</width>
+            <height>320</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
-            <height>500</height>
+            <width>768</width>
+            <height>320</height>
            </size>
           </property>
           <property name="autoFillBackground">
@@ -153,7 +166,7 @@ font: 5000 18pt &quot;Arial&quot;;</string>
           <property name="styleSheet">
            <string notr="true">/* Tab chưa được chọn */
 QTabBar::tab {
-	width:150px;
+	width:100px;
     min-height: 20px;  /* Đảm bảo đủ cao để hiển thị chữ */
     text-align: center;
     color: #00005A;  
@@ -162,7 +175,6 @@ QTabBar::tab {
     border-top-left-radius: 12px;  
     border-top-right-radius: 12px;
     background: #EAEAEA;
-    margin-right: 4px; /* Tạo khoảng cách giữa các tab */
 }
 
 /* Tab được chọn */
@@ -177,13 +189,16 @@ QTabBar::tab:selected {
 QTabBar::tab:last {
 	width: 250px; /* Giới hạn chiều dài */
     text-align: center;
+}
+QTabWidget:{
+	background-color: rgba(0,0,0,0);
 }</string>
           </property>
           <property name="tabShape">
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>3</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>false</bool>
@@ -201,262 +216,281 @@ QTabBar::tab:last {
            <attribute name="title">
             <string>SCORE</string>
            </attribute>
-           <widget class="QScrollArea" name="scrollArea_3">
+           <widget class="QFrame" name="frame">
             <property name="geometry">
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1011</width>
-              <height>311</height>
+              <width>768</width>
+              <height>256</height>
              </rect>
             </property>
-            <property name="widgetResizable">
-             <bool>true</bool>
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
             </property>
-            <widget class="QWidget" name="scrollAreaWidgetContents_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <widget class="QTableWidget" name="table_grade">
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>0</y>
-               <width>1011</width>
-               <height>311</height>
+               <y>30</y>
+               <width>768</width>
+               <height>226</height>
               </rect>
              </property>
-             <property name="styleSheet">
-              <string notr="true">background-color: rgb(255, 255, 255);</string>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
-             <widget class="QWidget" name="verticalLayoutWidget">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>1011</width>
-                <height>311</height>
-               </rect>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_3">
-               <item>
-                <widget class="QComboBox" name="ComboBox_semester">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>35</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Arial</family>
-                   <pointsize>10</pointsize>
-                   <weight>99</weight>
-                   <italic>false</italic>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">    font: 2000 10pt &quot;Arial&quot;; 
-    background-color: rgb(0,0,90);
-	color: rgb(255, 255, 255);
-</string>
-                 </property>
-                 <property name="editable">
-                  <bool>false</bool>
-                 </property>
-                 <property name="currentIndex">
-                  <number>0</number>
-                 </property>
-                 <property name="frame">
-                  <bool>false</bool>
-                 </property>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 1</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 2</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 3</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 4</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 5</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 6</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 7</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 8</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>     SEMESTER 9</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item>
-                <widget class="QTableWidget" name="table_grade">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>16777215</height>
-                  </size>
-                 </property>
-                 <property name="mouseTracking">
-                  <bool>false</bool>
-                 </property>
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">/* Header trên cùng */
+             <property name="minimumSize">
+              <size>
+               <width>768</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>768</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="mouseTracking">
+              <bool>false</bool>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">/* Header trên cùng */
 QHeaderView::section {
     background: rgb(255,255,255);  /* Màu xanh đậm */
     color: rgb(0,0,90);  /* Chữ trắng */
-    border: 1px solid white;  /* Viền trắng nhẹ */
 	font: 2000 12px &quot;Arial&quot;;
 }
 QTableWidget:{
 	background-color: rgb(255,255,255);
     color: rgb(0,0,0);  /* Chữ trắng */
-    border: 1px solid white;  /* Viền trắng nhẹ */
+    border: 1px solid grey;  /* Viền trắng nhẹ */
 	font: 2000 12px &quot;Arial&quot;;
 }
 </string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAsNeeded</enum>
-                 </property>
-                 <property name="autoScrollMargin">
-                  <number>16</number>
-                 </property>
-                 <property name="columnCount">
-                  <number>6</number>
-                 </property>
-                 <attribute name="horizontalHeaderCascadingSectionResizes">
-                  <bool>true</bool>
-                 </attribute>
-                 <attribute name="horizontalHeaderDefaultSectionSize">
-                  <number>170</number>
-                 </attribute>
-                 <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
-                  <bool>true</bool>
-                 </attribute>
-                 <attribute name="horizontalHeaderStretchLastSection">
-                  <bool>true</bool>
-                 </attribute>
-                 <attribute name="verticalHeaderCascadingSectionResizes">
-                  <bool>true</bool>
-                 </attribute>
-                 <column>
-                  <property name="text">
-                   <string>SUBJECTS</string>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>Arial Black</family>
-                    <pointsize>8</pointsize>
-                   </font>
-                  </property>
-                  <property name="textAlignment">
-                   <set>AlignCenter</set>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>FORMATIVE SCORE 1</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>FORMATIVE SCORE 2</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>MIDTERM</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>FINALTERM</string>
-                  </property>
-                 </column>
-                 <column>
-                  <property name="text">
-                   <string>AVERAGE</string>
-                  </property>
-                 </column>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton_updatecore">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0,0,90);
-font: 2000 10pt &quot;Arial&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>UPDATE</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAsNeeded</enum>
+             </property>
+             <property name="autoScrollMargin">
+              <number>16</number>
+             </property>
+             <property name="columnCount">
+              <number>6</number>
+             </property>
+             <attribute name="horizontalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>170</number>
+             </attribute>
+             <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderStretchLastSection">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <column>
+              <property name="text">
+               <string>SUBJECTS</string>
+              </property>
+              <property name="font">
+               <font>
+                <family>Arial Black</family>
+                <pointsize>8</pointsize>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignCenter</set>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>FORMATIVE SCORE 1</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>FORMATIVE SCORE 2</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>MIDTERM</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>FINALTERM</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>AVERAGE</string>
+              </property>
+             </column>
             </widget>
+            <widget class="QComboBox" name="ComboBox_semester">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>768</width>
+               <height>30</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>768</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>768</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Arial</family>
+               <pointsize>-1</pointsize>
+               <weight>99</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    background-color: navy;
+    color: white;
+    font: 2000 14px &quot;Arial&quot;;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}</string>
+             </property>
+             <property name="editable">
+              <bool>false</bool>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 5</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 6</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 7</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 8</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>     SEMESTER 9</string>
+              </property>
+             </item>
+            </widget>
+           </widget>
+           <widget class="QPushButton" name="pushButton_updatecore">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>255</y>
+              <width>768</width>
+              <height>30</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>768</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>768</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0,0,90);
+font: 2000 10pt &quot;Arial&quot;;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;</string>
+            </property>
+            <property name="text">
+             <string>UPDATE</string>
+            </property>
            </widget>
           </widget>
           <widget class="QWidget" name="tab_schedule">
@@ -468,9 +502,21 @@ font: 2000 10pt &quot;Arial&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1011</width>
-              <height>311</height>
+              <width>768</width>
+              <height>286</height>
              </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>768</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>768</width>
+              <height>16777215</height>
+             </size>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -483,17 +529,17 @@ font: 2000 10pt &quot;Arial&quot;;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1011</width>
-               <height>311</height>
+               <width>768</width>
+               <height>286</height>
               </rect>
              </property>
              <widget class="QWidget" name="verticalLayoutWidget_3">
               <property name="geometry">
                <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>1011</width>
-                <height>311</height>
+                <x>10</x>
+                <y>10</y>
+                <width>751</width>
+                <height>261</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -518,8 +564,8 @@ font: 2000 10pt &quot;Arial&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1011</width>
-              <height>311</height>
+              <width>768</width>
+              <height>286</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -533,17 +579,17 @@ font: 2000 10pt &quot;Arial&quot;;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1011</width>
-               <height>311</height>
+               <width>768</width>
+               <height>286</height>
               </rect>
              </property>
              <widget class="QWidget" name="verticalLayoutWidget_5">
               <property name="geometry">
                <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>1011</width>
-                <height>311</height>
+                <x>10</x>
+                <y>10</y>
+                <width>751</width>
+                <height>261</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -560,6 +606,18 @@ font: 2000 10pt &quot;Arial&quot;;</string>
            </widget>
           </widget>
           <widget class="QWidget" name="tab_inforstudent">
+           <property name="minimumSize">
+            <size>
+             <width>768</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>768</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <attribute name="title">
             <string>PERSONAL INFORMATION</string>
            </attribute>
@@ -568,8 +626,8 @@ font: 2000 10pt &quot;Arial&quot;;</string>
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>1011</width>
-              <height>321</height>
+              <width>768</width>
+              <height>286</height>
              </rect>
             </property>
             <property name="styleSheet">
@@ -583,17 +641,17 @@ font: 2000 10pt &quot;Arial&quot;;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>1011</width>
-               <height>321</height>
+               <width>768</width>
+               <height>286</height>
               </rect>
              </property>
              <widget class="QWidget" name="verticalLayoutWidget_4">
               <property name="geometry">
                <rect>
-                <x>180</x>
-                <y>20</y>
-                <width>271</width>
-                <height>281</height>
+                <x>120</x>
+                <y>10</y>
+                <width>221</width>
+                <height>261</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -789,9 +847,9 @@ QComboBox::down-arrow {
              <widget class="QWidget" name="verticalLayoutWidget_6">
               <property name="geometry">
                <rect>
-                <x>70</x>
-                <y>30</y>
-                <width>101</width>
+                <x>20</x>
+                <y>10</y>
+                <width>93</width>
                 <height>261</height>
                </rect>
               </property>
@@ -802,7 +860,7 @@ QComboBox::down-arrow {
                <item>
                 <widget class="QLabel" name="label_6">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Student ID:</string>
@@ -812,7 +870,7 @@ QComboBox::down-arrow {
                <item>
                 <widget class="QLabel" name="label_5">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Full Name:</string>
@@ -822,7 +880,7 @@ QComboBox::down-arrow {
                <item>
                 <widget class="QLabel" name="label_4">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Birthday:</string>
@@ -832,7 +890,7 @@ QComboBox::down-arrow {
                <item>
                 <widget class="QLabel" name="label_7">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Gender:</string>
@@ -842,7 +900,7 @@ QComboBox::down-arrow {
                <item>
                 <widget class="QLabel" name="label_3">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Email:</string>
@@ -854,17 +912,23 @@ QComboBox::down-arrow {
              <widget class="QWidget" name="formLayoutWidget">
               <property name="geometry">
                <rect>
-                <x>480</x>
-                <y>20</y>
-                <width>511</width>
-                <height>282</height>
+                <x>350</x>
+                <y>10</y>
+                <width>401</width>
+                <height>261</height>
                </rect>
               </property>
               <layout class="QFormLayout" name="formLayout_2">
+               <property name="horizontalSpacing">
+                <number>7</number>
+               </property>
+               <property name="verticalSpacing">
+                <number>10</number>
+               </property>
                <item row="0" column="0">
                 <widget class="QLabel" name="khAHCLabel">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Course:</string>
@@ -886,40 +950,16 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="1" column="0">
-                <widget class="QLabel" name="niNKhALabel">
-                 <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Academic Year:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
-                <widget class="QLineEdit" name="LineEdit_acayear">
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
                 <widget class="QLabel" name="ngNhLabel">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Major:</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
+               <item row="1" column="1">
                 <widget class="QLineEdit" name="LineEdit_major">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
@@ -933,17 +973,17 @@ QComboBox::down-arrow {
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0">
+               <item row="2" column="0">
                 <widget class="QLabel" name="lPLabel">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Class:</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="1">
+               <item row="2" column="1">
                 <widget class="QLineEdit" name="LineEdit_class">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
@@ -957,17 +997,17 @@ QComboBox::down-arrow {
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0">
+               <item row="3" column="0">
                 <widget class="QLabel" name="cVNHCTPLabel">
                  <property name="styleSheet">
-                  <string notr="true">font: 500 10pt &quot;Cambria&quot;;</string>
+                  <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
                  </property>
                  <property name="text">
                   <string>Academic Advisor:</string>
                  </property>
                 </widget>
                </item>
-               <item row="4" column="1">
+               <item row="3" column="1">
                 <widget class="QLineEdit" name="LineEdit_advisor">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
@@ -981,7 +1021,7 @@ QComboBox::down-arrow {
                  </property>
                 </widget>
                </item>
-               <item row="5" column="1">
+               <item row="4" column="1">
                 <widget class="QPushButton" name="pushButton_updateinfo">
                  <property name="minimumSize">
                   <size>
@@ -1014,9 +1054,9 @@ font: 2000 14pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="spacing">
-           <number>1</number>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="topMargin">
+           <number>0</number>
           </property>
           <item>
            <widget class="QPushButton" name="pushButton_exit">
@@ -1029,13 +1069,13 @@ font: 2000 14pt &quot;Arial&quot;;</string>
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>40</height>
+              <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>500</width>
-              <height>1550</height>
+              <width>400</width>
+              <height>50</height>
              </size>
             </property>
             <property name="sizeIncrement">
@@ -1045,28 +1085,34 @@ font: 2000 14pt &quot;Arial&quot;;</string>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(255, 255, 255);
-border-radius: 15px;
-background-color: rgb(170,0,0);
-font: 2000 10pt &quot;Arial&quot;;</string>
+             <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
+    color: rgb(255,255,255); /* Màu chữ trắng */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 8px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
             </property>
             <property name="text">
              <string>EXIT</string>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>500</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_logout">
@@ -1079,19 +1125,39 @@ font: 2000 10pt &quot;Arial&quot;;</string>
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>35</height>
+              <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>500</width>
-              <height>1000</height>
+              <width>400</width>
+              <height>50</height>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">border-radius: 15px;
-background-color: rgb(255,255,255);
-font: 2000 10pt &quot;Arial&quot;;</string>
+             <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
+    color: rgb(0,0,90); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+	padding: 8px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
             </property>
             <property name="text">
              <string>LOGOUT</string>

@@ -12,7 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1055, 750)
+        MainWindow.resize(808, 684)
+        MainWindow.setMaximumSize(QtCore.QSize(1056, 752))
         MainWindow.setAutoFillBackground(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -26,28 +27,33 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1033, 728))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 790, 641))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.scrollAreaWidgetContents)
         self.stackedWidget.setMinimumSize(QtCore.QSize(0, 100))
-        self.stackedWidget.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.stackedWidget.setMaximumSize(QtCore.QSize(933, 250))
         self.stackedWidget.setStyleSheet("background-color: rgba(0,0,0,0);")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.label_2 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(0, 0, 1011, 41))
+        self.label_2.setGeometry(QtCore.QRect(1, 0, 768, 51))
         self.label_2.setStyleSheet("background-color: white;\n"
 "color: rgb(0, 0, 90);\n"
-"border-radius: 20px;\n"
 "font-weight: bold;\n"
-"font: 5000 18pt \"Arial\";")
+"font: 5000 18pt \"Arial\";\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    padding: 10px;\n"
+"")
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.label = QtWidgets.QLabel(parent=self.page_2)
-        self.label.setGeometry(QtCore.QRect(0, 50, 1011, 300))
+        self.label.setGeometry(QtCore.QRect(1, 20, 768, 281))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -61,15 +67,17 @@ class Ui_MainWindow(object):
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setTextInteractionFlags(QtCore.Qt.TextInteractionFlag.LinksAccessibleByMouse|QtCore.Qt.TextInteractionFlag.TextEditable)
         self.label.setObjectName("label")
+        self.label.raise_()
+        self.label_2.raise_()
         self.stackedWidget.addWidget(self.page_2)
         self.verticalLayout.addWidget(self.stackedWidget)
         self.tabWidget = QtWidgets.QTabWidget(parent=self.scrollAreaWidgetContents)
-        self.tabWidget.setMinimumSize(QtCore.QSize(3, 300))
-        self.tabWidget.setMaximumSize(QtCore.QSize(16777215, 500))
+        self.tabWidget.setMinimumSize(QtCore.QSize(768, 320))
+        self.tabWidget.setMaximumSize(QtCore.QSize(768, 320))
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setStyleSheet("/* Tab chưa được chọn */\n"
 "QTabBar::tab {\n"
-"    width:150px;\n"
+"    width:100px;\n"
 "    min-height: 20px;  /* Đảm bảo đủ cao để hiển thị chữ */\n"
 "    text-align: center;\n"
 "    color: #00005A;  \n"
@@ -78,7 +86,6 @@ class Ui_MainWindow(object):
 "    border-top-left-radius: 12px;  \n"
 "    border-top-right-radius: 12px;\n"
 "    background: #EAEAEA;\n"
-"    margin-right: 4px; /* Tạo khoảng cách giữa các tab */\n"
 "}\n"
 "\n"
 "/* Tab được chọn */\n"
@@ -93,6 +100,9 @@ class Ui_MainWindow(object):
 "QTabBar::tab:last {\n"
 "    width: 250px; /* Giới hạn chiều dài */\n"
 "    text-align: center;\n"
+"}\n"
+"QTabWidget:{\n"
+"    background-color: rgba(0,0,0,0);\n"
 "}")
         self.tabWidget.setTabShape(QtWidgets.QTabWidget.TabShape.Rounded)
         self.tabWidget.setDocumentMode(False)
@@ -102,74 +112,33 @@ class Ui_MainWindow(object):
         self.tabWidget.setObjectName("tabWidget")
         self.tab_score = QtWidgets.QWidget()
         self.tab_score.setObjectName("tab_score")
-        self.scrollArea_3 = QtWidgets.QScrollArea(parent=self.tab_score)
-        self.scrollArea_3.setGeometry(QtCore.QRect(0, 0, 1011, 311))
-        self.scrollArea_3.setWidgetResizable(True)
-        self.scrollArea_3.setObjectName("scrollArea_3")
-        self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 1011, 311))
-        self.scrollAreaWidgetContents_3.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_3)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 1011, 311))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.ComboBox_semester = QtWidgets.QComboBox(parent=self.verticalLayoutWidget)
-        self.ComboBox_semester.setEnabled(False)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.ComboBox_semester.sizePolicy().hasHeightForWidth())
-        self.ComboBox_semester.setSizePolicy(sizePolicy)
-        self.ComboBox_semester.setMinimumSize(QtCore.QSize(0, 40))
-        self.ComboBox_semester.setMaximumSize(QtCore.QSize(16777215, 35))
-        font = QtGui.QFont()
-        font.setFamily("Arial")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(99)
-        self.ComboBox_semester.setFont(font)
-        self.ComboBox_semester.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.ComboBox_semester.setStyleSheet("    font: 2000 10pt \"Arial\"; \n"
-"    background-color: rgb(0,0,90);\n"
-"    color: rgb(255, 255, 255);\n"
-"")
-        self.ComboBox_semester.setEditable(False)
-        self.ComboBox_semester.setFrame(False)
-        self.ComboBox_semester.setObjectName("ComboBox_semester")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.ComboBox_semester.addItem("")
-        self.verticalLayout_3.addWidget(self.ComboBox_semester)
-        self.table_grade = QtWidgets.QTableWidget(parent=self.verticalLayoutWidget)
+        self.frame = QtWidgets.QFrame(parent=self.tab_score)
+        self.frame.setGeometry(QtCore.QRect(0, 0, 768, 256))
+        self.frame.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame.setObjectName("frame")
+        self.table_grade = QtWidgets.QTableWidget(parent=self.frame)
+        self.table_grade.setGeometry(QtCore.QRect(0, 30, 768, 226))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.table_grade.sizePolicy().hasHeightForWidth())
         self.table_grade.setSizePolicy(sizePolicy)
-        self.table_grade.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.table_grade.setMinimumSize(QtCore.QSize(768, 0))
+        self.table_grade.setMaximumSize(QtCore.QSize(768, 16777215))
         self.table_grade.setMouseTracking(False)
         self.table_grade.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.table_grade.setStyleSheet("/* Header trên cùng */\n"
 "QHeaderView::section {\n"
 "    background: rgb(255,255,255);  /* Màu xanh đậm */\n"
 "    color: rgb(0,0,90);  /* Chữ trắng */\n"
-"    border: 1px solid white;  /* Viền trắng nhẹ */\n"
 "    font: 2000 12px \"Arial\";\n"
 "}\n"
 "QTableWidget:{\n"
 "    background-color: rgb(255,255,255);\n"
 "    color: rgb(0,0,0);  /* Chữ trắng */\n"
-"    border: 1px solid white;  /* Viền trắng nhẹ */\n"
+"    border: 1px solid grey;  /* Viền trắng nhẹ */\n"
 "    font: 2000 12px \"Arial\";\n"
 "}\n"
 "")
@@ -201,28 +170,72 @@ class Ui_MainWindow(object):
         self.table_grade.horizontalHeader().setSortIndicatorShown(True)
         self.table_grade.horizontalHeader().setStretchLastSection(True)
         self.table_grade.verticalHeader().setCascadingSectionResizes(True)
-        self.verticalLayout_3.addWidget(self.table_grade)
-        self.pushButton_updatecore = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_updatecore.setMinimumSize(QtCore.QSize(0, 40))
+        self.ComboBox_semester = QtWidgets.QComboBox(parent=self.frame)
+        self.ComboBox_semester.setEnabled(False)
+        self.ComboBox_semester.setGeometry(QtCore.QRect(0, 0, 768, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.ComboBox_semester.sizePolicy().hasHeightForWidth())
+        self.ComboBox_semester.setSizePolicy(sizePolicy)
+        self.ComboBox_semester.setMinimumSize(QtCore.QSize(768, 30))
+        self.ComboBox_semester.setMaximumSize(QtCore.QSize(768, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(-1)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(99)
+        self.ComboBox_semester.setFont(font)
+        self.ComboBox_semester.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.ComboBox_semester.setStyleSheet("QComboBox {\n"
+"    background-color: navy;\n"
+"    color: white;\n"
+"    font: 2000 14px \"Arial\";\n"
+"    border-top-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"}")
+        self.ComboBox_semester.setEditable(False)
+        self.ComboBox_semester.setFrame(False)
+        self.ComboBox_semester.setObjectName("ComboBox_semester")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.ComboBox_semester.addItem("")
+        self.pushButton_updatecore = QtWidgets.QPushButton(parent=self.tab_score)
+        self.pushButton_updatecore.setGeometry(QtCore.QRect(0, 255, 768, 30))
+        self.pushButton_updatecore.setMinimumSize(QtCore.QSize(768, 30))
+        self.pushButton_updatecore.setMaximumSize(QtCore.QSize(768, 30))
         self.pushButton_updatecore.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(0,0,90);\n"
-"font: 2000 10pt \"Arial\";")
+"font: 2000 10pt \"Arial\";\n"
+"    border-top-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-left-radius: 15px;\n"
+"    border-bottom-right-radius: 15px;")
         self.pushButton_updatecore.setObjectName("pushButton_updatecore")
-        self.verticalLayout_3.addWidget(self.pushButton_updatecore)
-        self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_3)
         self.tabWidget.addTab(self.tab_score, "")
         self.tab_schedule = QtWidgets.QWidget()
         self.tab_schedule.setObjectName("tab_schedule")
         self.scrollArea_4 = QtWidgets.QScrollArea(parent=self.tab_schedule)
-        self.scrollArea_4.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.scrollArea_4.setGeometry(QtCore.QRect(0, 0, 768, 286))
+        self.scrollArea_4.setMinimumSize(QtCore.QSize(768, 0))
+        self.scrollArea_4.setMaximumSize(QtCore.QSize(768, 16777215))
         self.scrollArea_4.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollArea_4.setObjectName("scrollArea_4")
         self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 768, 286))
         self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_4)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(10, 10, 751, 261))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -236,15 +249,15 @@ class Ui_MainWindow(object):
         self.tab_notice = QtWidgets.QWidget()
         self.tab_notice.setObjectName("tab_notice")
         self.scrollArea_5 = QtWidgets.QScrollArea(parent=self.tab_notice)
-        self.scrollArea_5.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.scrollArea_5.setGeometry(QtCore.QRect(0, 0, 768, 286))
         self.scrollArea_5.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.scrollArea_5.setWidgetResizable(True)
         self.scrollArea_5.setObjectName("scrollArea_5")
         self.scrollAreaWidgetContents_5 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 768, 286))
         self.scrollAreaWidgetContents_5.setObjectName("scrollAreaWidgetContents_5")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_5)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(0, 0, 1011, 311))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(10, 10, 751, 261))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
@@ -256,17 +269,19 @@ class Ui_MainWindow(object):
         self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
         self.tabWidget.addTab(self.tab_notice, "")
         self.tab_inforstudent = QtWidgets.QWidget()
+        self.tab_inforstudent.setMinimumSize(QtCore.QSize(768, 0))
+        self.tab_inforstudent.setMaximumSize(QtCore.QSize(768, 16777215))
         self.tab_inforstudent.setObjectName("tab_inforstudent")
         self.scrollArea_2 = QtWidgets.QScrollArea(parent=self.tab_inforstudent)
-        self.scrollArea_2.setGeometry(QtCore.QRect(0, 0, 1011, 321))
+        self.scrollArea_2.setGeometry(QtCore.QRect(0, 0, 768, 286))
         self.scrollArea_2.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollArea_2.setObjectName("scrollArea_2")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 1011, 321))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 768, 286))
         self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
         self.verticalLayoutWidget_4 = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_2)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(180, 20, 271, 281))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(120, 10, 221, 261))
         self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -384,40 +399,42 @@ class Ui_MainWindow(object):
         self.lineEdit_mail.setObjectName("lineEdit_mail")
         self.verticalLayout_6.addWidget(self.lineEdit_mail)
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_2)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(70, 30, 101, 261))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(20, 10, 93, 261))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_8.setSpacing(7)
         self.verticalLayout_8.setObjectName("verticalLayout_8")
         self.label_6 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_6)
-        self.label_6.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.label_6.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_6.setObjectName("label_6")
         self.verticalLayout_8.addWidget(self.label_6)
         self.label_5 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_6)
-        self.label_5.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.label_5.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_5.setObjectName("label_5")
         self.verticalLayout_8.addWidget(self.label_5)
         self.label_4 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_6)
-        self.label_4.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.label_4.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_4.setObjectName("label_4")
         self.verticalLayout_8.addWidget(self.label_4)
         self.label_7 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_6)
-        self.label_7.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.label_7.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_7.setObjectName("label_7")
         self.verticalLayout_8.addWidget(self.label_7)
         self.label_3 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_6)
-        self.label_3.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.label_3.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_8.addWidget(self.label_3)
         self.formLayoutWidget = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_2)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(480, 20, 511, 282))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(350, 10, 401, 261))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout_2 = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_2.setHorizontalSpacing(7)
+        self.formLayout_2.setVerticalSpacing(10)
         self.formLayout_2.setObjectName("formLayout_2")
         self.khAHCLabel = QtWidgets.QLabel(parent=self.formLayoutWidget)
-        self.khAHCLabel.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.khAHCLabel.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.khAHCLabel.setObjectName("khAHCLabel")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.ItemRole.LabelRole, self.khAHCLabel)
         self.LineEdit_course = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
@@ -431,25 +448,10 @@ class Ui_MainWindow(object):
 "}")
         self.LineEdit_course.setObjectName("LineEdit_course")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_course)
-        self.niNKhALabel = QtWidgets.QLabel(parent=self.formLayoutWidget)
-        self.niNKhALabel.setStyleSheet("font: 500 10pt \"Cambria\";")
-        self.niNKhALabel.setObjectName("niNKhALabel")
-        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.niNKhALabel)
-        self.LineEdit_acayear = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
-        self.LineEdit_acayear.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.LineEdit_acayear.setObjectName("LineEdit_acayear")
-        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_acayear)
         self.ngNhLabel = QtWidgets.QLabel(parent=self.formLayoutWidget)
-        self.ngNhLabel.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.ngNhLabel.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.ngNhLabel.setObjectName("ngNhLabel")
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.ngNhLabel)
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.LabelRole, self.ngNhLabel)
         self.LineEdit_major = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
         self.LineEdit_major.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
@@ -460,11 +462,11 @@ class Ui_MainWindow(object):
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
         self.LineEdit_major.setObjectName("LineEdit_major")
-        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_major)
+        self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_major)
         self.lPLabel = QtWidgets.QLabel(parent=self.formLayoutWidget)
-        self.lPLabel.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.lPLabel.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.lPLabel.setObjectName("lPLabel")
-        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lPLabel)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole, self.lPLabel)
         self.LineEdit_class = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
         self.LineEdit_class.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
@@ -475,11 +477,11 @@ class Ui_MainWindow(object):
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
         self.LineEdit_class.setObjectName("LineEdit_class")
-        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_class)
+        self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_class)
         self.cVNHCTPLabel = QtWidgets.QLabel(parent=self.formLayoutWidget)
-        self.cVNHCTPLabel.setStyleSheet("font: 500 10pt \"Cambria\";")
+        self.cVNHCTPLabel.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.cVNHCTPLabel.setObjectName("cVNHCTPLabel")
-        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.ItemRole.LabelRole, self.cVNHCTPLabel)
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.ItemRole.LabelRole, self.cVNHCTPLabel)
         self.LineEdit_advisor = QtWidgets.QLineEdit(parent=self.formLayoutWidget)
         self.LineEdit_advisor.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
@@ -490,7 +492,7 @@ class Ui_MainWindow(object):
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
         self.LineEdit_advisor.setObjectName("LineEdit_advisor")
-        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_advisor)
+        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.ItemRole.FieldRole, self.LineEdit_advisor)
         self.pushButton_updateinfo = QtWidgets.QPushButton(parent=self.formLayoutWidget)
         self.pushButton_updateinfo.setMinimumSize(QtCore.QSize(0, 40))
         self.pushButton_updateinfo.setMaximumSize(QtCore.QSize(16777215, 40))
@@ -499,52 +501,89 @@ class Ui_MainWindow(object):
 "background-color: rgb(0,0,90);\n"
 "font: 2000 14pt \"Arial\";")
         self.pushButton_updateinfo.setObjectName("pushButton_updateinfo")
-        self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.ItemRole.FieldRole, self.pushButton_updateinfo)
+        self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.ItemRole.FieldRole, self.pushButton_updateinfo)
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
         self.tabWidget.addTab(self.tab_inforstudent, "")
         self.verticalLayout.addWidget(self.tabWidget)
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setSpacing(1)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout.setObjectName("horizontalLayout")
         self.pushButton_exit = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_exit.sizePolicy().hasHeightForWidth())
         self.pushButton_exit.setSizePolicy(sizePolicy)
-        self.pushButton_exit.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton_exit.setMaximumSize(QtCore.QSize(500, 1550))
+        self.pushButton_exit.setMinimumSize(QtCore.QSize(0, 50))
+        self.pushButton_exit.setMaximumSize(QtCore.QSize(400, 50))
         self.pushButton_exit.setSizeIncrement(QtCore.QSize(0, 500))
-        self.pushButton_exit.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"background-color: rgb(170,0,0);\n"
-"font: 2000 10pt \"Arial\";")
+        self.pushButton_exit.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
+"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 20px;\n"
+"    border-bottom-left-radius: 20px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
         self.pushButton_exit.setObjectName("pushButton_exit")
-        self.horizontalLayout_2.addWidget(self.pushButton_exit)
-        spacerItem = QtWidgets.QSpacerItem(500, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_2.addItem(spacerItem)
+        self.horizontalLayout.addWidget(self.pushButton_exit)
         self.pushButton_logout = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_logout.sizePolicy().hasHeightForWidth())
         self.pushButton_logout.setSizePolicy(sizePolicy)
-        self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 35))
-        self.pushButton_logout.setMaximumSize(QtCore.QSize(500, 1000))
-        self.pushButton_logout.setStyleSheet("border-radius: 15px;\n"
-"background-color: rgb(255,255,255);\n"
-"font: 2000 10pt \"Arial\";")
+        self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 50))
+        self.pushButton_logout.setMaximumSize(QtCore.QSize(400, 50))
+        self.pushButton_logout.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
         self.pushButton_logout.setIconSize(QtCore.QSize(50, 20))
         self.pushButton_logout.setObjectName("pushButton_logout")
-        self.horizontalLayout_2.addWidget(self.pushButton_logout)
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.horizontalLayout.addWidget(self.pushButton_logout)
+        self.verticalLayout.addLayout(self.horizontalLayout)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.verticalLayout_2.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
         self.ComboBox_semester.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -552,15 +591,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "STUDENT"))
-        self.ComboBox_semester.setItemText(0, _translate("MainWindow", "     SEMESTER 1"))
-        self.ComboBox_semester.setItemText(1, _translate("MainWindow", "     SEMESTER 2"))
-        self.ComboBox_semester.setItemText(2, _translate("MainWindow", "     SEMESTER 3"))
-        self.ComboBox_semester.setItemText(3, _translate("MainWindow", "     SEMESTER 4"))
-        self.ComboBox_semester.setItemText(4, _translate("MainWindow", "     SEMESTER 5"))
-        self.ComboBox_semester.setItemText(5, _translate("MainWindow", "     SEMESTER 6"))
-        self.ComboBox_semester.setItemText(6, _translate("MainWindow", "     SEMESTER 7"))
-        self.ComboBox_semester.setItemText(7, _translate("MainWindow", "     SEMESTER 8"))
-        self.ComboBox_semester.setItemText(8, _translate("MainWindow", "     SEMESTER 9"))
         item = self.table_grade.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "SUBJECTS"))
         item = self.table_grade.horizontalHeaderItem(1)
@@ -573,6 +603,15 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "FINALTERM"))
         item = self.table_grade.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "AVERAGE"))
+        self.ComboBox_semester.setItemText(0, _translate("MainWindow", "     SEMESTER 1"))
+        self.ComboBox_semester.setItemText(1, _translate("MainWindow", "     SEMESTER 2"))
+        self.ComboBox_semester.setItemText(2, _translate("MainWindow", "     SEMESTER 3"))
+        self.ComboBox_semester.setItemText(3, _translate("MainWindow", "     SEMESTER 4"))
+        self.ComboBox_semester.setItemText(4, _translate("MainWindow", "     SEMESTER 5"))
+        self.ComboBox_semester.setItemText(5, _translate("MainWindow", "     SEMESTER 6"))
+        self.ComboBox_semester.setItemText(6, _translate("MainWindow", "     SEMESTER 7"))
+        self.ComboBox_semester.setItemText(7, _translate("MainWindow", "     SEMESTER 8"))
+        self.ComboBox_semester.setItemText(8, _translate("MainWindow", "     SEMESTER 9"))
         self.pushButton_updatecore.setText(_translate("MainWindow", "UPDATE"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_score), _translate("MainWindow", "SCORE"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_schedule), _translate("MainWindow", "SCHEDULE"))
@@ -585,7 +624,6 @@ class Ui_MainWindow(object):
         self.label_7.setText(_translate("MainWindow", "Gender:"))
         self.label_3.setText(_translate("MainWindow", "Email:"))
         self.khAHCLabel.setText(_translate("MainWindow", "Course:"))
-        self.niNKhALabel.setText(_translate("MainWindow", "Academic Year:"))
         self.ngNhLabel.setText(_translate("MainWindow", "Major:"))
         self.lPLabel.setText(_translate("MainWindow", "Class:"))
         self.cVNHCTPLabel.setText(_translate("MainWindow", "Academic Advisor:"))
