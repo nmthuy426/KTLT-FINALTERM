@@ -198,7 +198,7 @@ QTabWidget:{
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="documentMode">
            <bool>false</bool>
@@ -544,11 +544,7 @@ font: 2000 10pt &quot;Arial&quot;;
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_5">
                <item>
-                <widget class="QListView" name="listView_schedule">
-                 <property name="styleSheet">
-                  <string notr="true">font: 75 9pt &quot;Cambria&quot;;</string>
-                 </property>
-                </widget>
+                <widget class="QListWidget" name="listWidget_schedule"/>
                </item>
               </layout>
              </widget>
@@ -594,11 +590,7 @@ font: 2000 10pt &quot;Arial&quot;;
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
                <item>
-                <widget class="QListView" name="listView_notice">
-                 <property name="styleSheet">
-                  <string notr="true">font: 75 9pt &quot;Cambria&quot;;</string>
-                 </property>
-                </widget>
+                <widget class="QListWidget" name="listWidget_notice"/>
                </item>
               </layout>
              </widget>

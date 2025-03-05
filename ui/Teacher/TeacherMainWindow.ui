@@ -190,17 +190,17 @@ font: 5000 18pt &quot;Arial&quot;;
             </property>
             <item>
              <property name="text">
-              <string>SEMESTER 1</string>
+              <string>2024-2025</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>SEMESTER 2</string>
+              <string>2022-2023</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>SEMESTER 3</string>
+              <string>2023-2024</string>
              </property>
             </item>
            </widget>
