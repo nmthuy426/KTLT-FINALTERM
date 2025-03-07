@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabAccounts">
      <attribute name="title">
@@ -966,7 +966,7 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>STUDENT</string>
          </property>
-         <widget class="QTableView" name="tableView_2">
+         <widget class="QTableWidget" name="tableWidget">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -987,13 +987,13 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>TEACHER</string>
          </property>
-         <widget class="QTableView" name="tableView">
+         <widget class="QTableWidget" name="tableWidget_2">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>31</y>
+            <y>27</y>
             <width>931</width>
-            <height>271</height>
+            <height>281</height>
            </rect>
           </property>
          </widget>
