@@ -74,46 +74,6 @@ font: 2000 18pt &quot;Cambria&quot;;
            </widget>
           </item>
           <item>
-           <widget class="QComboBox" name="comboBox_semester">
-            <property name="minimumSize">
-             <size>
-              <width>768</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">    border: 1px solid gray;
-    font: 2000 18px &quot;Cambria&quot;;
-    background: white;
-	color: rgb(0, 0, 127);
-	padding: 10px;
-
-</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>SEMESTER 1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>SEMESTER 2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>SEMESTER 3</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item>
            <widget class="QTableWidget" name="tableWidget_grade">
             <property name="maximumSize">
              <size>

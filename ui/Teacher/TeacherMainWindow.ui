@@ -181,52 +181,6 @@ font: 5000 18pt &quot;Arial&quot;;
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QComboBox" name="comboBox_Course">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>956</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">    border: 1px solid gray; 
-    font: 2000 18px &quot;Cambria&quot;;
-    background: white;
-	color: rgb(0, 0, 127);
-	padding: 10px;
-
-</string>
-           </property>
-           <item>
-            <property name="text">
-             <string>2024-2025</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2022-2023</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>2023-2024</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item>
           <widget class="QListWidget" name="listWidget_Class">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -237,13 +191,13 @@ font: 5000 18pt &quot;Arial&quot;;
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>230</height>
+             <height>300</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>956</width>
-             <height>230</height>
+             <height>350</height>
             </size>
            </property>
            <property name="styleSheet">
@@ -252,8 +206,8 @@ font: 500 10pt &quot;Cambria&quot;;
 color: rgb(0, 0, 0);
 /* Chỉ bo tròn hai góc trên */
     background-color: white;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 10px;
