@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(808, 684)
-        MainWindow.setMaximumSize(QtCore.QSize(1056, 752))
+        MainWindow.setMaximumSize(QtCore.QSize(10000, 10000))
         MainWindow.setAutoFillBackground(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -33,8 +33,8 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.scrollAreaWidgetContents)
-        self.lineEdit.setStyleSheet("    border: 1px solid gray;\n"
+        self.lineEdit_class = QtWidgets.QLineEdit(parent=self.scrollAreaWidgetContents)
+        self.lineEdit_class.setStyleSheet("    border: 1px solid gray;\n"
 "\n"
 "background-color: white;\n"
 "color: rgb(0, 0, 90);\n"
@@ -47,26 +47,26 @@ class Ui_MainWindow(object):
 "    border-bottom-right-radius: 0px;\n"
 "    padding: 10px;\n"
 "")
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout_3.addWidget(self.lineEdit)
-        self.comboBox = QtWidgets.QComboBox(parent=self.scrollAreaWidgetContents)
-        self.comboBox.setMinimumSize(QtCore.QSize(768, 0))
-        self.comboBox.setMaximumSize(QtCore.QSize(768, 16777215))
-        self.comboBox.setStyleSheet("    border: 1px solid gray;\n"
+        self.lineEdit_class.setObjectName("lineEdit_class")
+        self.verticalLayout_3.addWidget(self.lineEdit_class)
+        self.comboBox_semester = QtWidgets.QComboBox(parent=self.scrollAreaWidgetContents)
+        self.comboBox_semester.setMinimumSize(QtCore.QSize(768, 0))
+        self.comboBox_semester.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.comboBox_semester.setStyleSheet("    border: 1px solid gray;\n"
 "    font: 2000 18px \"Cambria\";\n"
 "    background: white;\n"
 "    color: rgb(0, 0, 127);\n"
 "    padding: 10px;\n"
 "\n"
 "")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.verticalLayout_3.addWidget(self.comboBox)
-        self.tableWidget = QtWidgets.QTableWidget(parent=self.scrollAreaWidgetContents)
-        self.tableWidget.setMaximumSize(QtCore.QSize(1000, 450))
-        self.tableWidget.setStyleSheet("QTableWidget {\n"
+        self.comboBox_semester.setObjectName("comboBox_semester")
+        self.comboBox_semester.addItem("")
+        self.comboBox_semester.addItem("")
+        self.comboBox_semester.addItem("")
+        self.verticalLayout_3.addWidget(self.comboBox_semester)
+        self.tableWidget_grade = QtWidgets.QTableWidget(parent=self.scrollAreaWidgetContents)
+        self.tableWidget_grade.setMaximumSize(QtCore.QSize(16777215, 450))
+        self.tableWidget_grade.setStyleSheet("QTableWidget {\n"
 "    gridline-color: #000000; /* Màu đường kẻ */\n"
 "    font: 5000 12px \"Arial\"; /* Kích thước chữ */\n"
 "}\n"
@@ -79,28 +79,28 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "")
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(7)
-        self.tableWidget.setRowCount(0)
+        self.tableWidget_grade.setObjectName("tableWidget_grade")
+        self.tableWidget_grade.setColumnCount(7)
+        self.tableWidget_grade.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(5, item)
+        self.tableWidget_grade.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(6, item)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(155)
-        self.tableWidget.horizontalHeader().setMinimumSectionSize(50)
-        self.tableWidget.verticalHeader().setDefaultSectionSize(30)
-        self.tableWidget.verticalHeader().setMinimumSectionSize(50)
-        self.verticalLayout_3.addWidget(self.tableWidget)
+        self.tableWidget_grade.setHorizontalHeaderItem(6, item)
+        self.tableWidget_grade.horizontalHeader().setDefaultSectionSize(155)
+        self.tableWidget_grade.horizontalHeader().setMinimumSectionSize(50)
+        self.tableWidget_grade.verticalHeader().setDefaultSectionSize(30)
+        self.tableWidget_grade.verticalHeader().setMinimumSectionSize(50)
+        self.verticalLayout_3.addWidget(self.tableWidget_grade)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setContentsMargins(0, 0, -1, -1)
         self.horizontalLayout.setSpacing(5)
@@ -211,22 +211,22 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "SEMESTER 1"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "SEMESTER 2"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "SEMESTER 3"))
-        item = self.tableWidget.horizontalHeaderItem(0)
+        self.comboBox_semester.setItemText(0, _translate("MainWindow", "SEMESTER 1"))
+        self.comboBox_semester.setItemText(1, _translate("MainWindow", "SEMESTER 2"))
+        self.comboBox_semester.setItemText(2, _translate("MainWindow", "SEMESTER 3"))
+        item = self.tableWidget_grade.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID STUDENT"))
-        item = self.tableWidget.horizontalHeaderItem(1)
+        item = self.tableWidget_grade.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "FULLNAME"))
-        item = self.tableWidget.horizontalHeaderItem(2)
+        item = self.tableWidget_grade.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "FORMATIVE SCORE 1"))
-        item = self.tableWidget.horizontalHeaderItem(3)
+        item = self.tableWidget_grade.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "FORMATIVE SCORE 2"))
-        item = self.tableWidget.horizontalHeaderItem(4)
+        item = self.tableWidget_grade.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "MIDTERM"))
-        item = self.tableWidget.horizontalHeaderItem(5)
+        item = self.tableWidget_grade.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "FINALTERM"))
-        item = self.tableWidget.horizontalHeaderItem(6)
+        item = self.tableWidget_grade.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "AVERAGE"))
         self.pushButton_home.setText(_translate("MainWindow", "HOME"))
         self.pushButton_save.setText(_translate("MainWindow", "SAVE"))

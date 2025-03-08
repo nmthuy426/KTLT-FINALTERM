@@ -13,6 +13,31 @@
   <property name="windowTitle">
    <string>Admin Management</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
+    color: rgb(255,255,255); /* Màu chữ trắng */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 8px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -24,9 +49,9 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
-    <widget class="QWidget" name="tabAccounts">
+    <widget class="QWidget" name="tab_ManageAccounts">
      <attribute name="title">
       <string>Manage Accounts</string>
      </attribute>
@@ -41,7 +66,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="groupBox_InfoStudent">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -127,7 +152,7 @@ color: rgb(0,0,90);</string>
             <number>7</number>
            </property>
            <item>
-            <widget class="QLineEdit" name="lineEdit_id">
+            <widget class="QLineEdit" name="lineEdit_StuId">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -153,7 +178,7 @@ color: rgb(0,0,90);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_fullname">
+            <widget class="QLineEdit" name="lineEdit_StuFullname">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -179,7 +204,7 @@ color: rgb(0,0,90);</string>
             </widget>
            </item>
            <item>
-            <widget class="QDateEdit" name="dateEdit_bir">
+            <widget class="QDateEdit" name="dateEdit_StuBir">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -232,7 +257,7 @@ QDateEdit::drop-down {
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_gender">
+            <widget class="QComboBox" name="comboBox_StuGender">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -285,7 +310,7 @@ QComboBox::down-arrow {
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_mail">
+            <widget class="QLineEdit" name="lineEdit_StuMail">
              <property name="maximumSize">
               <size>
                <width>16777215</width>
@@ -377,7 +402,7 @@ QComboBox::down-arrow {
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton_updateinfo">
+         <widget class="QPushButton" name="pushButton_StuAddInfo">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -419,7 +444,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QLineEdit" name="LineEdit_major">
+            <widget class="QLineEdit" name="LineEdit_StuCourse">
              <property name="styleSheet">
               <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -433,7 +458,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LineEdit_advisor">
+            <widget class="QLineEdit" name="LineEdit_StuMajor">
              <property name="styleSheet">
               <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -447,7 +472,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LineEdit_class">
+            <widget class="QLineEdit" name="LineEdit_StuClass">
              <property name="styleSheet">
               <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -461,7 +486,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LineEdit_course">
+            <widget class="QLineEdit" name="LineEdit_StuAdvisor">
              <property name="styleSheet">
               <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -479,7 +504,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QGroupBox" name="groupBox_InfoTeacher">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -513,7 +538,7 @@ color: rgb(0,0,90);</string>
             <number>7</number>
            </property>
            <item>
-            <widget class="QLineEdit" name="lineEdit_id_2">
+            <widget class="QLineEdit" name="lineEdit_TeaId">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -545,7 +570,7 @@ color: rgb(0,0,90);</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_fullname_2">
+            <widget class="QLineEdit" name="lineEdit_TeaFullname">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -577,7 +602,7 @@ color: rgb(0,0,90);</string>
             </widget>
            </item>
            <item>
-            <widget class="QDateEdit" name="dateEdit_bir_2">
+            <widget class="QDateEdit" name="dateEdit_TeaBir">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -636,7 +661,7 @@ QDateEdit::drop-down {
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="comboBox_gender_2">
+            <widget class="QComboBox" name="comboBox_TeaGender">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -751,7 +776,7 @@ QComboBox::down-arrow {
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton_updateinfo_2">
+         <widget class="QPushButton" name="pushButton_TeaAddInfo">
           <property name="geometry">
            <rect>
             <x>470</x>
@@ -841,7 +866,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             <number>7</number>
            </property>
            <item>
-            <widget class="QLineEdit" name="lineEdit_id_4">
+            <widget class="QLineEdit" name="lineEdit_TeaMail">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -873,7 +898,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_fullname_4">
+            <widget class="QLineEdit" name="lineEdit_TeaFaculty">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -905,7 +930,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_mail_4">
+            <widget class="QLineEdit" name="lineEdit_TeaClass">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -943,7 +968,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="tab_ListAccounts">
      <attribute name="title">
       <string>List Accounts</string>
      </attribute>
@@ -966,7 +991,7 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>STUDENT</string>
          </property>
-         <widget class="QTableWidget" name="tableWidget">
+         <widget class="QTableWidget" name="tableWidget_Student">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -987,7 +1012,7 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>TEACHER</string>
          </property>
-         <widget class="QTableWidget" name="tableWidget_2">
+         <widget class="QTableWidget" name="tableWidget_Teacher">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -1002,7 +1027,7 @@ color: rgb(0,0,90);</string>
       </layout>
      </widget>
     </widget>
-    <widget class="QWidget" name="tabClasses">
+    <widget class="QWidget" name="tab_ManageClasses">
      <attribute name="title">
       <string>Manage Classes</string>
      </attribute>
@@ -1017,7 +1042,7 @@ color: rgb(0,0,90);</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QTableWidget" name="tableClasses">
+        <widget class="QTableWidget" name="tableWidget_Classes">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -1035,7 +1060,7 @@ color: rgb(0,0,90);</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QPushButton" name="btnAssignStudents">
+          <widget class="QPushButton" name="pushButton_AssignStudents">
            <property name="styleSheet">
             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
@@ -1067,7 +1092,7 @@ QPushButton:pressed {
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnAssignTeacher">
+          <widget class="QPushButton" name="pushButton_AssignTeacher">
            <property name="styleSheet">
             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */

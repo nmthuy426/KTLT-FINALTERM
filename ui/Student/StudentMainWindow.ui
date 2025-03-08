@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>808</width>
-    <height>684</height>
+    <width>1000</width>
+    <height>712</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -47,8 +47,8 @@ border: none;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>790</width>
-         <height>641</height>
+         <width>987</width>
+         <height>669</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -62,7 +62,7 @@ border: none;</string>
           </property>
           <property name="maximumSize">
            <size>
-            <width>933</width>
+            <width>1000</width>
             <height>250</height>
            </size>
           </property>
@@ -78,9 +78,15 @@ border: none;</string>
              <rect>
               <x>1</x>
               <y>0</y>
-              <width>768</width>
+              <width>956</width>
               <height>51</height>
              </rect>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>956</width>
+              <height>16777215</height>
+             </size>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: white;
@@ -106,7 +112,7 @@ font: 5000 18pt &quot;Arial&quot;;
              <rect>
               <x>1</x>
               <y>20</y>
-              <width>768</width>
+              <width>956</width>
               <height>281</height>
              </rect>
             </property>
@@ -118,7 +124,7 @@ font: 5000 18pt &quot;Arial&quot;;
             </property>
             <property name="maximumSize">
              <size>
-              <width>1200</width>
+              <width>956</width>
               <height>350</height>
              </size>
             </property>
@@ -150,14 +156,14 @@ font: 5000 18pt &quot;Arial&quot;;
          <widget class="QTabWidget" name="tabWidget">
           <property name="minimumSize">
            <size>
-            <width>768</width>
-            <height>320</height>
+            <width>0</width>
+            <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>768</width>
-            <height>320</height>
+            <width>956</width>
+            <height>319</height>
            </size>
           </property>
           <property name="autoFillBackground">
@@ -198,7 +204,7 @@ QTabWidget:{
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>false</bool>
@@ -219,9 +225,9 @@ QTabWidget:{
            <widget class="QFrame" name="frame">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>0</y>
-              <width>768</width>
+              <width>956</width>
               <height>256</height>
              </rect>
             </property>
@@ -237,9 +243,9 @@ QTabWidget:{
             <widget class="QTableWidget" name="table_grade">
              <property name="geometry">
               <rect>
-               <x>0</x>
+               <x>1</x>
                <y>30</y>
-               <width>768</width>
+               <width>956</width>
                <height>226</height>
               </rect>
              </property>
@@ -257,7 +263,7 @@ QTabWidget:{
              </property>
              <property name="maximumSize">
               <size>
-               <width>768</width>
+               <width>956</width>
                <height>16777215</height>
               </size>
              </property>
@@ -355,9 +361,9 @@ QTableWidget:{
              </property>
              <property name="geometry">
               <rect>
-               <x>0</x>
+               <x>1</x>
                <y>0</y>
-               <width>768</width>
+               <width>956</width>
                <height>30</height>
               </rect>
              </property>
@@ -375,7 +381,7 @@ QTableWidget:{
              </property>
              <property name="maximumSize">
               <size>
-               <width>768</width>
+               <width>956</width>
                <height>30</height>
               </size>
              </property>
@@ -461,11 +467,17 @@ QTableWidget:{
            <widget class="QPushButton" name="pushButton_updatecore">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>255</y>
-              <width>768</width>
+              <width>956</width>
               <height>30</height>
              </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
@@ -475,7 +487,7 @@ QTableWidget:{
             </property>
             <property name="maximumSize">
              <size>
-              <width>768</width>
+              <width>956</width>
               <height>30</height>
              </size>
             </property>
@@ -500,9 +512,9 @@ font: 2000 10pt &quot;Arial&quot;;
            <widget class="QScrollArea" name="scrollArea_4">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>0</y>
-              <width>768</width>
+              <width>956</width>
               <height>286</height>
              </rect>
             </property>
@@ -514,7 +526,7 @@ font: 2000 10pt &quot;Arial&quot;;
             </property>
             <property name="maximumSize">
              <size>
-              <width>768</width>
+              <width>956</width>
               <height>16777215</height>
              </size>
             </property>
@@ -529,7 +541,7 @@ font: 2000 10pt &quot;Arial&quot;;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>768</width>
+               <width>956</width>
                <height>286</height>
               </rect>
              </property>
@@ -538,7 +550,7 @@ font: 2000 10pt &quot;Arial&quot;;
                <rect>
                 <x>10</x>
                 <y>10</y>
-                <width>751</width>
+                <width>931</width>
                 <height>261</height>
                </rect>
               </property>
@@ -558,9 +570,9 @@ font: 2000 10pt &quot;Arial&quot;;
            <widget class="QScrollArea" name="scrollArea_5">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>0</y>
-              <width>768</width>
+              <width>956</width>
               <height>286</height>
              </rect>
             </property>
@@ -575,7 +587,7 @@ font: 2000 10pt &quot;Arial&quot;;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>768</width>
+               <width>956</width>
                <height>286</height>
               </rect>
              </property>
@@ -584,7 +596,7 @@ font: 2000 10pt &quot;Arial&quot;;
                <rect>
                 <x>10</x>
                 <y>10</y>
-                <width>751</width>
+                <width>931</width>
                 <height>261</height>
                </rect>
               </property>
@@ -600,7 +612,7 @@ font: 2000 10pt &quot;Arial&quot;;
           <widget class="QWidget" name="tab_inforstudent">
            <property name="minimumSize">
             <size>
-             <width>768</width>
+             <width>956</width>
              <height>0</height>
             </size>
            </property>
@@ -616,11 +628,17 @@ font: 2000 10pt &quot;Arial&quot;;
            <widget class="QScrollArea" name="scrollArea_2">
             <property name="geometry">
              <rect>
-              <x>0</x>
+              <x>1</x>
               <y>0</y>
-              <width>768</width>
+              <width>956</width>
               <height>286</height>
              </rect>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>956</width>
+              <height>16777215</height>
+             </size>
             </property>
             <property name="styleSheet">
              <string notr="true">background-color: rgb(255, 255, 255);</string>
@@ -633,16 +651,16 @@ font: 2000 10pt &quot;Arial&quot;;
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>768</width>
+               <width>956</width>
                <height>286</height>
               </rect>
              </property>
              <widget class="QWidget" name="verticalLayoutWidget_4">
               <property name="geometry">
                <rect>
-                <x>120</x>
+                <x>140</x>
                 <y>10</y>
-                <width>221</width>
+                <width>321</width>
                 <height>261</height>
                </rect>
               </property>
@@ -651,7 +669,7 @@ font: 2000 10pt &quot;Arial&quot;;
                 <number>7</number>
                </property>
                <item>
-                <widget class="QLineEdit" name="lineEdit_id">
+                <widget class="QLineEdit" name="lineEdit_StuId">
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
@@ -677,7 +695,7 @@ font: 2000 10pt &quot;Arial&quot;;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_fullname">
+                <widget class="QLineEdit" name="lineEdit_StuFullname">
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
@@ -703,7 +721,7 @@ font: 2000 10pt &quot;Arial&quot;;
                 </widget>
                </item>
                <item>
-                <widget class="QDateEdit" name="dateEdit_bir">
+                <widget class="QDateEdit" name="dateEdit_StuBir">
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
@@ -756,7 +774,7 @@ QDateEdit::drop-down {
                 </widget>
                </item>
                <item>
-                <widget class="QComboBox" name="comboBox_gender">
+                <widget class="QComboBox" name="comboBox_StuGender">
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
@@ -809,7 +827,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_mail">
+                <widget class="QLineEdit" name="lineEdit_StuMail">
                  <property name="maximumSize">
                   <size>
                    <width>16777215</width>
@@ -841,7 +859,7 @@ QComboBox::down-arrow {
                <rect>
                 <x>20</x>
                 <y>10</y>
-                <width>93</width>
+                <width>111</width>
                 <height>261</height>
                </rect>
               </property>
@@ -904,9 +922,9 @@ QComboBox::down-arrow {
              <widget class="QWidget" name="formLayoutWidget">
               <property name="geometry">
                <rect>
-                <x>350</x>
+                <x>480</x>
                 <y>10</y>
-                <width>401</width>
+                <width>461</width>
                 <height>261</height>
                </rect>
               </property>
@@ -928,7 +946,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="QLineEdit" name="LineEdit_course">
+                <widget class="QLineEdit" name="LineEdit_StuCourse">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -952,7 +970,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QLineEdit" name="LineEdit_major">
+                <widget class="QLineEdit" name="LineEdit_StuMajor">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -976,7 +994,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="2" column="1">
-                <widget class="QLineEdit" name="LineEdit_class">
+                <widget class="QLineEdit" name="LineEdit_StuClass">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -1000,7 +1018,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="3" column="1">
-                <widget class="QLineEdit" name="LineEdit_advisor">
+                <widget class="QLineEdit" name="LineEdit_StuAdvisor">
                  <property name="styleSheet">
                   <string notr="true">QLineEdit {
     border: 1px solid gray;
@@ -1014,7 +1032,7 @@ QComboBox::down-arrow {
                 </widget>
                </item>
                <item row="4" column="1">
-                <widget class="QPushButton" name="pushButton_updateinfo">
+                <widget class="QPushButton" name="pushButton_StuUpdateinfo">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -1053,21 +1071,21 @@ font: 2000 14pt &quot;Arial&quot;;</string>
           <item>
            <widget class="QPushButton" name="pushButton_exit">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>1</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>478</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>400</width>
-              <height>50</height>
+              <width>1000</width>
+              <height>60</height>
              </size>
             </property>
             <property name="sizeIncrement">
@@ -1116,14 +1134,14 @@ QPushButton:pressed {
             </property>
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>478</width>
               <height>50</height>
              </size>
             </property>
             <property name="maximumSize">
              <size>
-              <width>400</width>
-              <height>50</height>
+              <width>1000</width>
+              <height>60</height>
              </size>
             </property>
             <property name="styleSheet">
