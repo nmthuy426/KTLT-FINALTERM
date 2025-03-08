@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Admin\AddStudent.ui'
+# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Admin\ListOfStudents.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -19,48 +19,19 @@ class Ui_AssignStudentsDialog(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.ComboBox_Class = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_2)
-        self.ComboBox_Class.setMinimumSize(QtCore.QSize(0, 50))
-        self.ComboBox_Class.setStyleSheet("QComboBox {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 25px; /* Bo tròn cả 4 góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 30px; /* Chừa khoảng trống bên phải */\n"
-"}\n"
-"\n"
-"/* Ẩn nền của nút dropdown để bo góc phải */\n"
-"QComboBox::drop-down {\n"
-"    border: none;\n"
-"    background: transparent; /* Để nền trong suốt */\n"
-"    width: 25px;\n"
-"    subcontrol-position: right center;\n"
-"}\n"
-"\n"
-"/* Tạo nền bo góc cho dropdown */\n"
-"QComboBox::down-arrow {\n"
-"    image: url(image/down-arrow.png);\n"
-"    width: 10px;\n"
-"    height: 12px;\n"
-"    margin-right: 5px;\n"
-"}\n"
-"")
-        self.ComboBox_Class.setObjectName("ComboBox_Class")
-        self.verticalLayout_2.addWidget(self.ComboBox_Class)
         self.groupBox_SelectedStudent = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget_2)
         self.groupBox_SelectedStudent.setStyleSheet("font: 2000 12pt \"Arial\";\n"
 "color: rgb(0,0,90);")
         self.groupBox_SelectedStudent.setObjectName("groupBox_SelectedStudent")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_SelectedStudent)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 961, 481))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 961, 541))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.listWidget_Students = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
-        self.listWidget_Students.setMinimumSize(QtCore.QSize(0, 236))
-        self.listWidget_Students.setMaximumSize(QtCore.QSize(16777215, 500))
+        self.listWidget_Students.setMinimumSize(QtCore.QSize(0, 480))
+        self.listWidget_Students.setMaximumSize(QtCore.QSize(16777215, 480))
         self.listWidget_Students.setStyleSheet("    QListWidget {\n"
 "        border: 2px solid rgb(255,255,255);\n"
 "        border-top-left-radius: 20px;  /* Bo góc trái trên */\n"
@@ -132,6 +103,6 @@ class Ui_AssignStudentsDialog(object):
     def retranslateUi(self, AssignStudentsDialog):
         _translate = QtCore.QCoreApplication.translate
         AssignStudentsDialog.setWindowTitle(_translate("AssignStudentsDialog", "Assign Students"))
-        self.groupBox_SelectedStudent.setTitle(_translate("AssignStudentsDialog", "SELECTED STUDENTS"))
+        self.groupBox_SelectedStudent.setTitle(_translate("AssignStudentsDialog", "LIST OF STUDENTS"))
         self.pushButton_Home.setText(_translate("AssignStudentsDialog", "BACK"))
         self.pushButton_AssignStudent.setText(_translate("AssignStudentsDialog", "SAVE"))
