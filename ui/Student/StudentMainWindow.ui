@@ -196,6 +196,10 @@ QTabBar::tab:last {
 	width: 250px; /* Giới hạn chiều dài */
     text-align: center;
 }
+QTabBar::tab:middle {
+	width: 250px; /* Giới hạn chiều dài */
+    text-align: center;
+}
 QTabWidget:{
 	background-color: rgba(0,0,0,0);
 }</string>
@@ -204,7 +208,7 @@ QTabWidget:{
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <property name="documentMode">
            <bool>false</bool>
@@ -565,7 +569,7 @@ font: 2000 10pt &quot;Arial&quot;;
           </widget>
           <widget class="QWidget" name="tab_notice">
            <attribute name="title">
-            <string>NOTICE</string>
+            <string>REGISTER FOR CLASS</string>
            </attribute>
            <widget class="QScrollArea" name="scrollArea_5">
             <property name="geometry">
@@ -602,7 +606,7 @@ font: 2000 10pt &quot;Arial&quot;;
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_7">
                <item>
-                <widget class="QListWidget" name="listWidget_notice"/>
+                <widget class="QListWidget" name="listWidget_registeclass"/>
                </item>
               </layout>
              </widget>

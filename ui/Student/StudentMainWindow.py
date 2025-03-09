@@ -102,6 +102,10 @@ class Ui_MainWindow(object):
 "    width: 250px; /* Giới hạn chiều dài */\n"
 "    text-align: center;\n"
 "}\n"
+"QTabBar::tab:middle {\n"
+"    width: 250px; /* Giới hạn chiều dài */\n"
+"    text-align: center;\n"
+"}\n"
 "QTabWidget:{\n"
 "    background-color: rgba(0,0,0,0);\n"
 "}")
@@ -267,9 +271,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.listWidget_notice = QtWidgets.QListWidget(parent=self.verticalLayoutWidget_5)
-        self.listWidget_notice.setObjectName("listWidget_notice")
-        self.verticalLayout_7.addWidget(self.listWidget_notice)
+        self.listWidget_registeclass = QtWidgets.QListWidget(parent=self.verticalLayoutWidget_5)
+        self.listWidget_registeclass.setObjectName("listWidget_registeclass")
+        self.verticalLayout_7.addWidget(self.listWidget_registeclass)
         self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_5)
         self.tabWidget.addTab(self.tab_notice, "")
         self.tab_inforstudent = QtWidgets.QWidget()
@@ -588,7 +592,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.stackedWidget.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         self.ComboBox_semester.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -620,7 +624,7 @@ class Ui_MainWindow(object):
         self.pushButton_updatecore.setText(_translate("MainWindow", "UPDATE"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_score), _translate("MainWindow", "SCORE"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_schedule), _translate("MainWindow", "SCHEDULE"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_notice), _translate("MainWindow", "NOTICE"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_notice), _translate("MainWindow", "REGISTER FOR CLASS"))
         self.comboBox_StuGender.setItemText(0, _translate("MainWindow", "Male"))
         self.comboBox_StuGender.setItemText(1, _translate("MainWindow", "Female"))
         self.label_6.setText(_translate("MainWindow", "Student ID:"))

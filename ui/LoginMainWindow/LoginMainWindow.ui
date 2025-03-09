@@ -47,7 +47,7 @@ color: rgb(255,255,255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="lineEdit_username">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -75,7 +75,7 @@ color: rgb(255,255,255);</string>
      <string>Your school email</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="lineEdit_password">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -136,7 +136,7 @@ font: 2000 10pt &quot;Arial&quot;;</string>
      <string>Password:</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="checkBox_saveinfo">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -154,7 +154,7 @@ color: rgb(255,255,255);</string>
      <string>Save my login information</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_ForgetPassword">
     <property name="geometry">
      <rect>
       <x>370</x>
@@ -172,7 +172,7 @@ color: rgb(255,255,255)</string>
      <string>Forget password?</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_Login">
     <property name="geometry">
      <rect>
       <x>150</x>

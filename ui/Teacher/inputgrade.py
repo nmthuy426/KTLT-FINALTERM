@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(808, 684)
+        MainWindow.resize(1000, 712)
         MainWindow.setMaximumSize(QtCore.QSize(10000, 10000))
         MainWindow.setAutoFillBackground(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
@@ -27,7 +27,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 792, 641))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 978, 690))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -49,26 +49,12 @@ class Ui_MainWindow(object):
 "")
         self.lineEdit_class.setObjectName("lineEdit_class")
         self.verticalLayout_3.addWidget(self.lineEdit_class)
-        self.comboBox_semester = QtWidgets.QComboBox(parent=self.scrollAreaWidgetContents)
-        self.comboBox_semester.setMinimumSize(QtCore.QSize(768, 0))
-        self.comboBox_semester.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        self.comboBox_semester.setStyleSheet("    border: 1px solid gray;\n"
-"    font: 2000 18px \"Cambria\";\n"
-"    background: white;\n"
-"    color: rgb(0, 0, 127);\n"
-"    padding: 10px;\n"
-"\n"
-"")
-        self.comboBox_semester.setObjectName("comboBox_semester")
-        self.comboBox_semester.addItem("")
-        self.comboBox_semester.addItem("")
-        self.comboBox_semester.addItem("")
-        self.verticalLayout_3.addWidget(self.comboBox_semester)
         self.tableWidget_grade = QtWidgets.QTableWidget(parent=self.scrollAreaWidgetContents)
-        self.tableWidget_grade.setMaximumSize(QtCore.QSize(16777215, 450))
+        self.tableWidget_grade.setMaximumSize(QtCore.QSize(16777215, 550))
         self.tableWidget_grade.setStyleSheet("QTableWidget {\n"
 "    gridline-color: #000000; /* Màu đường kẻ */\n"
 "    font: 5000 12px \"Arial\"; /* Kích thước chữ */\n"
+"    background-color: rgb(255,255,255);\n"
 "}\n"
 "\n"
 "QHeaderView::section {\n"
@@ -112,7 +98,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_home.sizePolicy().hasHeightForWidth())
         self.pushButton_home.setSizePolicy(sizePolicy)
         self.pushButton_home.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_home.setMaximumSize(QtCore.QSize(250, 50))
+        self.pushButton_home.setMaximumSize(QtCore.QSize(300, 60))
         self.pushButton_home.setSizeIncrement(QtCore.QSize(0, 500))
         self.pushButton_home.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
@@ -140,6 +126,12 @@ class Ui_MainWindow(object):
         self.pushButton_home.setObjectName("pushButton_home")
         self.horizontalLayout.addWidget(self.pushButton_home)
         self.pushButton_save = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_save.sizePolicy().hasHeightForWidth())
+        self.pushButton_save.setSizePolicy(sizePolicy)
+        self.pushButton_save.setMaximumSize(QtCore.QSize(1000, 60))
         self.pushButton_save.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
@@ -172,7 +164,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_logout.sizePolicy().hasHeightForWidth())
         self.pushButton_logout.setSizePolicy(sizePolicy)
         self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_logout.setMaximumSize(QtCore.QSize(250, 50))
+        self.pushButton_logout.setMaximumSize(QtCore.QSize(300, 60))
         self.pushButton_logout.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
@@ -211,9 +203,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.comboBox_semester.setItemText(0, _translate("MainWindow", "SEMESTER 1"))
-        self.comboBox_semester.setItemText(1, _translate("MainWindow", "SEMESTER 2"))
-        self.comboBox_semester.setItemText(2, _translate("MainWindow", "SEMESTER 3"))
         item = self.tableWidget_grade.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID STUDENT"))
         item = self.tableWidget_grade.horizontalHeaderItem(1)

@@ -1060,7 +1060,7 @@ color: rgb(0,0,90);</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
-          <widget class="QPushButton" name="pushButton_AssignTeacher">
+          <widget class="QPushButton" name="pushButton_CreateClass">
            <property name="styleSheet">
             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
@@ -1087,7 +1087,7 @@ QPushButton:pressed {
 }</string>
            </property>
            <property name="text">
-            <string>ADD CLASS</string>
+            <string>CREATE CLASS</string>
            </property>
           </widget>
          </item>

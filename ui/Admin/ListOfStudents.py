@@ -9,11 +9,11 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_AssignStudentsDialog(object):
-    def setupUi(self, AssignStudentsDialog):
-        AssignStudentsDialog.setObjectName("AssignStudentsDialog")
-        AssignStudentsDialog.resize(1000, 600)
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=AssignStudentsDialog)
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(1000, 600)
+        self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=Dialog)
         self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 981, 581))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
@@ -97,12 +97,12 @@ class Ui_AssignStudentsDialog(object):
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout_2.addWidget(self.groupBox_SelectedStudent)
 
-        self.retranslateUi(AssignStudentsDialog)
-        QtCore.QMetaObject.connectSlotsByName(AssignStudentsDialog)
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    def retranslateUi(self, AssignStudentsDialog):
+    def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        AssignStudentsDialog.setWindowTitle(_translate("AssignStudentsDialog", "Assign Students"))
-        self.groupBox_SelectedStudent.setTitle(_translate("AssignStudentsDialog", "LIST OF STUDENTS"))
-        self.pushButton_Home.setText(_translate("AssignStudentsDialog", "BACK"))
-        self.pushButton_AssignStudent.setText(_translate("AssignStudentsDialog", "SAVE"))
+        Dialog.setWindowTitle(_translate("Dialog", "List of Students"))
+        self.groupBox_SelectedStudent.setTitle(_translate("Dialog", "LIST OF STUDENTS"))
+        self.pushButton_Home.setText(_translate("Dialog", "BACK"))
+        self.pushButton_AssignStudent.setText(_translate("Dialog", "SAVE"))

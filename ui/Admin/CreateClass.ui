@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add Class</string>
+   <string>Create a new class</string>
   </property>
   <widget class="QWidget" name="verticalLayoutWidget">
    <property name="geometry">
@@ -30,7 +30,7 @@
 font: 5000 22pt &quot;Arial&quot;;</string>
       </property>
       <property name="text">
-       <string>ADD CLASS</string>
+       <string>CREATE CLASS</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -136,7 +136,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
            <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
           </property>
           <property name="text">
-           <string>List of students:</string>
+           <string>Schedule</string>
           </property>
          </widget>
         </item>
@@ -148,7 +148,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          <number>7</number>
         </property>
         <item>
-         <widget class="QLineEdit" name="lineEdit_id_4">
+         <widget class="QLineEdit" name="lineEdit_ClassId">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -180,7 +180,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_fullname_4">
+         <widget class="QLineEdit" name="lineEdit_ClassName">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -212,7 +212,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_mail_4">
+         <widget class="QLineEdit" name="lineEdit_Subject">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -244,7 +244,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_mail_8">
+         <widget class="QLineEdit" name="lineEdit_Major">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -276,7 +276,7 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_mail_6">
+         <widget class="QLineEdit" name="lineEdit_Teacher">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -308,37 +308,34 @@ font: 5000 22pt &quot;Arial&quot;;</string>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_AssignStudent_2">
+         <widget class="QLineEdit" name="lineEdit_Schedule">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
             <height>55</height>
            </size>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
-    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
-    color: rgb(0,0,90); /* Màu chữ trắng */
-    border-radius: 20px;
-	padding: 8px; /* Khoảng cách giữa chữ và viền */
-    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
-}
-
-QPushButton:hover {
-    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */
-	color: rgb(255,255,255);
-}
-
-QPushButton:pressed {
-    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */
-	color: rgb(255,255,255);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
-}</string>
+          <property name="sizeIncrement">
+           <size>
+            <width>0</width>
+            <height>10</height>
+           </size>
           </property>
-          <property name="text">
-           <string>ASSIGN STUDENT FOR THIS CLASS</string>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 20px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
           </property>
          </widget>
         </item>
@@ -349,7 +346,7 @@ QPushButton:pressed {
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_Home">
+       <widget class="QPushButton" name="pushButton_Back">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -388,12 +385,12 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>HOME</string>
+         <string>BACK</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_AssignStudent">
+       <widget class="QPushButton" name="pushButton_SaveClass">
         <property name="maximumSize">
          <size>
           <width>16777215</width>

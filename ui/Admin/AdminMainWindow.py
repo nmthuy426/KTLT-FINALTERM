@@ -573,39 +573,13 @@ class Ui_AdminManagement(object):
         self.verticalLayout_2.addWidget(self.tableWidget_Classes)
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton_AssignStudents = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
-        self.pushButton_AssignStudents.setStyleSheet("QPushButton {\n"
+        self.pushButton_CreateClass = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
+        self.pushButton_CreateClass.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
 "    color: rgb(0,0,90); /* Màu chữ trắng */\n"
 "    border-top-left-radius: 25px;\n"
 "    border-bottom-left-radius: 25px;\n"
-"    border-top-right-radius: 0x;\n"
-"    border-bottom-right-radius: 0px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
-"}")
-        self.pushButton_AssignStudents.setObjectName("pushButton_AssignStudents")
-        self.horizontalLayout_2.addWidget(self.pushButton_AssignStudents)
-        self.pushButton_AssignTeacher = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
-        self.pushButton_AssignTeacher.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 0px;\n"
-"    border-bottom-left-radius: 0px;\n"
 "    border-top-right-radius: 25px;\n"
 "    border-bottom-right-radius: 25px;\n"
 "    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
@@ -623,14 +597,14 @@ class Ui_AdminManagement(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_AssignTeacher.setObjectName("pushButton_AssignTeacher")
-        self.horizontalLayout_2.addWidget(self.pushButton_AssignTeacher)
+        self.pushButton_CreateClass.setObjectName("pushButton_CreateClass")
+        self.horizontalLayout_2.addWidget(self.pushButton_CreateClass)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.tabWidget.addTab(self.tab_ManageClasses, "")
         AdminManagement.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminManagement)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(AdminManagement)
 
     def retranslateUi(self, AdminManagement):
@@ -664,6 +638,5 @@ class Ui_AdminManagement(object):
         self.groupBox_3.setTitle(_translate("AdminManagement", "STUDENT"))
         self.groupBox_4.setTitle(_translate("AdminManagement", "TEACHER"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "List Accounts"))
-        self.pushButton_AssignStudents.setText(_translate("AdminManagement", "ASSIGN STUDENT"))
-        self.pushButton_AssignTeacher.setText(_translate("AdminManagement", "ADD CLASS"))
+        self.pushButton_CreateClass.setText(_translate("AdminManagement", "CREATE CLASS"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "Manage Classes"))

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Admin\AddClass.ui'
+# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Admin\CreateClass.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -64,15 +64,15 @@ class Ui_AddClassDialog(object):
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
         self.verticalLayout_13.setSpacing(7)
         self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.lineEdit_id_4 = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.lineEdit_ClassId = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_id_4.sizePolicy().hasHeightForWidth())
-        self.lineEdit_id_4.setSizePolicy(sizePolicy)
-        self.lineEdit_id_4.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_id_4.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_id_4.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.lineEdit_ClassId.sizePolicy().hasHeightForWidth())
+        self.lineEdit_ClassId.setSizePolicy(sizePolicy)
+        self.lineEdit_ClassId.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_ClassId.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_ClassId.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 20px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -80,17 +80,17 @@ class Ui_AddClassDialog(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_id_4.setObjectName("lineEdit_id_4")
-        self.verticalLayout_13.addWidget(self.lineEdit_id_4)
-        self.lineEdit_fullname_4 = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.lineEdit_ClassId.setObjectName("lineEdit_ClassId")
+        self.verticalLayout_13.addWidget(self.lineEdit_ClassId)
+        self.lineEdit_ClassName = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_fullname_4.sizePolicy().hasHeightForWidth())
-        self.lineEdit_fullname_4.setSizePolicy(sizePolicy)
-        self.lineEdit_fullname_4.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_fullname_4.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_fullname_4.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.lineEdit_ClassName.sizePolicy().hasHeightForWidth())
+        self.lineEdit_ClassName.setSizePolicy(sizePolicy)
+        self.lineEdit_ClassName.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_ClassName.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_ClassName.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 20px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -98,17 +98,17 @@ class Ui_AddClassDialog(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_fullname_4.setObjectName("lineEdit_fullname_4")
-        self.verticalLayout_13.addWidget(self.lineEdit_fullname_4)
-        self.lineEdit_mail_4 = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.lineEdit_ClassName.setObjectName("lineEdit_ClassName")
+        self.verticalLayout_13.addWidget(self.lineEdit_ClassName)
+        self.lineEdit_Subject = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_mail_4.sizePolicy().hasHeightForWidth())
-        self.lineEdit_mail_4.setSizePolicy(sizePolicy)
-        self.lineEdit_mail_4.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_mail_4.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_mail_4.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.lineEdit_Subject.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Subject.setSizePolicy(sizePolicy)
+        self.lineEdit_Subject.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Subject.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Subject.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 20px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -116,17 +116,17 @@ class Ui_AddClassDialog(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_mail_4.setObjectName("lineEdit_mail_4")
-        self.verticalLayout_13.addWidget(self.lineEdit_mail_4)
-        self.lineEdit_mail_8 = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.lineEdit_Subject.setObjectName("lineEdit_Subject")
+        self.verticalLayout_13.addWidget(self.lineEdit_Subject)
+        self.lineEdit_Major = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_mail_8.sizePolicy().hasHeightForWidth())
-        self.lineEdit_mail_8.setSizePolicy(sizePolicy)
-        self.lineEdit_mail_8.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_mail_8.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_mail_8.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.lineEdit_Major.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Major.setSizePolicy(sizePolicy)
+        self.lineEdit_Major.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Major.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Major.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 20px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -134,17 +134,17 @@ class Ui_AddClassDialog(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_mail_8.setObjectName("lineEdit_mail_8")
-        self.verticalLayout_13.addWidget(self.lineEdit_mail_8)
-        self.lineEdit_mail_6 = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        self.lineEdit_Major.setObjectName("lineEdit_Major")
+        self.verticalLayout_13.addWidget(self.lineEdit_Major)
+        self.lineEdit_Teacher = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_mail_6.sizePolicy().hasHeightForWidth())
-        self.lineEdit_mail_6.setSizePolicy(sizePolicy)
-        self.lineEdit_mail_6.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_mail_6.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_mail_6.setStyleSheet("QLineEdit {\n"
+        sizePolicy.setHeightForWidth(self.lineEdit_Teacher.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Teacher.setSizePolicy(sizePolicy)
+        self.lineEdit_Teacher.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Teacher.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Teacher.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 20px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -152,40 +152,34 @@ class Ui_AddClassDialog(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_mail_6.setObjectName("lineEdit_mail_6")
-        self.verticalLayout_13.addWidget(self.lineEdit_mail_6)
-        self.pushButton_AssignStudent_2 = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_AssignStudent_2.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.pushButton_AssignStudent_2.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
-"    border-radius: 20px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+        self.lineEdit_Teacher.setObjectName("lineEdit_Teacher")
+        self.verticalLayout_13.addWidget(self.lineEdit_Teacher)
+        self.lineEdit_Schedule = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_Schedule.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Schedule.setSizePolicy(sizePolicy)
+        self.lineEdit_Schedule.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Schedule.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Schedule.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 20px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.pushButton_AssignStudent_2.setObjectName("pushButton_AssignStudent_2")
-        self.verticalLayout_13.addWidget(self.pushButton_AssignStudent_2)
+        self.lineEdit_Schedule.setObjectName("lineEdit_Schedule")
+        self.verticalLayout_13.addWidget(self.lineEdit_Schedule)
         self.horizontalLayout_2.addLayout(self.verticalLayout_13)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton_Home = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_Home.setMinimumSize(QtCore.QSize(0, 35))
-        self.pushButton_Home.setMaximumSize(QtCore.QSize(16777215, 45))
-        self.pushButton_Home.setStyleSheet("QPushButton {\n"
+        self.pushButton_Back = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_Back.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_Back.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.pushButton_Back.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
@@ -208,11 +202,11 @@ class Ui_AddClassDialog(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_Home.setObjectName("pushButton_Home")
-        self.horizontalLayout.addWidget(self.pushButton_Home)
-        self.pushButton_AssignStudent = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_AssignStudent.setMaximumSize(QtCore.QSize(16777215, 45))
-        self.pushButton_AssignStudent.setStyleSheet("QPushButton {\n"
+        self.pushButton_Back.setObjectName("pushButton_Back")
+        self.horizontalLayout.addWidget(self.pushButton_Back)
+        self.pushButton_SaveClass = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_SaveClass.setMaximumSize(QtCore.QSize(16777215, 45))
+        self.pushButton_SaveClass.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
 "    color: rgb(0,0,90); /* Màu chữ trắng */\n"
@@ -235,8 +229,8 @@ class Ui_AddClassDialog(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_AssignStudent.setObjectName("pushButton_AssignStudent")
-        self.horizontalLayout.addWidget(self.pushButton_AssignStudent)
+        self.pushButton_SaveClass.setObjectName("pushButton_SaveClass")
+        self.horizontalLayout.addWidget(self.pushButton_SaveClass)
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.retranslateUi(AddClassDialog)
@@ -244,14 +238,13 @@ class Ui_AddClassDialog(object):
 
     def retranslateUi(self, AddClassDialog):
         _translate = QtCore.QCoreApplication.translate
-        AddClassDialog.setWindowTitle(_translate("AddClassDialog", "Add Class"))
-        self.label.setText(_translate("AddClassDialog", "ADD CLASS"))
+        AddClassDialog.setWindowTitle(_translate("AddClassDialog", "Create a new class"))
+        self.label.setText(_translate("AddClassDialog", "CREATE CLASS"))
         self.label_18.setText(_translate("AddClassDialog", "Class ID:"))
         self.label_19.setText(_translate("AddClassDialog", "Class Name:"))
         self.label_20.setText(_translate("AddClassDialog", "Subject:"))
         self.label_21.setText(_translate("AddClassDialog", "Major:"))
         self.label_22.setText(_translate("AddClassDialog", "Teacher:"))
-        self.label_23.setText(_translate("AddClassDialog", "List of students:"))
-        self.pushButton_AssignStudent_2.setText(_translate("AddClassDialog", "ASSIGN STUDENT FOR THIS CLASS"))
-        self.pushButton_Home.setText(_translate("AddClassDialog", "HOME"))
-        self.pushButton_AssignStudent.setText(_translate("AddClassDialog", "SAVE CLASS"))
+        self.label_23.setText(_translate("AddClassDialog", "Schedule"))
+        self.pushButton_Back.setText(_translate("AddClassDialog", "BACK"))
+        self.pushButton_SaveClass.setText(_translate("AddClassDialog", "SAVE CLASS"))

@@ -33,29 +33,29 @@ class Ui_MainWindow(object):
 "color: rgb(255,255,255);")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(20, 120, 521, 51))
-        self.lineEdit.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.NoContextMenu)
-        self.lineEdit.setStyleSheet("QLineEdit {\n"
+        self.lineEdit_username = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.lineEdit_username.setGeometry(QtCore.QRect(20, 120, 521, 51))
+        self.lineEdit_username.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.NoContextMenu)
+        self.lineEdit_username.setStyleSheet("QLineEdit {\n"
 "    font: 50 12pt \"Cambria\";\n"
 "    border-radius: 25px; /* Bo góc 10px */\n"
 "    padding: 5px; /* Tạo khoảng cách bên trong */\n"
 "    padding-left: 60px; /* Đẩy chữ vào bên phải để icon che phía trước */\n"
 "    background-color: rgb(255,255,255); /* Màu nền đỏ đậm */\n"
 "}")
-        self.lineEdit.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit_2.setGeometry(QtCore.QRect(20, 220, 521, 51))
-        self.lineEdit_2.setStyleSheet("QLineEdit {\n"
+        self.lineEdit_username.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lineEdit_username.setObjectName("lineEdit_username")
+        self.lineEdit_password = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.lineEdit_password.setGeometry(QtCore.QRect(20, 220, 521, 51))
+        self.lineEdit_password.setStyleSheet("QLineEdit {\n"
 "    font: 50 12pt \"Cambria\";\n"
 "    border-radius: 25px; /* Bo góc 10px */\n"
 "    padding: 5px; /* Tạo khoảng cách bên trong */\n"
 "    padding-left: 60px; /* Đẩy chữ vào bên phải để icon che phía trước */\n"
 "    background-color: rgb(255,255,255); /* Màu nền đỏ đậm */\n"
 "}")
-        self.lineEdit_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_password.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.lineEdit_password.setObjectName("lineEdit_password")
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(20, 90, 111, 20))
         self.label_2.setStyleSheet("color: rgb(255,255,255);\n"
@@ -68,23 +68,23 @@ class Ui_MainWindow(object):
 "background-color: rgba(255, 255, 255,0);\n"
 "font: 2000 10pt \"Arial\";")
         self.label_3.setObjectName("label_3")
-        self.checkBox = QtWidgets.QCheckBox(parent=self.centralwidget)
-        self.checkBox.setGeometry(QtCore.QRect(20, 290, 281, 21))
-        self.checkBox.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
+        self.checkBox_saveinfo = QtWidgets.QCheckBox(parent=self.centralwidget)
+        self.checkBox_saveinfo.setGeometry(QtCore.QRect(20, 290, 281, 21))
+        self.checkBox_saveinfo.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
 "font: 2000 10pt \"Arial Rounded MT Bold\";\n"
 "color: rgb(255,255,255);")
-        self.checkBox.setObjectName("checkBox")
-        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(370, 280, 171, 41))
-        self.pushButton.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
+        self.checkBox_saveinfo.setObjectName("checkBox_saveinfo")
+        self.pushButton_ForgetPassword = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_ForgetPassword.setGeometry(QtCore.QRect(370, 280, 171, 41))
+        self.pushButton_ForgetPassword.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
 "font: 2000 10pt \"Arial Rounded MT Bold\";\n"
 "color: rgb(255,255,255)")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(150, 330, 261, 51))
-        self.pushButton_2.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.pushButton_2.setAutoFillBackground(False)
-        self.pushButton_2.setStyleSheet("QPushButton {\n"
+        self.pushButton_ForgetPassword.setObjectName("pushButton_ForgetPassword")
+        self.pushButton_Login = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_Login.setGeometry(QtCore.QRect(150, 330, 261, 51))
+        self.pushButton_Login.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.pushButton_Login.setAutoFillBackground(False)
+        self.pushButton_Login.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
 "    color: rgb(0,0,90); /* Màu chữ trắng */\n"
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_Login.setObjectName("pushButton_Login")
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_4.setGeometry(QtCore.QRect(40, 130, 31, 31))
         self.label_4.setStyleSheet("background-color: rgb(255, 255, 255);")
@@ -127,10 +127,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.label.setText(_translate("MainWindow", "LOGIN"))
-        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Your school email"))
-        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Password"))
+        self.lineEdit_username.setPlaceholderText(_translate("MainWindow", "Your school email"))
+        self.lineEdit_password.setPlaceholderText(_translate("MainWindow", "Password"))
         self.label_2.setText(_translate("MainWindow", "Username:"))
         self.label_3.setText(_translate("MainWindow", "Password:"))
-        self.checkBox.setText(_translate("MainWindow", "Save my login information"))
-        self.pushButton.setText(_translate("MainWindow", "Forget password?"))
-        self.pushButton_2.setText(_translate("MainWindow", "LOGIN"))
+        self.checkBox_saveinfo.setText(_translate("MainWindow", "Save my login information"))
+        self.pushButton_ForgetPassword.setText(_translate("MainWindow", "Forget password?"))
+        self.pushButton_Login.setText(_translate("MainWindow", "LOGIN"))
