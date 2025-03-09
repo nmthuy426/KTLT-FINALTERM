@@ -1,17 +1,35 @@
-class SinhVien(NguoiDung):
-    def __init__(self, ma_so, ho_ten):
-        super().__init__(ma_so, ho_ten)
-        self.diem_so = {}  # Lưu điểm theo dạng {ma_mon: diem}
+class Student(User):
+    def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, email: str, password: str,
+                 student_class: str, major: str, course: str, advisor: str):
+        super().__init__(user_id, fullname, birthday, gender, email, password)
+        self.student_class = student_class  # Lớp học của sinh viên
+        self.major = major  # Ngành học
+        self.course = course  # Khóa học (năm nhập học)
+        self.advisor = advisor  # Cố vấn học tập
+        self.registered_classes = []
+        self.grades = {}  # Lưu điểm dưới dạng {class_id: điểm}
 
-    def them_diem(self, ma_mon, diem):
-        self.diem_so[ma_mon] = diem
+    def register_class(self, classroom: 'Classroom'):
+        if classroom.add_student(self):
+            self.registered_classes.append(classroom.class_id)
+            return True
+        return False
 
-    def tinh_diem_trung_binh(self, danh_sach_mon_hoc):
-        tong_diem = 0
-        tong_tin_chi = 0
-        for ma_mon, diem in self.diem_so.items():
-            mon_hoc = danh_sach_mon_hoc.get(ma_mon)
-            if mon_hoc:
-                tong_diem += diem * mon_hoc.so_tin_chi
-                tong_tin_chi += mon_hoc.so_tin_chi
-        return round(tong_diem / tong_tin_chi, 2) if tong_tin_chi > 0 else 0
+    def view_schedule(self):
+        return self.registered_classes
+
+    def view_grades(self):
+        return self.grades
+
+    def view_profile(self):
+        return {
+            "ID": self.user_id,
+            "Full Name": self.fullname,
+            "Birthday": self.birthday,
+            "Gender": self.gender,
+            "Email": self.email,
+            "Class": self.student_class,
+            "Major": self.major,
+            "Course": self.course,
+            "Advisor": self.advisor
+        }

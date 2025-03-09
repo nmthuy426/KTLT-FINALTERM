@@ -35,21 +35,11 @@ class Ui_AddClassDialog(object):
         self.label_18.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_18.setObjectName("label_18")
         self.verticalLayout_12.addWidget(self.label_18)
-        self.label_19 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.label_19.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.label_19.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_19.setObjectName("label_19")
-        self.verticalLayout_12.addWidget(self.label_19)
         self.label_20 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         self.label_20.setMaximumSize(QtCore.QSize(16777215, 55))
         self.label_20.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_20.setObjectName("label_20")
         self.verticalLayout_12.addWidget(self.label_20)
-        self.label_21 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
-        self.label_21.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.label_21.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_21.setObjectName("label_21")
-        self.verticalLayout_12.addWidget(self.label_21)
         self.label_22 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
         self.label_22.setMaximumSize(QtCore.QSize(16777215, 55))
         self.label_22.setStyleSheet("font: 1000 10pt \"Cambria\";")
@@ -60,6 +50,16 @@ class Ui_AddClassDialog(object):
         self.label_23.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_23.setObjectName("label_23")
         self.verticalLayout_12.addWidget(self.label_23)
+        self.label_19 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
+        self.label_19.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.label_19.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_19.setObjectName("label_19")
+        self.verticalLayout_12.addWidget(self.label_19)
+        self.label_21 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
+        self.label_21.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.label_21.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_21.setObjectName("label_21")
+        self.verticalLayout_12.addWidget(self.label_21)
         self.horizontalLayout_2.addLayout(self.verticalLayout_12)
         self.verticalLayout_13 = QtWidgets.QVBoxLayout()
         self.verticalLayout_13.setSpacing(7)
@@ -82,24 +82,6 @@ class Ui_AddClassDialog(object):
 "}")
         self.lineEdit_ClassId.setObjectName("lineEdit_ClassId")
         self.verticalLayout_13.addWidget(self.lineEdit_ClassId)
-        self.lineEdit_ClassName = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_ClassName.sizePolicy().hasHeightForWidth())
-        self.lineEdit_ClassName.setSizePolicy(sizePolicy)
-        self.lineEdit_ClassName.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_ClassName.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_ClassName.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 20px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_ClassName.setObjectName("lineEdit_ClassName")
-        self.verticalLayout_13.addWidget(self.lineEdit_ClassName)
         self.lineEdit_Subject = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -118,24 +100,6 @@ class Ui_AddClassDialog(object):
 "}")
         self.lineEdit_Subject.setObjectName("lineEdit_Subject")
         self.verticalLayout_13.addWidget(self.lineEdit_Subject)
-        self.lineEdit_Major = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_Major.sizePolicy().hasHeightForWidth())
-        self.lineEdit_Major.setSizePolicy(sizePolicy)
-        self.lineEdit_Major.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_Major.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_Major.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 20px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_Major.setObjectName("lineEdit_Major")
-        self.verticalLayout_13.addWidget(self.lineEdit_Major)
         self.lineEdit_Teacher = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -172,6 +136,42 @@ class Ui_AddClassDialog(object):
 "}")
         self.lineEdit_Schedule.setObjectName("lineEdit_Schedule")
         self.verticalLayout_13.addWidget(self.lineEdit_Schedule)
+        self.lineEdit_Room = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_Room.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Room.setSizePolicy(sizePolicy)
+        self.lineEdit_Room.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Room.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Room.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 20px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_Room.setObjectName("lineEdit_Room")
+        self.verticalLayout_13.addWidget(self.lineEdit_Room)
+        self.lineEdit_Major = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_Major.sizePolicy().hasHeightForWidth())
+        self.lineEdit_Major.setSizePolicy(sizePolicy)
+        self.lineEdit_Major.setMaximumSize(QtCore.QSize(16777215, 55))
+        self.lineEdit_Major.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_Major.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 20px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_Major.setObjectName("lineEdit_Major")
+        self.verticalLayout_13.addWidget(self.lineEdit_Major)
         self.horizontalLayout_2.addLayout(self.verticalLayout_13)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -241,10 +241,10 @@ class Ui_AddClassDialog(object):
         AddClassDialog.setWindowTitle(_translate("AddClassDialog", "Create a new class"))
         self.label.setText(_translate("AddClassDialog", "CREATE CLASS"))
         self.label_18.setText(_translate("AddClassDialog", "Class ID:"))
-        self.label_19.setText(_translate("AddClassDialog", "Class Name:"))
         self.label_20.setText(_translate("AddClassDialog", "Subject:"))
-        self.label_21.setText(_translate("AddClassDialog", "Major:"))
         self.label_22.setText(_translate("AddClassDialog", "Teacher:"))
-        self.label_23.setText(_translate("AddClassDialog", "Schedule"))
+        self.label_23.setText(_translate("AddClassDialog", "Schedule:"))
+        self.label_19.setText(_translate("AddClassDialog", "Room:"))
+        self.label_21.setText(_translate("AddClassDialog", "Major:"))
         self.pushButton_Back.setText(_translate("AddClassDialog", "BACK"))
         self.pushButton_SaveClass.setText(_translate("AddClassDialog", "SAVE CLASS"))
