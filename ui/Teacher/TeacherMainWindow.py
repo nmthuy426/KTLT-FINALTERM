@@ -78,41 +78,21 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.stackedWidget)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.comboBox_Course = QtWidgets.QComboBox(parent=self.verticalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.comboBox_Course.sizePolicy().hasHeightForWidth())
-        self.comboBox_Course.setSizePolicy(sizePolicy)
-        self.comboBox_Course.setMinimumSize(QtCore.QSize(0, 0))
-        self.comboBox_Course.setMaximumSize(QtCore.QSize(956, 50))
-        self.comboBox_Course.setStyleSheet("    border: 1px solid gray; \n"
-"    font: 2000 18px \"Cambria\";\n"
-"    background: white;\n"
-"    color: rgb(0, 0, 127);\n"
-"    padding: 10px;\n"
-"\n"
-"")
-        self.comboBox_Course.setObjectName("comboBox_Course")
-        self.comboBox_Course.addItem("")
-        self.comboBox_Course.addItem("")
-        self.comboBox_Course.addItem("")
-        self.verticalLayout_2.addWidget(self.comboBox_Course)
         self.listWidget_Class = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.listWidget_Class.sizePolicy().hasHeightForWidth())
         self.listWidget_Class.setSizePolicy(sizePolicy)
-        self.listWidget_Class.setMinimumSize(QtCore.QSize(0, 230))
-        self.listWidget_Class.setMaximumSize(QtCore.QSize(956, 230))
+        self.listWidget_Class.setMinimumSize(QtCore.QSize(0, 300))
+        self.listWidget_Class.setMaximumSize(QtCore.QSize(956, 350))
         self.listWidget_Class.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 500 10pt \"Cambria\";\n"
 "color: rgb(0, 0, 0);\n"
 "/* Chỉ bo tròn hai góc trên */\n"
 "    background-color: white;\n"
-"    border-top-left-radius: 0px;\n"
-"    border-top-right-radius: 0px;\n"
+"    border-top-left-radius: 20px;\n"
+"    border-top-right-radius: 20px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "    border-bottom-right-radius: 20px;\n"
 "    padding: 10px;\n"
@@ -133,7 +113,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_exit.sizePolicy().hasHeightForWidth())
         self.pushButton_exit.setSizePolicy(sizePolicy)
         self.pushButton_exit.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_exit.setMaximumSize(QtCore.QSize(16777, 60))
+        self.pushButton_exit.setMaximumSize(QtCore.QSize(300, 60))
         self.pushButton_exit.setSizeIncrement(QtCore.QSize(0, 0))
         self.pushButton_exit.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
@@ -160,6 +140,38 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_exit.setObjectName("pushButton_exit")
         self.horizontalLayout.addWidget(self.pushButton_exit)
+        self.pushButton_InputGrade = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_InputGrade.sizePolicy().hasHeightForWidth())
+        self.pushButton_InputGrade.setSizePolicy(sizePolicy)
+        self.pushButton_InputGrade.setMaximumSize(QtCore.QSize(1000, 60))
+        self.pushButton_InputGrade.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_InputGrade.setObjectName("pushButton_InputGrade")
+        self.horizontalLayout.addWidget(self.pushButton_InputGrade)
         self.pushButton_logout = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -167,7 +179,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_logout.sizePolicy().hasHeightForWidth())
         self.pushButton_logout.setSizePolicy(sizePolicy)
         self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_logout.setMaximumSize(QtCore.QSize(16777, 60))
+        self.pushButton_logout.setMaximumSize(QtCore.QSize(300, 60))
         self.pushButton_logout.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
@@ -206,8 +218,6 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_2.setText(_translate("MainWindow", "TEACHER"))
-        self.comboBox_Course.setItemText(0, _translate("MainWindow", "2024-2025"))
-        self.comboBox_Course.setItemText(1, _translate("MainWindow", "2022-2023"))
-        self.comboBox_Course.setItemText(2, _translate("MainWindow", "2023-2024"))
         self.pushButton_exit.setText(_translate("MainWindow", "EXIT"))
+        self.pushButton_InputGrade.setText(_translate("MainWindow", "INPUT GRADE"))
         self.pushButton_logout.setText(_translate("MainWindow", "LOGOUT"))

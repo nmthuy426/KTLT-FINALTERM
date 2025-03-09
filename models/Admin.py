@@ -1,15 +1,20 @@
+from models.Class import Classroom
+from models.Student import Student
+from models.Teacher import Teacher
+
+
 class Admin:
     def __init__(self):
         self.students = []  # Danh sách Student
         self.teachers = []  # Danh sách Teacher
         self.classrooms = []
 
-    def create_user(self, user_type: str, user_id: str, fullname: str, birthday: str, gender: str, email: str, password: str):
+    def create_user(self, user_type: str, user_id: str, fullname: str, birthday: str, gender: str, password: str):
         if user_type == "student":
-            user = Student(user_id, fullname, birthday, gender, email, password)
+            user = Student(user_id, fullname, birthday, gender, password)
             self.students.append(user)
         elif user_type == "teacher":
-            user = Teacher(user_id, fullname, birthday, gender, email, password)
+            user = Teacher(user_id, fullname, birthday, gender, password)
             self.teachers.append(user)
         else:
             print(f"❌ Error: Invalid user type '{user_type}'")

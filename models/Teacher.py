@@ -1,7 +1,10 @@
+from models.User import User
+
+
 class Teacher(User):
-    def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, email: str, password: str,
+    def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str,
                  faculty: str, teacher_class: str):
-        super().__init__(user_id, fullname, birthday, gender, email, password)
+        super().__init__(user_id, fullname, birthday, gender, password, "teacher")
         self.faculty = faculty  # Khoa của giáo viên
         self.teacher_class = teacher_class  # Lớp phụ trách
         self.assigned_classes = []

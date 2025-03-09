@@ -1,7 +1,10 @@
+from models.User import User
+
+
 class Student(User):
-    def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, email: str, password: str,
+    def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str,
                  student_class: str, major: str, course: str, advisor: str):
-        super().__init__(user_id, fullname, birthday, gender, email, password)
+        super().__init__(user_id, fullname, birthday, gender, password,"student")
         self.student_class = student_class  # Lớp học của sinh viên
         self.major = major  # Ngành học
         self.course = course  # Khóa học (năm nhập học)
