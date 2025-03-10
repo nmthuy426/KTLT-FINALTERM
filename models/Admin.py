@@ -17,7 +17,7 @@ class Admin:
             user = Teacher(user_id, fullname, birthday, gender, password)
             self.teachers.append(user)
         else:
-            print(f"❌ Error: Invalid user type '{user_type}'")
+            print(f" Error: Invalid user type '{user_type}'")
             return None
         return user
 

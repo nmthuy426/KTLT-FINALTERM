@@ -604,7 +604,7 @@ class Ui_AdminManagement(object):
         AdminManagement.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminManagement)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminManagement)
 
     def retranslateUi(self, AdminManagement):
