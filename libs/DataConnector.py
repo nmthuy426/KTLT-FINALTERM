@@ -1,6 +1,6 @@
 from models.Student import Student
 from models.Teacher import Teacher
-from models.Class import Classroom
+from models.Class import Class
 from JsonFileFactory import JsonFileFactory
 
 
@@ -20,7 +20,7 @@ class DataConnector:
     def get_all_classrooms(self):
         jff = JsonFileFactory()
         filename = "../dataset/classrooms.json"
-        classrooms = jff.read_data(filename, Classroom )
+        classrooms = jff.read_data(filename, Class )
         return classrooms
 
     def login(self, username, password):

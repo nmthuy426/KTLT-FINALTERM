@@ -1,0 +1,30 @@
+[
+    {
+        "user_id": "T001",
+        "fullname": "Nguyễn Văn A",
+        "birthday": "1980-05-20",
+        "gender": "Male",
+        "email": "anv@uel.edu.vn",
+        "password": "abc123",
+        "faculty": "Công nghệ thông tin",
+        "teacher_class": "K24401",
+        "assigned_classes": [
+            "Lập trình Python",
+            "Cấu trúc dữ liệu"
+        ]
+    },
+    {
+        "user_id": "T002",
+        "fullname": "Trần Thị B",
+        "birthday": "1985-09-12",
+        "gender": "Female",
+        "email": "btt@uel.edu.vn",
+        "password": "xyz789",
+        "faculty": "Kinh tế",
+        "teacher_class": "K24402",
+        "assigned_classes": [
+            "Kinh tế vi mô",
+            "Marketing căn bản"
+        ]
+    }
+]

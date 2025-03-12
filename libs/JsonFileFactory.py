@@ -1,5 +1,9 @@
 import json
 import os
+
+from models.Student import Student
+
+
 class JsonFileFactory:
     def write_data(self,arr_data,filename):
         """
@@ -13,17 +17,18 @@ class JsonFileFactory:
         json_file=open(filename,'w',encoding='utf-8')
         json_file.write(json_string)
         json_file.close()
-    def read_data(self,filename,ClassName):
-        """
-        Hàm đọc jsonstring và phục hồi lại mô hình lớp ClassName
-        với ClassName là tên lớp được chỉ định phục hồi OOP
-        :param filename:
-        :param ClassName:
-        :return:
-        """
-        if os.path.isfile(filename)==False:
+
+    def read_data(self, filename, ClassName, related_data=None):
+        if not os.path.isfile(filename):
             return []
-        file=open(filename,'r',encoding='utf-8')
-        arr_data=json.loads(file.read(),object_hook=lambda cls:ClassName(**cls))
-        file.close()
-        return arr_data
+
+        with open(filename, 'r', encoding='utf-8') as file:
+            arr_data = json.load(file)
+
+        # Nếu có related_data (ví dụ: teachers_dict, students_dict), ánh xạ lại dữ liệu
+        for obj in arr_data:
+            for key, mapping in (related_data or {}).items():
+                if key in obj and isinstance(obj[key], list):
+                    obj[key] = [mapping[item_id] for item_id in obj[key] if item_id in mapping]
+
+        return [ClassName(**obj) for obj in arr_data]
