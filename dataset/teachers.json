@@ -9,8 +9,8 @@
         "faculty": "Công nghệ thông tin",
         "teacher_class": "K24401",
         "assigned_classes": [
-            "Lập trình Python",
-            "Cấu trúc dữ liệu"
+            "C001",
+            "C003"
         ]
     },
     {
@@ -23,8 +23,8 @@
         "faculty": "Kinh tế",
         "teacher_class": "K24402",
         "assigned_classes": [
-            "Kinh tế vi mô",
-            "Marketing căn bản"
+            "C002",
+            "C004"
         ]
     }
 ]

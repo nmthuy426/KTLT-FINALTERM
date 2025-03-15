@@ -34,3 +34,7 @@ class Class:
                 f"Schedule: {self.schedule}, Subject: {self.subject}, Major: {self.major}, "
                 f"Min Students: {self.min_students}, Max Students: {self.max_students}, "
                 f"Students ({len(self.students)}/{self.max_students}): {student_list}, Grades: {grade_list}")
+
+    def __repr__(self):
+        """ Hàm này sẽ được dùng khi in danh sách lớp học """
+        return f"{self.class_id} - {self.subject} ({self.room}) - GV: {self.teacher.fullname if self.teacher else 'None'} - Lịch học: {self.schedule}"

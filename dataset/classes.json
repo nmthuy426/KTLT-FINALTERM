@@ -1,7 +1,7 @@
 [
     {
         "class_id": "C001",
-        "teacher": "Teacher ID: T001, Name: Nguyễn Văn A, Birthday: 1980-05-20, Gender: Male, Faculty: Công nghệ thông tin, Class: K24401,\n Assigned Classes: ['Lập trình Python', 'Cấu trúc dữ liệu']",
+        "teacher": "T001",
         "room": "Phòng A101",
         "schedule": "Thứ 2, 4, 6 (07:30 - 09:30)",
         "subject": "Lập trình Python",
@@ -13,7 +13,7 @@
     },
     {
         "class_id": "C002",
-        "teacher": "Teacher ID: T002, Name: Trần Thị B, Birthday: 1985-09-12, Gender: Female, Faculty: Kinh tế, Class: K24402,\n Assigned Classes: ['Kinh tế vi mô', 'Marketing căn bản']",
+        "teacher": "T002",
         "room": "Phòng B202",
         "schedule": "Thứ 3, 5 (13:00 - 15:00)",
         "subject": "Kinh tế vi mô",
@@ -25,7 +25,7 @@
     },
     {
         "class_id": "C003",
-        "teacher": "Teacher ID: T001, Name: Nguyễn Văn A, Birthday: 1980-05-20, Gender: Male, Faculty: Công nghệ thông tin, Class: K24401,\n Assigned Classes: ['Lập trình Python', 'Cấu trúc dữ liệu']",
+        "teacher": "T001",
         "room": "Phòng C303",
         "schedule": "Thứ 2, 4 (09:30 - 11:30)",
         "subject": "Cấu trúc dữ liệu",
@@ -37,7 +37,7 @@
     },
     {
         "class_id": "C004",
-        "teacher": "Teacher ID: T002, Name: Trần Thị B, Birthday: 1985-09-12, Gender: Female, Faculty: Kinh tế, Class: K24402,\n Assigned Classes: ['Kinh tế vi mô', 'Marketing căn bản']",
+        "teacher": "T002",
         "room": "Phòng D404",
         "schedule": "Thứ 7 (08:00 - 12:00)",
         "subject": "Marketing căn bản",
