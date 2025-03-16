@@ -292,5 +292,19 @@
         "advisor": "Trần Thị B",
         "registered_classes": [],
         "grades": {}
+    },
+    {
+        "user_id": "k244111473",
+        "fullname": "bùi lê hạnh nguyên",
+        "birthday": "1/1/2000",
+        "gender": "Male",
+        "email": "nguyênblh@st.uel.edu.vn",
+        "password": "12345",
+        "student_class": "K24402",
+        "major": "TMĐT",
+        "course": "1900",
+        "advisor": "Trần Thị B",
+        "registered_classes": [],
+        "grades": {}
     }
 ]
