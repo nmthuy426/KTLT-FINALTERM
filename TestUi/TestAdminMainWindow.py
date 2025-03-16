@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from ui.Admin.AdminMainWindowExt import AdminMainWindowExt
+from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
 from ui.Student.StudentMainWindowEx import StudentMainWindowExt
 
 app = QApplication([])

@@ -20,22 +20,37 @@ class DataConnector:
     def get_all_classes(self):
         jff = JsonFileFactory()
         filename = "../dataset/classrooms.json"
-        classrooms = jff.read_data(filename, Class )
+        classrooms = jff.read_data(filename, Class)
         return classrooms
 
-    def login(self, username, password):
-        # Kiểm tra trong danh sách sinh viên
+    def login(self, email, password):
+        """Xác thực người dùng dựa trên email và mật khẩu"""
+        email = email.strip().lower()
+        password = password.strip()
+
+        # Kiểm tra danh sách học sinh
         students = self.get_all_students()
         for student in students:
-            if student.UserName == username and student.Password == password:
-                return "student", student  # Phân quyền là student
+            if getattr(student, "email", "").strip().lower() == email:
+                if getattr(student, "password", "").strip() == password:
+                    print(f"✅ Đăng nhập thành công (Student): {email}")
+                    return "student", student
+                else:
+                    print("❌ Sai mật khẩu!")
+                    return None, None
 
-        # Kiểm tra trong danh sách giáo viên
+        # Kiểm tra danh sách giáo viên
         teachers = self.get_all_teachers()
         for teacher in teachers:
-            if teacher.UserName == username and teacher.Password == password:
-                return "teacher", teacher  # Phân quyền là teacher
+            if getattr(teacher, "email", "").strip().lower() == email:
+                if getattr(teacher, "password", "").strip() == password:
+                    print(f"✅ Đăng nhập thành công (Teacher): {email}")
+                    return "teacher", teacher
+                else:
+                    print("❌ Sai mật khẩu!")
+                    return None, None
 
+        print("❌ Đăng nhập thất bại: Sai email hoặc mật khẩu!")
         return None, None
 
     def check_existing_student(self, students, stuid):
@@ -44,7 +59,7 @@ class DataConnector:
         for i, student in enumerate(students):
             print(f"👀 Kiểm tra {getattr(student, 'user_id', 'UNKNOWN')} với {stuid}...")
 
-            if getattr(student, "user_id", None) == stuid:  # Kiểm tra đúng thuộc tính ID
+            if getattr(student, "user_id", None) == stuid:
                 print(f"✅ Tìm thấy tại index {i}")
                 return i
 
@@ -52,9 +67,7 @@ class DataConnector:
         return -1
 
     def check_existing_teacher(self, teachers, teaid):
-        for i in range(len(teachers)):
-            teacher = teachers[i]
-            if teacher.teaid == teaid:
+        for i, teacher in enumerate(teachers):
+            if getattr(teacher, "user_id", None) == teaid:
                 return i
         return -1
-

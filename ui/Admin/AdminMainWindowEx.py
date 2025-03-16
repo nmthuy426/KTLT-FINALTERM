@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QMessageBox, QMainWindow, QTableWidgetItem
+from PyQt6.QtGui import QIntValidator
 from ui.Admin.AdminMainWindow import Ui_AdminManagement
 from models.Student import Student
 from models.Teacher import Teacher
@@ -15,11 +16,15 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.students = []
         self.teachers = []
         self.student_window = student_window  # Giữ tham chiếu đến StudentMainWindow
+        self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.jff = JsonFileFactory()
+
+        # Chỉ cho phép nhập số từ 2000 đến 2100 vào Course
+        self.LineEdit_StuCourse.setValidator(QIntValidator(2000, 2100))
 
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Lấy thư mục hiện tại
         self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
@@ -47,6 +52,12 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.pushButton_StuAddInfo.clicked.connect(self.process_add_student)
         self.lineEdit_StuFullname.textChanged.connect(self.update_student_email)
 
+    def update_student_email(self):
+        fullname = self.lineEdit_StuFullname.text().strip()
+        if fullname:
+            email = User.generate_email(fullname, "student")
+            self.lineEdit_StuMail.setText(email)
+
     def load_students(self):
         students = self.jff.read_data(self.student_file, Student) or []
         self.tableWidget_Student.setRowCount(len(students))
@@ -73,6 +84,11 @@ class AdminMainWindowExt(Ui_AdminManagement):
             self.tableWidget_Student.setItem(row, 6, QTableWidgetItem(str(getattr(student, "major", ""))))
             self.tableWidget_Student.setItem(row, 7, QTableWidgetItem(str(getattr(student, "student_class", ""))))
             self.tableWidget_Student.setItem(row, 8, QTableWidgetItem(str(getattr(student, "advisor", ""))))
+
+    def validate_advisor(self, advisor_name):
+        teachers = self.jff.read_data(self.teacher_file, Teacher) or []
+        teacher_names = [teacher.fullname for teacher in teachers]
+        return advisor_name in teacher_names
 
     def process_add_student(self):
         print("🔍 Bắt đầu thêm sinh viên...")
@@ -102,6 +118,11 @@ class AdminMainWindowExt(Ui_AdminManagement):
         if any(student["user_id"] == stuid for student in students_data):
             print(f"⚠️ ID {stuid} đã tồn tại!")
             QMessageBox.warning(self.MainWindow, "Error", f"ID {stuid} đã tồn tại!")
+            return
+
+        if not self.validate_advisor(advisor):
+            print("❌ Giáo viên không tồn tại!")
+            QMessageBox.warning(self.MainWindow, "Error", "Giáo viên không tồn tại!")
             return
 
         new_student = {
@@ -138,15 +159,3 @@ class AdminMainWindowExt(Ui_AdminManagement):
 
         if self.student_window:
             self.student_window.load_student_info_to_ui(new_student)
-
-    def update_student_email(self):
-        fullname = self.lineEdit_StuFullname.text()
-        if fullname:
-            email = User.generate_email(fullname, "student")
-            self.lineEdit_StuMail.setText(email)
-
-    def update_teacher_email(self):
-        fullname = self.lineEdit_TeaFullname.text()
-        if fullname:
-            email = User.generate_email(fullname, "teacher")
-            self.lineEdit_TeaMail.setText(email)
