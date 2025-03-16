@@ -11,5 +11,5 @@ print("Danh sách giáo viên:")
 for e in teachers:
         print(e)
 jff = JsonFileFactory()
-filename = "../dataset/teachers.json"
+filename = "../dataset/teachersjson"
 jff.write_data(teachers, filename)
