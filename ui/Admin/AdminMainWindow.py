@@ -437,7 +437,7 @@ class Ui_AdminManagement(object):
         self.label_11.setObjectName("label_11")
         self.verticalLayout_9.addWidget(self.label_11)
         self.pushButton_TeaAddInfo = QtWidgets.QPushButton(parent=self.groupBox_InfoTeacher)
-        self.pushButton_TeaAddInfo.setGeometry(QtCore.QRect(470, 240, 461, 50))
+        self.pushButton_TeaAddInfo.setGeometry(QtCore.QRect(470, 240, 471, 50))
         self.pushButton_TeaAddInfo.setMinimumSize(QtCore.QSize(0, 40))
         self.pushButton_TeaAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
         self.pushButton_TeaAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
@@ -465,7 +465,7 @@ class Ui_AdminManagement(object):
         self.label_20.setObjectName("label_20")
         self.verticalLayout_12.addWidget(self.label_20)
         self.verticalLayoutWidget_11 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 321, 201))
+        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 341, 201))
         self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)

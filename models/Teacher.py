@@ -4,7 +4,7 @@ from models.User import User
 class Teacher(User):
     def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str,
                  faculty: str, teacher_class: str,
-                 assigned_classes=None):
+                 assigned_classes=None,email=None):
         super().__init__(user_id, fullname, birthday, gender, password, "teacher")
         self.faculty = faculty  # Khoa của giáo viên
         self.teacher_class = teacher_class  # Lớp phụ trách
@@ -20,4 +20,4 @@ class Teacher(User):
         return "⚠️ Class is not active yet."
 
     def __str__(self):
-        return f"Teacher ID: {self.user_id}, Name: {self.fullname}, Birthday: {self.birthday}, Gender: {self.gender}, Faculty: {self.faculty}, Class: {self.teacher_class},\n Assigned Classes: {self.assigned_classes}"
+        return f"Teacher ID: {self.user_id}, Name: {self.fullname},Email: {getattr(self, 'email', 'N/A')}, Birthday: {self.birthday}, Gender: {self.gender}, Faculty: {self.faculty}, Class: {self.teacher_class},\n Assigned Classes: {self.assigned_classes}"

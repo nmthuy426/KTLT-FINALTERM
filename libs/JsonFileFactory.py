@@ -1,52 +1,42 @@
 import json
 import os
 
-from models.Student import Student
-from models.Teacher import Teacher
-from models.Class import Class
-
 
 class JsonFileFactory:
-    def write_data(self, arr_data, filename):
+    @staticmethod
+    def write_data(arr_data, filename):
         """
-        Hàm này dùng để parse object thành JSON string và ghi vào file.
-        :param arr_data: Danh sách đối tượng
-        :param filename: Đường dẫn file JSON
-        :return: True nếu thành công
+        Ghi dữ liệu vào file JSON
+        :param arr_data: Mảng đối tượng
+        :param filename: Tên file
         """
-        def serialize(obj):
-            if isinstance(obj, Teacher) or isinstance(obj, Student):
-                return obj.user_id  # Lưu user_id thay vì đối tượng
-            return obj.__dict__  # Mặc định serialize object thành dict
-
-        json_string = json.dumps(arr_data, default=serialize, indent=4, ensure_ascii=False)
+        json_string = json.dumps([item.__dict__ for item in arr_data], default=str, indent=4, ensure_ascii=False)
         with open(filename, 'w', encoding='utf-8') as json_file:
             json_file.write(json_string)
 
-    def read_data(self, filename, ClassName, related_data=None):
+    @staticmethod
+
+    def read_data(filename, ClassName, related_data=None):
         """
-        Đọc dữ liệu từ file JSON và ánh xạ các quan hệ.
-        :param filename: Đường dẫn file JSON
-        :param ClassName: Lớp đối tượng để parse dữ liệu vào
-        :param related_data: Dictionary ánh xạ dữ liệu liên quan (VD: teachers_dict)
-        :return: Danh sách đối tượng đã parse
+        Đọc dữ liệu từ file JSON và parse thành object
+        :param filename: Tên file
+        :param ClassName: Class để parse dữ liệu
+        :param related_data: Dữ liệu liên quan để ánh xạ
+        :return: Mảng object
         """
         if not os.path.isfile(filename):
             return []
+        try:
+            with open(filename, 'r', encoding='utf-8') as file:
+                arr_data = json.load(file)
 
-        with open(filename, 'r', encoding='utf-8') as file:
-            arr_data = json.load(file)
+            # Ánh xạ dữ liệu liên quan (ví dụ: ánh xạ teacher từ teachers.json vào classes.json)
+            for obj in arr_data:
+                for key, mapping in (related_data or {}).items():
+                    if key in obj:
+                        obj[key] = mapping.get(obj[key], obj[key])
 
-        # Kiểm tra related_data để tránh lỗi
-        related_data = related_data or {}
-
-        for obj in arr_data:
-            # Nếu "teacher" là user_id, ánh xạ thành đối tượng Teacher
-            if 'teacher' in obj and isinstance(obj['teacher'], str):
-                obj['teacher'] = related_data.get(obj['teacher'], None)
-
-            # Nếu "students" là danh sách user_id, ánh xạ thành danh sách Student
-            if 'students' in obj and isinstance(obj['students'], list):
-                obj['students'] = list(filter(None, [related_data.get(s_id, None) for s_id in obj['students']]))
-
-        return [ClassName(**obj) for obj in arr_data]
+            return [ClassName(**obj) for obj in arr_data]
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"❌ Lỗi khi đọc file {filename}: {e}")
+            return []

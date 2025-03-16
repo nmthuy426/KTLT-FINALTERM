@@ -3,7 +3,7 @@ from models.User import User
 class Student(User):
     def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str,
                  student_class: str, major: str, course: str, advisor: str,
-                 registered_classes=None, grades=None):  # 👈 Thêm tham số mặc định
+                 registered_classes=None, grades=None, email=None):  # 👈 Thêm tham số mặc định
         super().__init__(user_id, fullname, birthday, gender, password, "student")
         self.student_class = student_class
         self.major = major

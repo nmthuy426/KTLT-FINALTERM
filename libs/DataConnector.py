@@ -1,7 +1,7 @@
 from models.Student import Student
 from models.Teacher import Teacher
 from models.Class import Class
-from JsonFileFactory import JsonFileFactory
+from libs.JsonFileFactory import JsonFileFactory
 
 
 class DataConnector:
@@ -17,7 +17,7 @@ class DataConnector:
         teachers = jff.read_data(filename, Teacher)
         return teachers
 
-    def get_all_classrooms(self):
+    def get_all_classes(self):
         jff = JsonFileFactory()
         filename = "../dataset/classrooms.json"
         classrooms = jff.read_data(filename, Class )
@@ -37,3 +37,24 @@ class DataConnector:
                 return "teacher", teacher  # Phân quyền là teacher
 
         return None, None
+
+    def check_existing_student(self, students, stuid):
+        print(f"🧐 Đang kiểm tra ID {stuid} trong danh sách...")
+
+        for i, student in enumerate(students):
+            print(f"👀 Kiểm tra {getattr(student, 'user_id', 'UNKNOWN')} với {stuid}...")
+
+            if getattr(student, "user_id", None) == stuid:  # Kiểm tra đúng thuộc tính ID
+                print(f"✅ Tìm thấy tại index {i}")
+                return i
+
+        print("❌ Không tìm thấy!")
+        return -1
+
+    def check_existing_teacher(self, teachers, teaid):
+        for i in range(len(teachers)):
+            teacher = teachers[i]
+            if teacher.teaid == teaid:
+                return i
+        return -1
+
