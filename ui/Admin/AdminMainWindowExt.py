@@ -55,6 +55,14 @@ class AdminMainWindowExt(Ui_AdminManagement):
             ["ID", "Name", "Birthday", "Gender", "Email", "Course", "Major", "Class", "Advisor"]
         )
 
+        self.tableWidget_Student.setColumnWidth(2, 150)  # Birthday
+        self.tableWidget_Student.setColumnWidth(3, 100)  # Gender
+        self.tableWidget_Student.setColumnWidth(4, 250)  # Email (lớn hơn để tránh "...")
+        self.tableWidget_Student.setColumnWidth(5, 100)  # Course
+        self.tableWidget_Student.setColumnWidth(6, 220)  # Major
+        self.tableWidget_Student.setColumnWidth(7, 120)  # Class
+        self.tableWidget_Student.setColumnWidth(8, 200)  # Advisor
+
         for row, student in enumerate(students):
             self.tableWidget_Student.setItem(row, 0, QTableWidgetItem(str(getattr(student, "user_id", ""))))
             self.tableWidget_Student.setItem(row, 1, QTableWidgetItem(str(getattr(student, "fullname", ""))))
