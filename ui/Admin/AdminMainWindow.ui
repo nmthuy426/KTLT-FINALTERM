@@ -39,28 +39,94 @@ QPushButton:pressed {
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1000</width>
+      <height>712</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png</pixmap>
+    </property>
+   </widget>
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>11</x>
-      <y>10</y>
-      <width>981</width>
-      <height>691</height>
+      <x>0</x>
+      <y>0</y>
+      <width>1000</width>
+      <height>712</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">/* Tab chưa được chọn */
+QTabBar::tab {
+    width: 100px;
+	height: 30px;
+    min-height: 20px;
+    text-align: center;
+    color: #00005A;
+    font: 2000 10pt &quot;Arial&quot;;
+    padding: 6px 12px;
+    background: #EAEAEA;
+}
+QTabBar::tab:last {
+    border-top-right-radius: 12px;
+}
+QTabBar::tab:first {
+    border-top-left-radius: 12px;
+}
+
+/* Tab được chọn */
+QTabBar::tab:selected {
+    background: white;
+    color: #00008B;
+    text-align: center;
+}
+
+/* Tab cuối cùng có chiều dài lớn hơn */
+QTabBar::tab {
+    width: 300px;
+    text-align: center;
+}
+QTabBar::tab:middle {
+    width: 328px;
+    text-align: center;
+}
+
+/* Đặt nền trong suốt cho QTabWidget */
+QTabWidget {
+    background-color: rgba(0,0,0,0);
+    border-bottom-left-radius: 12px;  
+    border-bottom-right-radius: 12px;  
+}
+
+/* Làm trong suốt nền của tab content */
+QTabWidget::pane {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+</string>
+    </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_ManageAccounts">
      <attribute name="title">
-      <string>Manage Accounts</string>
+      <string>CREATE ACCOUNTS</string>
      </attribute>
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>951</width>
+        <width>981</width>
         <height>641</height>
        </rect>
       </property>
@@ -89,10 +155,10 @@ color: rgb(0,0,90);</string>
          <widget class="QWidget" name="formLayoutWidget">
           <property name="geometry">
            <rect>
-            <x>530</x>
-            <y>30</y>
+            <x>490</x>
+            <y>40</y>
             <width>151</width>
-            <height>231</height>
+            <height>201</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -142,9 +208,9 @@ color: rgb(0,0,90);</string>
           <property name="geometry">
            <rect>
             <x>140</x>
-            <y>30</y>
-            <width>371</width>
-            <height>230</height>
+            <y>40</y>
+            <width>331</width>
+            <height>271</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -341,9 +407,9 @@ QComboBox::down-arrow {
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>30</y>
+            <y>40</y>
             <width>121</width>
-            <height>231</height>
+            <height>271</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -402,44 +468,13 @@ QComboBox::down-arrow {
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton_StuAddInfo">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>270</y>
-            <width>931</width>
-            <height>50</height>
-           </rect>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);
-border-radius: 15px;
-background-color: rgb(0,0,90);
-font: 2000 12pt &quot;Arial&quot;;</string>
-          </property>
-          <property name="text">
-           <string>ADD STUDENT</string>
-          </property>
-         </widget>
          <widget class="QWidget" name="verticalLayoutWidget_3">
           <property name="geometry">
            <rect>
-            <x>690</x>
-            <y>30</y>
-            <width>251</width>
-            <height>231</height>
+            <x>650</x>
+            <y>40</y>
+            <width>321</width>
+            <height>271</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -499,6 +534,31 @@ font: 2000 12pt &quot;Arial&quot;;</string>
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_StuAddInfo">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+border-radius: 15px;
+background-color: rgb(0,0,90);
+font: 2000 12pt &quot;Arial&quot;;</string>
+             </property>
+             <property name="text">
+              <string>ADD STUDENT</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </widget>
@@ -529,7 +589,7 @@ color: rgb(0,0,90);</string>
            <rect>
             <x>140</x>
             <y>30</y>
-            <width>321</width>
+            <width>351</width>
             <height>261</height>
            </rect>
           </property>
@@ -776,43 +836,12 @@ QComboBox::down-arrow {
            </item>
           </layout>
          </widget>
-         <widget class="QPushButton" name="pushButton_TeaAddInfo">
-          <property name="geometry">
-           <rect>
-            <x>470</x>
-            <y>240</y>
-            <width>471</width>
-            <height>50</height>
-           </rect>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>50</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(255, 255, 255);
-border-radius: 15px;
-background-color: rgb(0,0,90);
-font: 2000 12pt &quot;Arial&quot;;</string>
-          </property>
-          <property name="text">
-           <string>ADD TEACHER</string>
-          </property>
-         </widget>
          <widget class="QWidget" name="verticalLayoutWidget_10">
           <property name="geometry">
            <rect>
-            <x>470</x>
+            <x>510</x>
             <y>30</y>
-            <width>121</width>
+            <width>81</width>
             <height>201</height>
            </rect>
           </property>
@@ -826,7 +855,7 @@ font: 2000 12pt &quot;Arial&quot;;</string>
               <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
              </property>
              <property name="text">
-              <string>Email</string>
+              <string>Email:</string>
              </property>
             </widget>
            </item>
@@ -857,8 +886,8 @@ font: 2000 12pt &quot;Arial&quot;;</string>
            <rect>
             <x>600</x>
             <y>30</y>
-            <width>341</width>
-            <height>201</height>
+            <width>371</width>
+            <height>261</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -961,6 +990,31 @@ font: 2000 12pt &quot;Arial&quot;;</string>
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_TeaAddInfo">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+border-radius: 15px;
+background-color: rgb(0,0,90);
+font: 2000 12pt &quot;Arial&quot;;</string>
+             </property>
+             <property name="text">
+              <string>ADD TEACHER</string>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </widget>
@@ -970,15 +1024,15 @@ font: 2000 12pt &quot;Arial&quot;;</string>
     </widget>
     <widget class="QWidget" name="tab_ListAccounts">
      <attribute name="title">
-      <string>List Accounts</string>
+      <string>LISTS OF ACCOUNTS</string>
      </attribute>
      <widget class="QWidget" name="verticalLayoutWidget_8">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>951</width>
-        <height>641</height>
+        <width>981</width>
+        <height>651</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -991,14 +1045,24 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>STUDENT</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
          <widget class="QTableWidget" name="tableWidget_Student">
           <property name="geometry">
            <rect>
             <x>10</x>
             <y>30</y>
-            <width>931</width>
-            <height>271</height>
+            <width>961</width>
+            <height>281</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableWidget {
+    border-radius: 25px; /* Bo góc cả 4 góc */
+    background: white;
+}
+</string>
           </property>
          </widget>
         </widget>
@@ -1012,14 +1076,24 @@ color: rgb(0,0,90);</string>
          <property name="title">
           <string>TEACHER</string>
          </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
          <widget class="QTableWidget" name="tableWidget_Teacher">
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>27</y>
-            <width>931</width>
+            <y>30</y>
+            <width>961</width>
             <height>281</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QTableWidget {
+    border-radius: 25px; /* Bo góc cả 4 góc */
+    background: white;
+}
+</string>
           </property>
          </widget>
         </widget>
@@ -1029,15 +1103,15 @@ color: rgb(0,0,90);</string>
     </widget>
     <widget class="QWidget" name="tab_ManageClasses">
      <attribute name="title">
-      <string>Manage Classes</string>
+      <string>MANAGE CLASSES</string>
      </attribute>
      <widget class="QWidget" name="verticalLayoutWidget_2">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>951</width>
-        <height>641</height>
+        <width>981</width>
+        <height>651</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -1052,8 +1126,15 @@ color: rgb(0,0,90);</string>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>560</height>
+           <height>580</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTableWidget {
+    border-radius: 25px; /* Bo góc cả 4 góc */
+    background: white;
+}
+</string>
          </property>
         </widget>
        </item>

@@ -18,16 +18,28 @@ class Ui_MainWindow(object):
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
+        self.label.setStyleSheet("/* Header trên cùng */\n"
+"QHeaderView::section {\n"
+"    background: rgb(255,255,255);  /* Màu xanh đậm */\n"
+"    color: rgb(0,0,90);  /* Chữ trắng */\n"
+"    font: 2000 12px \"Arial\";\n"
+"}\n"
+"\n"
+"")
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../../../../Downloads/55656.png"))
+        self.label.setObjectName("label")
         self.scrollArea = QtWidgets.QScrollArea(parent=self.centralwidget)
+        self.scrollArea.setGeometry(QtCore.QRect(52, 56, 895, 600))
         self.scrollArea.setMaximumSize(QtCore.QSize(16777215, 1000))
         self.scrollArea.setStyleSheet("background-color: rgba(0,0,0,0);\n"
 "border: none;")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 978, 690))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 895, 600))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -51,18 +63,84 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.lineEdit_class)
         self.tableWidget_grade = QtWidgets.QTableWidget(parent=self.scrollAreaWidgetContents)
         self.tableWidget_grade.setMaximumSize(QtCore.QSize(16777215, 550))
-        self.tableWidget_grade.setStyleSheet("QTableWidget {\n"
-"    gridline-color: #000000; /* Màu đường kẻ */\n"
-"    font: 5000 12px \"Arial\"; /* Kích thước chữ */\n"
-"    background-color: rgb(255,255,255);\n"
+        self.tableWidget_grade.setStyleSheet("/* === Bảng chính (QTableWidget) === */\n"
+"QTableWidget {\n"
+"    gridline-color: #000000; /* Màu đường kẻ ô */\n"
+"    font: 2000 12px \"Arial\"; /* Kích thước chữ */\n"
+"    background-color: white; /* Nền trắng */\n"
+"    border: none; /* Xóa viền thừa */\n"
+"    border-bottom-left-radius: 20px;  /* Bo góc dưới */\n"
+"    border-bottom-right-radius: 20px;\n"
 "}\n"
 "\n"
+"/* === Header (Dòng tiêu đề) === */\n"
 "QHeaderView::section {\n"
 "    background-color: navy; /* Màu nền tiêu đề */\n"
 "    color: white; /* Màu chữ tiêu đề */\n"
-"    border: 1px solid white;\n"
-"    font: 5000 12px \"Arial\"; /* Kích thước chữ */\n"
+"    border: 1px solid white; /* Viền trắng để tách cột */\n"
+"    font: 2000 12px \"Arial\";\n"
+"    padding: 6px; /* Khoảng cách chữ trong header */\n"
+"}\n"
 "\n"
+"/* === Thanh cuộn dọc === */\n"
+"QTableWidget::verticalScrollBar {\n"
+"    width: 6px;  /* Độ rộng nhỏ hơn */\n"
+"    padding: 2px;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: transparent;\n"
+"    width: 6px;  /* Làm thanh nhỏ */\n"
+"    margin: 15px 0px 15px 0px; /* Tạo khoảng cách với mép */\n"
+"}\n"
+"\n"
+"/* Thanh trượt (cái phần kéo được) */\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #909090;  /* Màu trung tính */\n"
+"    min-height: 30px;  /* Đảm bảo không quá nhỏ */\n"
+"    border-radius: 3px;  /* Bo góc */\n"
+"}\n"
+"\n"
+"/* Khi hover vào thanh kéo */\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background: #707070; /* Đổi màu tối hơn chút */\n"
+"}\n"
+"\n"
+"/* Ẩn nút mũi tên trên/dưới */\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    background: none;\n"
+"    height: 0px;\n"
+"}\n"
+"\n"
+"/* === Thanh cuộn ngang === */\n"
+"QTableWidget::horizontalScrollBar {\n"
+"    height: 6px;  /* Mỏng hơn */\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background: transparent;\n"
+"    height: 6px;  \n"
+"    margin: 0px 15px 0px 15px;\n"
+"}\n"
+"\n"
+"/* Thanh trượt ngang */\n"
+"QScrollBar::handle:horizontal {\n"
+"    background: #909090;\n"
+"    min-width: 30px;\n"
+"    border-radius: 3px;\n"
+"    padding: 3px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal:hover {\n"
+"    background: #707070;\n"
+"}\n"
+"\n"
+"/* Ẩn góc giao giữa 2 thanh kéo */\n"
+"QScrollBar::corner {\n"
+"    background: transparent;\n"
+"    border: none;\n"
 "}\n"
 "")
         self.tableWidget_grade.setObjectName("tableWidget_grade")
@@ -194,7 +272,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.verticalLayout.addLayout(self.verticalLayout_3)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.verticalLayout_2.addWidget(self.scrollArea)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

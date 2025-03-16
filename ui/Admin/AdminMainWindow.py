@@ -38,13 +38,66 @@ class Ui_AdminManagement(object):
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=AdminManagement)
         self.centralwidget.setObjectName("centralwidget")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png"))
+        self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(parent=self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(11, 10, 981, 691))
+        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1000, 712))
+        self.tabWidget.setStyleSheet("/* Tab chưa được chọn */\n"
+"QTabBar::tab {\n"
+"    width: 100px;\n"
+"    height: 30px;\n"
+"    min-height: 20px;\n"
+"    text-align: center;\n"
+"    color: #00005A;\n"
+"    font: 2000 10pt \"Arial\";\n"
+"    padding: 6px 12px;\n"
+"    background: #EAEAEA;\n"
+"}\n"
+"QTabBar::tab:last {\n"
+"    border-top-right-radius: 12px;\n"
+"}\n"
+"QTabBar::tab:first {\n"
+"    border-top-left-radius: 12px;\n"
+"}\n"
+"\n"
+"/* Tab được chọn */\n"
+"QTabBar::tab:selected {\n"
+"    background: white;\n"
+"    color: #00008B;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"/* Tab cuối cùng có chiều dài lớn hơn */\n"
+"QTabBar::tab {\n"
+"    width: 300px;\n"
+"    text-align: center;\n"
+"}\n"
+"QTabBar::tab:middle {\n"
+"    width: 328px;\n"
+"    text-align: center;\n"
+"}\n"
+"\n"
+"/* Đặt nền trong suốt cho QTabWidget */\n"
+"QTabWidget {\n"
+"    background-color: rgba(0,0,0,0);\n"
+"    border-bottom-left-radius: 12px;  \n"
+"    border-bottom-right-radius: 12px;  \n"
+"}\n"
+"\n"
+"/* Làm trong suốt nền của tab content */\n"
+"QTabWidget::pane {\n"
+"    background: rgba(0, 0, 0, 0);\n"
+"    border: none;\n"
+"}\n"
+"")
         self.tabWidget.setObjectName("tabWidget")
         self.tab_ManageAccounts = QtWidgets.QWidget()
         self.tab_ManageAccounts.setObjectName("tab_ManageAccounts")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.tab_ManageAccounts)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 951, 641))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 981, 641))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -56,7 +109,7 @@ class Ui_AdminManagement(object):
 "color: rgb(0,0,90);")
         self.groupBox_InfoStudent.setObjectName("groupBox_InfoStudent")
         self.formLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(530, 30, 151, 231))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(490, 40, 151, 201))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.formLayoutWidget)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -78,7 +131,7 @@ class Ui_AdminManagement(object):
         self.cVNHCTPLabel.setObjectName("cVNHCTPLabel")
         self.verticalLayout_4.addWidget(self.cVNHCTPLabel)
         self.verticalLayoutWidget_4 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(140, 30, 371, 230))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(140, 40, 331, 271))
         self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -196,7 +249,7 @@ class Ui_AdminManagement(object):
         self.lineEdit_StuMail.setObjectName("lineEdit_StuMail")
         self.verticalLayout_6.addWidget(self.lineEdit_StuMail)
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(10, 30, 121, 231))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(10, 40, 121, 271))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -222,17 +275,8 @@ class Ui_AdminManagement(object):
         self.label_3.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_3.setObjectName("label_3")
         self.verticalLayout_8.addWidget(self.label_3)
-        self.pushButton_StuAddInfo = QtWidgets.QPushButton(parent=self.groupBox_InfoStudent)
-        self.pushButton_StuAddInfo.setGeometry(QtCore.QRect(10, 270, 931, 50))
-        self.pushButton_StuAddInfo.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton_StuAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_StuAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"background-color: rgb(0,0,90);\n"
-"font: 2000 12pt \"Arial\";")
-        self.pushButton_StuAddInfo.setObjectName("pushButton_StuAddInfo")
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(690, 30, 251, 231))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 321, 271))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -281,6 +325,15 @@ class Ui_AdminManagement(object):
 "}")
         self.LineEdit_StuAdvisor.setObjectName("LineEdit_StuAdvisor")
         self.verticalLayout_3.addWidget(self.LineEdit_StuAdvisor)
+        self.pushButton_StuAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_3)
+        self.pushButton_StuAddInfo.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_StuAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_StuAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-radius: 15px;\n"
+"background-color: rgb(0,0,90);\n"
+"font: 2000 12pt \"Arial\";")
+        self.pushButton_StuAddInfo.setObjectName("pushButton_StuAddInfo")
+        self.verticalLayout_3.addWidget(self.pushButton_StuAddInfo)
         self.verticalLayout.addWidget(self.groupBox_InfoStudent)
         self.groupBox_InfoTeacher = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget)
         self.groupBox_InfoTeacher.setMinimumSize(QtCore.QSize(0, 0))
@@ -289,7 +342,7 @@ class Ui_AdminManagement(object):
 "color: rgb(0,0,90);")
         self.groupBox_InfoTeacher.setObjectName("groupBox_InfoTeacher")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 321, 261))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 351, 261))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
@@ -436,17 +489,8 @@ class Ui_AdminManagement(object):
         self.label_11.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_11.setObjectName("label_11")
         self.verticalLayout_9.addWidget(self.label_11)
-        self.pushButton_TeaAddInfo = QtWidgets.QPushButton(parent=self.groupBox_InfoTeacher)
-        self.pushButton_TeaAddInfo.setGeometry(QtCore.QRect(470, 240, 471, 50))
-        self.pushButton_TeaAddInfo.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton_TeaAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_TeaAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"background-color: rgb(0,0,90);\n"
-"font: 2000 12pt \"Arial\";")
-        self.pushButton_TeaAddInfo.setObjectName("pushButton_TeaAddInfo")
         self.verticalLayoutWidget_10 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(470, 30, 121, 201))
+        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(510, 30, 81, 201))
         self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
@@ -465,7 +509,7 @@ class Ui_AdminManagement(object):
         self.label_20.setObjectName("label_20")
         self.verticalLayout_12.addWidget(self.label_20)
         self.verticalLayoutWidget_11 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 341, 201))
+        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 371, 261))
         self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
@@ -525,12 +569,21 @@ class Ui_AdminManagement(object):
 "}")
         self.lineEdit_TeaClass.setObjectName("lineEdit_TeaClass")
         self.verticalLayout_13.addWidget(self.lineEdit_TeaClass)
+        self.pushButton_TeaAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_11)
+        self.pushButton_TeaAddInfo.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_TeaAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_TeaAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-radius: 15px;\n"
+"background-color: rgb(0,0,90);\n"
+"font: 2000 12pt \"Arial\";")
+        self.pushButton_TeaAddInfo.setObjectName("pushButton_TeaAddInfo")
+        self.verticalLayout_13.addWidget(self.pushButton_TeaAddInfo)
         self.verticalLayout.addWidget(self.groupBox_InfoTeacher)
         self.tabWidget.addTab(self.tab_ManageAccounts, "")
         self.tab_ListAccounts = QtWidgets.QWidget()
         self.tab_ListAccounts.setObjectName("tab_ListAccounts")
         self.verticalLayoutWidget_8 = QtWidgets.QWidget(parent=self.tab_ListAccounts)
-        self.verticalLayoutWidget_8.setGeometry(QtCore.QRect(10, 10, 951, 641))
+        self.verticalLayoutWidget_8.setGeometry(QtCore.QRect(10, 10, 981, 651))
         self.verticalLayoutWidget_8.setObjectName("verticalLayoutWidget_8")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_8)
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
@@ -538,9 +591,15 @@ class Ui_AdminManagement(object):
         self.groupBox_3 = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget_8)
         self.groupBox_3.setStyleSheet("font: 2000 12pt \"Arial\";\n"
 "color: rgb(0,0,90);")
+        self.groupBox_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupBox_3.setObjectName("groupBox_3")
         self.tableWidget_Student = QtWidgets.QTableWidget(parent=self.groupBox_3)
-        self.tableWidget_Student.setGeometry(QtCore.QRect(10, 30, 931, 271))
+        self.tableWidget_Student.setGeometry(QtCore.QRect(10, 30, 961, 281))
+        self.tableWidget_Student.setStyleSheet("QTableWidget {\n"
+"    border-radius: 25px; /* Bo góc cả 4 góc */\n"
+"    background: white;\n"
+"}\n"
+"")
         self.tableWidget_Student.setObjectName("tableWidget_Student")
         self.tableWidget_Student.setColumnCount(0)
         self.tableWidget_Student.setRowCount(0)
@@ -548,9 +607,15 @@ class Ui_AdminManagement(object):
         self.groupBox_4 = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget_8)
         self.groupBox_4.setStyleSheet("font: 2000 12pt \"Arial\";\n"
 "color: rgb(0,0,90);")
+        self.groupBox_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupBox_4.setObjectName("groupBox_4")
         self.tableWidget_Teacher = QtWidgets.QTableWidget(parent=self.groupBox_4)
-        self.tableWidget_Teacher.setGeometry(QtCore.QRect(10, 27, 931, 281))
+        self.tableWidget_Teacher.setGeometry(QtCore.QRect(10, 30, 961, 281))
+        self.tableWidget_Teacher.setStyleSheet("QTableWidget {\n"
+"    border-radius: 25px; /* Bo góc cả 4 góc */\n"
+"    background: white;\n"
+"}\n"
+"")
         self.tableWidget_Teacher.setObjectName("tableWidget_Teacher")
         self.tableWidget_Teacher.setColumnCount(0)
         self.tableWidget_Teacher.setRowCount(0)
@@ -559,14 +624,19 @@ class Ui_AdminManagement(object):
         self.tab_ManageClasses = QtWidgets.QWidget()
         self.tab_ManageClasses.setObjectName("tab_ManageClasses")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.tab_ManageClasses)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 951, 641))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 981, 651))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.tableWidget_Classes = QtWidgets.QTableWidget(parent=self.verticalLayoutWidget_2)
         self.tableWidget_Classes.setMinimumSize(QtCore.QSize(0, 560))
-        self.tableWidget_Classes.setMaximumSize(QtCore.QSize(16777215, 560))
+        self.tableWidget_Classes.setMaximumSize(QtCore.QSize(16777215, 580))
+        self.tableWidget_Classes.setStyleSheet("QTableWidget {\n"
+"    border-radius: 25px; /* Bo góc cả 4 góc */\n"
+"    background: white;\n"
+"}\n"
+"")
         self.tableWidget_Classes.setObjectName("tableWidget_Classes")
         self.tableWidget_Classes.setColumnCount(0)
         self.tableWidget_Classes.setRowCount(0)
@@ -604,7 +674,7 @@ class Ui_AdminManagement(object):
         AdminManagement.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminManagement)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(AdminManagement)
 
     def retranslateUi(self, AdminManagement):
@@ -630,13 +700,13 @@ class Ui_AdminManagement(object):
         self.label_9.setText(_translate("AdminManagement", "Full Name:"))
         self.label_10.setText(_translate("AdminManagement", "Birthday:"))
         self.label_11.setText(_translate("AdminManagement", "Gender:"))
-        self.pushButton_TeaAddInfo.setText(_translate("AdminManagement", "ADD TEACHER"))
-        self.label_18.setText(_translate("AdminManagement", "Email"))
+        self.label_18.setText(_translate("AdminManagement", "Email:"))
         self.label_19.setText(_translate("AdminManagement", "Faculty:"))
         self.label_20.setText(_translate("AdminManagement", "Class:"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageAccounts), _translate("AdminManagement", "Manage Accounts"))
+        self.pushButton_TeaAddInfo.setText(_translate("AdminManagement", "ADD TEACHER"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageAccounts), _translate("AdminManagement", "CREATE ACCOUNTS"))
         self.groupBox_3.setTitle(_translate("AdminManagement", "STUDENT"))
         self.groupBox_4.setTitle(_translate("AdminManagement", "TEACHER"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "List Accounts"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "LISTS OF ACCOUNTS"))
         self.pushButton_CreateClass.setText(_translate("AdminManagement", "CREATE CLASS"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "Manage Classes"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "MANAGE CLASSES"))

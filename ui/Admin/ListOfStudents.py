@@ -13,31 +13,37 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(1000, 600)
-        self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=Dialog)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 981, 581))
-        self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.groupBox_SelectedStudent = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget_2)
-        self.groupBox_SelectedStudent.setStyleSheet("font: 2000 12pt \"Arial\";\n"
-"color: rgb(0,0,90);")
-        self.groupBox_SelectedStudent.setObjectName("groupBox_SelectedStudent")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_SelectedStudent)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 30, 961, 541))
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(60, 50, 881, 501))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
+        self.label_3 = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
+        self.label_3.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_3.setMaximumSize(QtCore.QSize(956, 50))
+        self.label_3.setStyleSheet("background-color: white;\n"
+"color: rgb(0, 0, 90);\n"
+"font-weight: bold;\n"
+"font: 5000 12pt \"Arial\";\n"
+"border-top-left-radius: 25px;\n"
+"border-top-right-radius: 25px;\n"
+"padding: 10px;\n"
+"")
+        self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout.addWidget(self.label_3)
         self.listWidget_Students = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
-        self.listWidget_Students.setMinimumSize(QtCore.QSize(0, 480))
-        self.listWidget_Students.setMaximumSize(QtCore.QSize(16777215, 480))
+        self.listWidget_Students.setMinimumSize(QtCore.QSize(0, 0))
+        self.listWidget_Students.setMaximumSize(QtCore.QSize(16777215, 500))
         self.listWidget_Students.setStyleSheet("    QListWidget {\n"
 "        border: 2px solid rgb(255,255,255);\n"
-"        border-top-left-radius: 20px;  /* Bo góc trái trên */\n"
-"        border-top-right-radius: 20px; /* Bo góc phải trên */\n"
-"        border-bottom-left-radius: 0px;  /* Giữ góc dưới vuông */\n"
-"        border-bottom-right-radius: 0px; /* Giữ góc dưới vuông */\n"
 "        background-color: white;\n"
 "        padding: 5px;\n"
 "    }")
@@ -95,7 +101,6 @@ class Ui_Dialog(object):
         self.pushButton_AssignStudent.setObjectName("pushButton_AssignStudent")
         self.horizontalLayout.addWidget(self.pushButton_AssignStudent)
         self.verticalLayout.addLayout(self.horizontalLayout)
-        self.verticalLayout_2.addWidget(self.groupBox_SelectedStudent)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -103,6 +108,6 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "List of Students"))
-        self.groupBox_SelectedStudent.setTitle(_translate("Dialog", "LIST OF STUDENTS"))
+        self.label_3.setText(_translate("Dialog", "LIST OF STUDENTS"))
         self.pushButton_Home.setText(_translate("Dialog", "BACK"))
         self.pushButton_AssignStudent.setText(_translate("Dialog", "SAVE"))

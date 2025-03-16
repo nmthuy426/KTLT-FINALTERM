@@ -18,95 +18,42 @@ class Ui_MainWindow(object):
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.scrollArea = QtWidgets.QScrollArea(parent=self.centralwidget)
-        self.scrollArea.setGeometry(QtCore.QRect(11, 11, 981, 691))
-        self.scrollArea.setMaximumSize(QtCore.QSize(16777215, 1000))
-        self.scrollArea.setStyleSheet("background-color: rgba(0,0,0,0);\n"
-"border: none;")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 981, 691))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(10, 10, 961, 671))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.stackedWidget = QtWidgets.QStackedWidget(parent=self.verticalLayoutWidget)
-        self.stackedWidget.setMinimumSize(QtCore.QSize(0, 100))
-        self.stackedWidget.setMaximumSize(QtCore.QSize(16777, 300))
-        self.stackedWidget.setStyleSheet("background-color: rgba(0,0,0,0);")
-        self.stackedWidget.setObjectName("stackedWidget")
-        self.page_2 = QtWidgets.QWidget()
-        self.page_2.setObjectName("page_2")
-        self.label_2 = QtWidgets.QLabel(parent=self.page_2)
-        self.label_2.setGeometry(QtCore.QRect(1, 0, 956, 51))
-        self.label_2.setMinimumSize(QtCore.QSize(768, 0))
-        self.label_2.setMaximumSize(QtCore.QSize(16777, 16777215))
-        self.label_2.setStyleSheet("background-color: white;\n"
-"color: rgb(0, 0, 90);\n"
-"font-weight: bold;\n"
-"font: 5000 18pt \"Arial\";\n"
-"\n"
-"    border-top-left-radius: 20px;\n"
-"    border-top-right-radius: 20px;\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"    padding: 10px;\n"
-"")
-        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_2.setObjectName("label_2")
-        self.label = QtWidgets.QLabel(parent=self.page_2)
-        self.label.setGeometry(QtCore.QRect(1, 50, 956, 281))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Maximum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
-        self.label.setMinimumSize(QtCore.QSize(768, 0))
-        self.label.setMaximumSize(QtCore.QSize(16777, 350))
-        self.label.setStyleSheet("")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../../../../Downloads/TNT_7659-scaled(1)(1).png"))
-        self.label.setScaledContents(True)
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setTextInteractionFlags(QtCore.Qt.TextInteractionFlag.LinksAccessibleByMouse|QtCore.Qt.TextInteractionFlag.TextEditable)
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../../../../Downloads/55656.png"))
         self.label.setObjectName("label")
-        self.stackedWidget.addWidget(self.page_2)
-        self.verticalLayout.addWidget(self.stackedWidget)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.listWidget_Class = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
+        self.listWidget_Class = QtWidgets.QListWidget(parent=self.centralwidget)
+        self.listWidget_Class.setGeometry(QtCore.QRect(70, 150, 861, 401))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.listWidget_Class.sizePolicy().hasHeightForWidth())
         self.listWidget_Class.setSizePolicy(sizePolicy)
         self.listWidget_Class.setMinimumSize(QtCore.QSize(0, 300))
-        self.listWidget_Class.setMaximumSize(QtCore.QSize(956, 350))
+        self.listWidget_Class.setMaximumSize(QtCore.QSize(956, 600))
         self.listWidget_Class.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 500 10pt \"Cambria\";\n"
 "color: rgb(0, 0, 0);\n"
 "/* Chỉ bo tròn hai góc trên */\n"
 "    background-color: white;\n"
-"    border-top-left-radius: 20px;\n"
-"    border-top-right-radius: 20px;\n"
-"    border-bottom-left-radius: 20px;\n"
-"    border-bottom-right-radius: 20px;\n"
+"    border-top-left-radius: 25px;\n"
+"    border-top-right-radius: 25px;\n"
+"    border-bottom-left-radius: 25px;\n"
+"    border-bottom-right-radius: 25px;\n"
 "    padding: 10px;\n"
-"border: 1px solid gray;\n"
+"border: none;\n"
 "\n"
 "")
         self.listWidget_Class.setObjectName("listWidget_Class")
-        self.verticalLayout_2.addWidget(self.listWidget_Class)
-        self.verticalLayout.addLayout(self.verticalLayout_2)
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setContentsMargins(0, 0, -1, -1)
+        self.widget = QtWidgets.QWidget(parent=self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(70, 570, 861, 71))
+        self.widget.setObjectName("widget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(5)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton_exit = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_exit = QtWidgets.QPushButton(parent=self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
@@ -140,7 +87,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_exit.setObjectName("pushButton_exit")
         self.horizontalLayout.addWidget(self.pushButton_exit)
-        self.pushButton_InputGrade = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_InputGrade = QtWidgets.QPushButton(parent=self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -172,7 +119,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_InputGrade.setObjectName("pushButton_InputGrade")
         self.horizontalLayout.addWidget(self.pushButton_InputGrade)
-        self.pushButton_logout = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_logout = QtWidgets.QPushButton(parent=self.widget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
@@ -206,18 +153,31 @@ class Ui_MainWindow(object):
         self.pushButton_logout.setIconSize(QtCore.QSize(50, 20))
         self.pushButton_logout.setObjectName("pushButton_logout")
         self.horizontalLayout.addWidget(self.pushButton_logout)
-        self.verticalLayout.addLayout(self.horizontalLayout)
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(70, 70, 860, 61))
+        self.label_3.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_3.setMaximumSize(QtCore.QSize(956, 16777215))
+        self.label_3.setStyleSheet("background-color: white;\n"
+"color: rgb(0, 0, 90);\n"
+"font-weight: bold;\n"
+"font: 5000 18pt \"Arial\";\n"
+"    border-top-left-radius: 25px;\n"
+"    border-top-right-radius: 25px;\n"
+"    border-bottom-left-radius: 25px;\n"
+"    border-bottom-right-radius: 25px;\n"
+"    padding: 10px;\n"
+"")
+        self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_3.setObjectName("label_3")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_2.setText(_translate("MainWindow", "TEACHER"))
         self.pushButton_exit.setText(_translate("MainWindow", "EXIT"))
         self.pushButton_InputGrade.setText(_translate("MainWindow", "INPUT GRADE"))
         self.pushButton_logout.setText(_translate("MainWindow", "LOGOUT"))
+        self.label_3.setText(_translate("MainWindow", "TEACHER"))

@@ -26,38 +26,70 @@
    <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item>
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>1000</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0,0,0,0);
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1000</width>
+      <height>712</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Header trên cùng */
+QHeaderView::section {
+    background: rgb(255,255,255);  /* Màu xanh đậm */
+    color: rgb(0,0,90);  /* Chữ trắng */
+	font: 2000 12px &quot;Arial&quot;;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../../../../Downloads/55656.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>52</x>
+      <y>56</y>
+      <width>895</width>
+      <height>600</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>1000</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0);
 border: none;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>978</width>
-         <height>690</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>895</width>
+       <height>600</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QLineEdit" name="lineEdit_class">
-            <property name="styleSheet">
-             <string notr="true">    border: 1px solid gray;
+         <widget class="QLineEdit" name="lineEdit_class">
+          <property name="styleSheet">
+           <string notr="true">    border: 1px solid gray;
 
 background-color: white;
 color: rgb(0, 0, 90);
@@ -70,121 +102,187 @@ font: 2000 18pt &quot;Cambria&quot;;
     border-bottom-right-radius: 0px;
     padding: 10px;
 </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="tableWidget_grade">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>550</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QTableWidget {
-    gridline-color: #000000; /* Màu đường kẻ */
-    font: 5000 12px &quot;Arial&quot;; /* Kích thước chữ */
-	background-color: rgb(255,255,255);
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidget_grade">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>550</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">/* === Bảng chính (QTableWidget) === */
+QTableWidget {
+    gridline-color: #000000; /* Màu đường kẻ ô */
+    font: 2000 12px &quot;Arial&quot;; /* Kích thước chữ */
+    background-color: white; /* Nền trắng */
+    border: none; /* Xóa viền thừa */
+    border-bottom-left-radius: 20px;  /* Bo góc dưới */
+    border-bottom-right-radius: 20px;
 }
 
+/* === Header (Dòng tiêu đề) === */
 QHeaderView::section {
     background-color: navy; /* Màu nền tiêu đề */
     color: white; /* Màu chữ tiêu đề */
-    border: 1px solid white;
-    font: 5000 12px &quot;Arial&quot;; /* Kích thước chữ */
+    border: 1px solid white; /* Viền trắng để tách cột */
+    font: 2000 12px &quot;Arial&quot;;
+    padding: 6px; /* Khoảng cách chữ trong header */
+}
 
+/* === Thanh cuộn dọc === */
+QTableWidget::verticalScrollBar {
+    width: 6px;  /* Độ rộng nhỏ hơn */
+	padding: 2px;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: transparent;
+    width: 6px;  /* Làm thanh nhỏ */
+    margin: 15px 0px 15px 0px; /* Tạo khoảng cách với mép */
+}
+
+/* Thanh trượt (cái phần kéo được) */
+QScrollBar::handle:vertical {
+    background: #909090;  /* Màu trung tính */
+    min-height: 30px;  /* Đảm bảo không quá nhỏ */
+    border-radius: 3px;  /* Bo góc */
+}
+
+/* Khi hover vào thanh kéo */
+QScrollBar::handle:vertical:hover {
+    background: #707070; /* Đổi màu tối hơn chút */
+}
+
+/* Ẩn nút mũi tên trên/dưới */
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+    height: 0px;
+}
+
+/* === Thanh cuộn ngang === */
+QTableWidget::horizontalScrollBar {
+    height: 6px;  /* Mỏng hơn */
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: transparent;
+    height: 6px;  
+    margin: 0px 15px 0px 15px;
+}
+
+/* Thanh trượt ngang */
+QScrollBar::handle:horizontal {
+    background: #909090;
+    min-width: 30px;
+    border-radius: 3px;
+	padding: 3px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background: #707070;
+}
+
+/* Ẩn góc giao giữa 2 thanh kéo */
+QScrollBar::corner {
+    background: transparent;
+    border: none;
 }
 </string>
-            </property>
-            <attribute name="horizontalHeaderDefaultSectionSize">
-             <number>155</number>
-            </attribute>
-            <attribute name="horizontalHeaderMinimumSectionSize">
-             <number>50</number>
-            </attribute>
-            <attribute name="verticalHeaderDefaultSectionSize">
-             <number>30</number>
-            </attribute>
-            <attribute name="verticalHeaderMinimumSectionSize">
-             <number>50</number>
-            </attribute>
-            <column>
-             <property name="text">
-              <string>ID STUDENT</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>FULLNAME</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>FORMATIVE SCORE 1</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>FORMATIVE SCORE 2</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>MIDTERM</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>FINALTERM</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>AVERAGE</string>
-             </property>
-            </column>
-           </widget>
-          </item>
+          </property>
+          <attribute name="horizontalHeaderDefaultSectionSize">
+           <number>155</number>
+          </attribute>
+          <attribute name="horizontalHeaderMinimumSectionSize">
+           <number>50</number>
+          </attribute>
+          <attribute name="verticalHeaderDefaultSectionSize">
+           <number>30</number>
+          </attribute>
+          <attribute name="verticalHeaderMinimumSectionSize">
+           <number>50</number>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>ID STUDENT</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>FULLNAME</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>FORMATIVE SCORE 1</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>FORMATIVE SCORE 2</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>MIDTERM</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>FINALTERM</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>AVERAGE</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
-            <property name="spacing">
-             <number>5</number>
+           <widget class="QPushButton" name="pushButton_home">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="leftMargin">
-             <number>0</number>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
             </property>
-            <property name="topMargin">
-             <number>0</number>
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>60</height>
+             </size>
             </property>
-            <item>
-             <widget class="QPushButton" name="pushButton_home">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                <horstretch>1</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>300</width>
-                <height>60</height>
-               </size>
-              </property>
-              <property name="sizeIncrement">
-               <size>
-                <width>0</width>
-                <height>500</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>500</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
     color: rgb(255,255,255); /* Màu chữ trắng */
@@ -207,28 +305,28 @@ QPushButton:pressed {
 	color: rgb(255,255,255);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
-              </property>
-              <property name="text">
-               <string>HOME</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_save">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>1000</width>
-                <height>60</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
+            </property>
+            <property name="text">
+             <string>HOME</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_save">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>1000</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */
     color: rgb(0, 85, 0); /* Màu chữ trắng */
@@ -251,34 +349,34 @@ QPushButton:pressed {
 	color: rgb(255,255,255);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
-              </property>
-              <property name="text">
-               <string>SAVE</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton_logout">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-                <horstretch>1</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>50</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>300</width>
-                <height>60</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton {
+            </property>
+            <property name="text">
+             <string>SAVE</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_logout">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+              <horstretch>1</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>300</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
     color: rgb(0,0,90); /* Màu chữ trắng */
@@ -301,27 +399,25 @@ QPushButton:pressed {
 	color: rgb(255,255,255);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
-              </property>
-              <property name="text">
-               <string>LOGOUT</string>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>50</width>
-                <height>20</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-           </layout>
+            </property>
+            <property name="text">
+             <string>LOGOUT</string>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>50</width>
+              <height>20</height>
+             </size>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
        </layout>
-      </widget>
-     </widget>
-    </item>
-   </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>
