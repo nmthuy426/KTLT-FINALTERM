@@ -278,5 +278,19 @@
         "advisor": "TS. Lê Văn U",
         "registered_classes": [],
         "grades": {}
+    },
+    {
+        "user_id": "K24411181",
+        "fullname": "Ngô Minh Thùy",
+        "birthday": "1/1/2000",
+        "gender": "Male",
+        "email": "thùynm@st.uel.edu.vn",
+        "password": "12345",
+        "student_class": "K24411E",
+        "major": "Thương mại điện tử",
+        "course": "2024",
+        "advisor": "Trần Thị B",
+        "registered_classes": [],
+        "grades": {}
     }
 ]
