@@ -41,7 +41,8 @@ class Ui_AdminManagement(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png"))
+        self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(parent=self.centralwidget)
         self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1000, 712))
@@ -102,6 +103,250 @@ class Ui_AdminManagement(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
+        self.groupBox_InfoTeacher = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget)
+        self.groupBox_InfoTeacher.setMinimumSize(QtCore.QSize(0, 0))
+        self.groupBox_InfoTeacher.setMaximumSize(QtCore.QSize(16777215, 300))
+        self.groupBox_InfoTeacher.setStyleSheet("font: 2000 12pt \"Arial\";\n"
+"color: rgb(0,0,90);")
+        self.groupBox_InfoTeacher.setObjectName("groupBox_InfoTeacher")
+        self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 351, 261))
+        self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setSpacing(7)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.lineEdit_TeaId = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_TeaId.sizePolicy().hasHeightForWidth())
+        self.lineEdit_TeaId.setSizePolicy(sizePolicy)
+        self.lineEdit_TeaId.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_TeaId.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_TeaId.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_TeaId.setObjectName("lineEdit_TeaId")
+        self.verticalLayout_7.addWidget(self.lineEdit_TeaId)
+        self.lineEdit_TeaFullname = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_TeaFullname.sizePolicy().hasHeightForWidth())
+        self.lineEdit_TeaFullname.setSizePolicy(sizePolicy)
+        self.lineEdit_TeaFullname.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_TeaFullname.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_TeaFullname.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_TeaFullname.setObjectName("lineEdit_TeaFullname")
+        self.verticalLayout_7.addWidget(self.lineEdit_TeaFullname)
+        self.dateEdit_TeaBir = QtWidgets.QDateEdit(parent=self.verticalLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.dateEdit_TeaBir.sizePolicy().hasHeightForWidth())
+        self.dateEdit_TeaBir.setSizePolicy(sizePolicy)
+        self.dateEdit_TeaBir.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.dateEdit_TeaBir.setSizeIncrement(QtCore.QSize(0, 10))
+        self.dateEdit_TeaBir.setStyleSheet("QDateEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}\n"
+"\n"
+"QDateEdit::up-button {\n"
+"    image: url(image/up-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    border: none;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right; /* Giữ vị trí */\n"
+"    margin-right: 10px; /* Giảm khoảng cách */\n"
+"    margin-top: 6px;\n"
+"}\n"
+"\n"
+"QDateEdit::down-button {\n"
+"    image: url(image/down-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    border: none;\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: bottom right; /* Giữ vị trí */\n"
+"    margin-right: 10px; /* Giảm khoảng cách */\n"
+"    margin-bottom: 6px;\n"
+"}\n"
+"\n"
+"QDateEdit::drop-down {\n"
+"    border: none;\n"
+"} \n"
+"")
+        self.dateEdit_TeaBir.setObjectName("dateEdit_TeaBir")
+        self.verticalLayout_7.addWidget(self.dateEdit_TeaBir)
+        self.comboBox_TeaGender = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_5)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.comboBox_TeaGender.sizePolicy().hasHeightForWidth())
+        self.comboBox_TeaGender.setSizePolicy(sizePolicy)
+        self.comboBox_TeaGender.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.comboBox_TeaGender.setSizeIncrement(QtCore.QSize(0, 10))
+        self.comboBox_TeaGender.setStyleSheet("QComboBox {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo tròn cả 4 góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 30px; /* Chừa khoảng trống bên phải */\n"
+"}\n"
+"\n"
+"/* Ẩn nền của nút dropdown để bo góc phải */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    background: transparent; /* Để nền trong suốt */\n"
+"    width: 25px;\n"
+"    subcontrol-position: right center;\n"
+"}\n"
+"\n"
+"/* Tạo nền bo góc cho dropdown */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(image/down-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"")
+        self.comboBox_TeaGender.setObjectName("comboBox_TeaGender")
+        self.comboBox_TeaGender.addItem("")
+        self.comboBox_TeaGender.addItem("")
+        self.verticalLayout_7.addWidget(self.comboBox_TeaGender)
+        self.verticalLayoutWidget_7 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
+        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(10, 30, 121, 261))
+        self.verticalLayoutWidget_7.setObjectName("verticalLayoutWidget_7")
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_7)
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setSpacing(7)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.label_8 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
+        self.label_8.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_8.setObjectName("label_8")
+        self.verticalLayout_9.addWidget(self.label_8)
+        self.label_9 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
+        self.label_9.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_9.setObjectName("label_9")
+        self.verticalLayout_9.addWidget(self.label_9)
+        self.label_10 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
+        self.label_10.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_10.setObjectName("label_10")
+        self.verticalLayout_9.addWidget(self.label_10)
+        self.label_11 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
+        self.label_11.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_11.setObjectName("label_11")
+        self.verticalLayout_9.addWidget(self.label_11)
+        self.verticalLayoutWidget_10 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
+        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(510, 30, 81, 191))
+        self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12.setSpacing(7)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.label_18 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
+        self.label_18.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_18.setObjectName("label_18")
+        self.verticalLayout_12.addWidget(self.label_18)
+        self.label_19 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
+        self.label_19.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_19.setObjectName("label_19")
+        self.verticalLayout_12.addWidget(self.label_19)
+        self.label_20 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
+        self.label_20.setStyleSheet("font: 1000 10pt \"Cambria\";")
+        self.label_20.setObjectName("label_20")
+        self.verticalLayout_12.addWidget(self.label_20)
+        self.verticalLayoutWidget_11 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
+        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 371, 261))
+        self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_13.setSpacing(7)
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.lineEdit_TeaMail = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_TeaMail.sizePolicy().hasHeightForWidth())
+        self.lineEdit_TeaMail.setSizePolicy(sizePolicy)
+        self.lineEdit_TeaMail.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_TeaMail.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_TeaMail.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_TeaMail.setObjectName("lineEdit_TeaMail")
+        self.verticalLayout_13.addWidget(self.lineEdit_TeaMail)
+        self.lineEdit_TeaFaculty = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_TeaFaculty.sizePolicy().hasHeightForWidth())
+        self.lineEdit_TeaFaculty.setSizePolicy(sizePolicy)
+        self.lineEdit_TeaFaculty.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_TeaFaculty.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_TeaFaculty.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_TeaFaculty.setObjectName("lineEdit_TeaFaculty")
+        self.verticalLayout_13.addWidget(self.lineEdit_TeaFaculty)
+        self.lineEdit_TeaClass = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_TeaClass.sizePolicy().hasHeightForWidth())
+        self.lineEdit_TeaClass.setSizePolicy(sizePolicy)
+        self.lineEdit_TeaClass.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.lineEdit_TeaClass.setSizeIncrement(QtCore.QSize(0, 10))
+        self.lineEdit_TeaClass.setStyleSheet("QLineEdit {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
+"}")
+        self.lineEdit_TeaClass.setObjectName("lineEdit_TeaClass")
+        self.verticalLayout_13.addWidget(self.lineEdit_TeaClass)
+        self.pushButton_TeaAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_11)
+        self.pushButton_TeaAddInfo.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_TeaAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_TeaAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
+"border-radius: 15px;\n"
+"background-color: rgb(0,0,90);\n"
+"font: 2000 12pt \"Arial\";")
+        self.pushButton_TeaAddInfo.setObjectName("pushButton_TeaAddInfo")
+        self.verticalLayout_13.addWidget(self.pushButton_TeaAddInfo)
+        self.verticalLayout.addWidget(self.groupBox_InfoTeacher)
         self.groupBox_InfoStudent = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget)
         self.groupBox_InfoStudent.setMinimumSize(QtCore.QSize(0, 300))
         self.groupBox_InfoStudent.setMaximumSize(QtCore.QSize(16777215, 500))
@@ -276,7 +521,7 @@ class Ui_AdminManagement(object):
         self.label_3.setObjectName("label_3")
         self.verticalLayout_8.addWidget(self.label_3)
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 321, 271))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 321, 281))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -292,152 +537,10 @@ class Ui_AdminManagement(object):
 "}")
         self.LineEdit_StuCourse.setObjectName("LineEdit_StuCourse")
         self.verticalLayout_3.addWidget(self.LineEdit_StuCourse)
-        self.LineEdit_StuMajor = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_3)
-        self.LineEdit_StuMajor.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.LineEdit_StuMajor.setObjectName("LineEdit_StuMajor")
-        self.verticalLayout_3.addWidget(self.LineEdit_StuMajor)
-        self.LineEdit_StuClass = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_3)
-        self.LineEdit_StuClass.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.LineEdit_StuClass.setObjectName("LineEdit_StuClass")
-        self.verticalLayout_3.addWidget(self.LineEdit_StuClass)
-        self.LineEdit_StuAdvisor = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_3)
-        self.LineEdit_StuAdvisor.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.LineEdit_StuAdvisor.setObjectName("LineEdit_StuAdvisor")
-        self.verticalLayout_3.addWidget(self.LineEdit_StuAdvisor)
-        self.pushButton_StuAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_3)
-        self.pushButton_StuAddInfo.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton_StuAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_StuAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
-"border-radius: 15px;\n"
-"background-color: rgb(0,0,90);\n"
-"font: 2000 12pt \"Arial\";")
-        self.pushButton_StuAddInfo.setObjectName("pushButton_StuAddInfo")
-        self.verticalLayout_3.addWidget(self.pushButton_StuAddInfo)
-        self.verticalLayout.addWidget(self.groupBox_InfoStudent)
-        self.groupBox_InfoTeacher = QtWidgets.QGroupBox(parent=self.verticalLayoutWidget)
-        self.groupBox_InfoTeacher.setMinimumSize(QtCore.QSize(0, 0))
-        self.groupBox_InfoTeacher.setMaximumSize(QtCore.QSize(16777215, 300))
-        self.groupBox_InfoTeacher.setStyleSheet("font: 2000 12pt \"Arial\";\n"
-"color: rgb(0,0,90);")
-        self.groupBox_InfoTeacher.setObjectName("groupBox_InfoTeacher")
-        self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 351, 261))
-        self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
-        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_7.setSpacing(7)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.lineEdit_TeaId = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_TeaId.sizePolicy().hasHeightForWidth())
-        self.lineEdit_TeaId.setSizePolicy(sizePolicy)
-        self.lineEdit_TeaId.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.lineEdit_TeaId.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_TeaId.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_TeaId.setObjectName("lineEdit_TeaId")
-        self.verticalLayout_7.addWidget(self.lineEdit_TeaId)
-        self.lineEdit_TeaFullname = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_TeaFullname.sizePolicy().hasHeightForWidth())
-        self.lineEdit_TeaFullname.setSizePolicy(sizePolicy)
-        self.lineEdit_TeaFullname.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.lineEdit_TeaFullname.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_TeaFullname.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_TeaFullname.setObjectName("lineEdit_TeaFullname")
-        self.verticalLayout_7.addWidget(self.lineEdit_TeaFullname)
-        self.dateEdit_TeaBir = QtWidgets.QDateEdit(parent=self.verticalLayoutWidget_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.dateEdit_TeaBir.sizePolicy().hasHeightForWidth())
-        self.dateEdit_TeaBir.setSizePolicy(sizePolicy)
-        self.dateEdit_TeaBir.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.dateEdit_TeaBir.setSizeIncrement(QtCore.QSize(0, 10))
-        self.dateEdit_TeaBir.setStyleSheet("QDateEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}\n"
-"\n"
-"QDateEdit::up-button {\n"
-"    image: url(image/up-arrow.png);\n"
-"    width: 10px;\n"
-"    height: 12px;\n"
-"    border: none;\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right; /* Giữ vị trí */\n"
-"    margin-right: 10px; /* Giảm khoảng cách */\n"
-"    margin-top: 6px;\n"
-"}\n"
-"\n"
-"QDateEdit::down-button {\n"
-"    image: url(image/down-arrow.png);\n"
-"    width: 10px;\n"
-"    height: 12px;\n"
-"    border: none;\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: bottom right; /* Giữ vị trí */\n"
-"    margin-right: 10px; /* Giảm khoảng cách */\n"
-"    margin-bottom: 6px;\n"
-"}\n"
-"\n"
-"QDateEdit::drop-down {\n"
-"    border: none;\n"
-"} \n"
-"")
-        self.dateEdit_TeaBir.setObjectName("dateEdit_TeaBir")
-        self.verticalLayout_7.addWidget(self.dateEdit_TeaBir)
-        self.comboBox_TeaGender = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.comboBox_TeaGender.sizePolicy().hasHeightForWidth())
-        self.comboBox_TeaGender.setSizePolicy(sizePolicy)
-        self.comboBox_TeaGender.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.comboBox_TeaGender.setSizeIncrement(QtCore.QSize(0, 10))
-        self.comboBox_TeaGender.setStyleSheet("QComboBox {\n"
+        self.comboBox_StuMajor = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_3)
+        self.comboBox_StuMajor.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.comboBox_StuMajor.setSizeIncrement(QtCore.QSize(0, 10))
+        self.comboBox_StuMajor.setStyleSheet("QComboBox {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 15px; /* Bo tròn cả 4 góc */\n"
 "    padding: 10px;\n"
@@ -462,68 +565,44 @@ class Ui_AdminManagement(object):
 "    margin-right: 5px;\n"
 "}\n"
 "")
-        self.comboBox_TeaGender.setObjectName("comboBox_TeaGender")
-        self.comboBox_TeaGender.addItem("")
-        self.comboBox_TeaGender.addItem("")
-        self.verticalLayout_7.addWidget(self.comboBox_TeaGender)
-        self.verticalLayoutWidget_7 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(10, 30, 121, 261))
-        self.verticalLayoutWidget_7.setObjectName("verticalLayoutWidget_7")
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_7)
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_9.setSpacing(7)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.label_8 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
-        self.label_8.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_8.setObjectName("label_8")
-        self.verticalLayout_9.addWidget(self.label_8)
-        self.label_9 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
-        self.label_9.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_9.setObjectName("label_9")
-        self.verticalLayout_9.addWidget(self.label_9)
-        self.label_10 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
-        self.label_10.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_10.setObjectName("label_10")
-        self.verticalLayout_9.addWidget(self.label_10)
-        self.label_11 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_7)
-        self.label_11.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_11.setObjectName("label_11")
-        self.verticalLayout_9.addWidget(self.label_11)
-        self.verticalLayoutWidget_10 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(510, 30, 81, 201))
-        self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
-        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_12.setSpacing(7)
-        self.verticalLayout_12.setObjectName("verticalLayout_12")
-        self.label_18 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
-        self.label_18.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_18.setObjectName("label_18")
-        self.verticalLayout_12.addWidget(self.label_18)
-        self.label_19 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
-        self.label_19.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_19.setObjectName("label_19")
-        self.verticalLayout_12.addWidget(self.label_19)
-        self.label_20 = QtWidgets.QLabel(parent=self.verticalLayoutWidget_10)
-        self.label_20.setStyleSheet("font: 1000 10pt \"Cambria\";")
-        self.label_20.setObjectName("label_20")
-        self.verticalLayout_12.addWidget(self.label_20)
-        self.verticalLayoutWidget_11 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 371, 261))
-        self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_13.setSpacing(7)
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
-        self.lineEdit_TeaMail = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_TeaMail.sizePolicy().hasHeightForWidth())
-        self.lineEdit_TeaMail.setSizePolicy(sizePolicy)
-        self.lineEdit_TeaMail.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.lineEdit_TeaMail.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_TeaMail.setStyleSheet("QLineEdit {\n"
+        self.comboBox_StuMajor.setObjectName("comboBox_StuMajor")
+        self.comboBox_StuMajor.addItem("")
+        self.comboBox_StuMajor.addItem("")
+        self.comboBox_StuMajor.addItem("")
+        self.comboBox_StuMajor.addItem("")
+        self.verticalLayout_3.addWidget(self.comboBox_StuMajor)
+        self.comboBox_StuClass = QtWidgets.QComboBox(parent=self.verticalLayoutWidget_3)
+        self.comboBox_StuClass.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.comboBox_StuClass.setSizeIncrement(QtCore.QSize(0, 10))
+        self.comboBox_StuClass.setStyleSheet("QComboBox {\n"
+"    border: 1px solid gray;\n"
+"    border-radius: 15px; /* Bo tròn cả 4 góc */\n"
+"    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 30px; /* Chừa khoảng trống bên phải */\n"
+"}\n"
+"\n"
+"/* Ẩn nền của nút dropdown để bo góc phải */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    background: transparent; /* Để nền trong suốt */\n"
+"    width: 25px;\n"
+"    subcontrol-position: right center;\n"
+"}\n"
+"\n"
+"/* Tạo nền bo góc cho dropdown */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(image/down-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"")
+        self.comboBox_StuClass.setObjectName("comboBox_StuClass")
+        self.verticalLayout_3.addWidget(self.comboBox_StuClass)
+        self.LineEdit_StuAdvisor = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_3)
+        self.LineEdit_StuAdvisor.setStyleSheet("QLineEdit {\n"
 "    border: 1px solid gray;\n"
 "    border-radius: 15px; /* Bo góc */\n"
 "    padding: 10px;\n"
@@ -531,54 +610,18 @@ class Ui_AdminManagement(object):
 "    background: white;\n"
 "    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
 "}")
-        self.lineEdit_TeaMail.setObjectName("lineEdit_TeaMail")
-        self.verticalLayout_13.addWidget(self.lineEdit_TeaMail)
-        self.lineEdit_TeaFaculty = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_TeaFaculty.sizePolicy().hasHeightForWidth())
-        self.lineEdit_TeaFaculty.setSizePolicy(sizePolicy)
-        self.lineEdit_TeaFaculty.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.lineEdit_TeaFaculty.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_TeaFaculty.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_TeaFaculty.setObjectName("lineEdit_TeaFaculty")
-        self.verticalLayout_13.addWidget(self.lineEdit_TeaFaculty)
-        self.lineEdit_TeaClass = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget_11)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_TeaClass.sizePolicy().hasHeightForWidth())
-        self.lineEdit_TeaClass.setSizePolicy(sizePolicy)
-        self.lineEdit_TeaClass.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.lineEdit_TeaClass.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_TeaClass.setStyleSheet("QLineEdit {\n"
-"    border: 1px solid gray;\n"
-"    border-radius: 15px; /* Bo góc */\n"
-"    padding: 10px;\n"
-"    font: 500 15px \"Cambria\";\n"
-"    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_TeaClass.setObjectName("lineEdit_TeaClass")
-        self.verticalLayout_13.addWidget(self.lineEdit_TeaClass)
-        self.pushButton_TeaAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_11)
-        self.pushButton_TeaAddInfo.setMinimumSize(QtCore.QSize(0, 40))
-        self.pushButton_TeaAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_TeaAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
+        self.LineEdit_StuAdvisor.setObjectName("LineEdit_StuAdvisor")
+        self.verticalLayout_3.addWidget(self.LineEdit_StuAdvisor)
+        self.pushButton_StuAddInfo = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_3)
+        self.pushButton_StuAddInfo.setMinimumSize(QtCore.QSize(0, 40))
+        self.pushButton_StuAddInfo.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_StuAddInfo.setStyleSheet("color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "background-color: rgb(0,0,90);\n"
 "font: 2000 12pt \"Arial\";")
-        self.pushButton_TeaAddInfo.setObjectName("pushButton_TeaAddInfo")
-        self.verticalLayout_13.addWidget(self.pushButton_TeaAddInfo)
-        self.verticalLayout.addWidget(self.groupBox_InfoTeacher)
+        self.pushButton_StuAddInfo.setObjectName("pushButton_StuAddInfo")
+        self.verticalLayout_3.addWidget(self.pushButton_StuAddInfo)
+        self.verticalLayout.addWidget(self.groupBox_InfoStudent)
         self.tabWidget.addTab(self.tab_ManageAccounts, "")
         self.tab_ListAccounts = QtWidgets.QWidget()
         self.tab_ListAccounts.setObjectName("tab_ListAccounts")
@@ -680,6 +723,17 @@ class Ui_AdminManagement(object):
     def retranslateUi(self, AdminManagement):
         _translate = QtCore.QCoreApplication.translate
         AdminManagement.setWindowTitle(_translate("AdminManagement", "Admin Management"))
+        self.groupBox_InfoTeacher.setTitle(_translate("AdminManagement", "TEACHER"))
+        self.comboBox_TeaGender.setItemText(0, _translate("AdminManagement", "Male"))
+        self.comboBox_TeaGender.setItemText(1, _translate("AdminManagement", "Female"))
+        self.label_8.setText(_translate("AdminManagement", "Teacher ID:"))
+        self.label_9.setText(_translate("AdminManagement", "Full Name:"))
+        self.label_10.setText(_translate("AdminManagement", "Birthday:"))
+        self.label_11.setText(_translate("AdminManagement", "Gender:"))
+        self.label_18.setText(_translate("AdminManagement", "Email:"))
+        self.label_19.setText(_translate("AdminManagement", "Faculty:"))
+        self.label_20.setText(_translate("AdminManagement", "Class:"))
+        self.pushButton_TeaAddInfo.setText(_translate("AdminManagement", "ADD TEACHER"))
         self.groupBox_InfoStudent.setTitle(_translate("AdminManagement", "STUDENT"))
         self.khAHCLabel.setText(_translate("AdminManagement", "Course:"))
         self.ngNhLabel.setText(_translate("AdminManagement", "Major:"))
@@ -692,18 +746,11 @@ class Ui_AdminManagement(object):
         self.label_4.setText(_translate("AdminManagement", "Birthday:"))
         self.label_7.setText(_translate("AdminManagement", "Gender:"))
         self.label_3.setText(_translate("AdminManagement", "Email:"))
+        self.comboBox_StuMajor.setItemText(0, _translate("AdminManagement", "Thương Mại Điện Tử"))
+        self.comboBox_StuMajor.setItemText(1, _translate("AdminManagement", "Thương Mại Điện Tử (tiếng anh)"))
+        self.comboBox_StuMajor.setItemText(2, _translate("AdminManagement", "Hệ Thống Thông Tin Quản Lý"))
+        self.comboBox_StuMajor.setItemText(3, _translate("AdminManagement", "Kinh Doanh Số và Trí Tuệ Nhân Tạo"))
         self.pushButton_StuAddInfo.setText(_translate("AdminManagement", "ADD STUDENT"))
-        self.groupBox_InfoTeacher.setTitle(_translate("AdminManagement", "TEACHER"))
-        self.comboBox_TeaGender.setItemText(0, _translate("AdminManagement", "Male"))
-        self.comboBox_TeaGender.setItemText(1, _translate("AdminManagement", "Female"))
-        self.label_8.setText(_translate("AdminManagement", "Teacher ID:"))
-        self.label_9.setText(_translate("AdminManagement", "Full Name:"))
-        self.label_10.setText(_translate("AdminManagement", "Birthday:"))
-        self.label_11.setText(_translate("AdminManagement", "Gender:"))
-        self.label_18.setText(_translate("AdminManagement", "Email:"))
-        self.label_19.setText(_translate("AdminManagement", "Faculty:"))
-        self.label_20.setText(_translate("AdminManagement", "Class:"))
-        self.pushButton_TeaAddInfo.setText(_translate("AdminManagement", "ADD TEACHER"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageAccounts), _translate("AdminManagement", "CREATE ACCOUNTS"))
         self.groupBox_3.setTitle(_translate("AdminManagement", "STUDENT"))
         self.groupBox_4.setTitle(_translate("AdminManagement", "TEACHER"))

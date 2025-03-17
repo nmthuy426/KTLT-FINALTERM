@@ -1,63 +1,84 @@
 from PyQt6.QtWidgets import QMessageBox, QMainWindow
-from PyQt6.QtCore import pyqtSlot
+from PyQt6.QtCore import Qt
 from libs.DataConnector import DataConnector
-from ui.Student.StudentMainWindow import Ui_MainWindow as StudentMainWindow  # Import UI Student
-from ui.Teacher.TeacherMainWindow import Ui_MainWindow as TeacherMainWindow  # Import UI Teacher
-from ui.LoginMainWindow.LoginMainWindow import Ui_MainWindow  # Import UI của màn hình đăng nhập
+from ui.Student.StudentMainWindow import Ui_MainWindow as StudentMainWindow  # UI Student
+from ui.Teacher.TeacherMainWindow import Ui_MainWindow as TeacherMainWindow  # UI Teacher
+from ui.LoginMainWindow.LoginMainWindow import Ui_MainWindow  # UI Login
 
 
-class LoginMainWindowEx(QMainWindow):
+class LoginMainWindowExt(Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()  # Khởi tạo giao diện
-        self.ui.setupUi(self)  # Gắn giao diện vào cửa sổ chính
+        self.MainWindow = None
+        self.student_window = None  # Giữ tham chiếu cửa sổ sinh viên
+        self.teacher_window = None  # Giữ tham chiếu cửa sổ giáo viên
         self.data_connector = DataConnector()  # Kết nối database
 
-        # Kết nối nút đăng nhập với hàm xử lý
-        self.ui.pushButton_Login.clicked.connect(self.process_login)
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        self.setupSignalAndSlot()
 
-    @pyqtSlot()
+    def showWindow(self):
+        self.MainWindow.show()
+
+    def setupSignalAndSlot(self):
+        self.pushButton_Login.clicked.connect(self.process_login)
+        self.pushButton_ForgetPassword.clicked.connect(self.forgetpassword)
+
+    def forgetpassword(self):
+        QMessageBox.information(self.MainWindow, "Quên mật khẩu", "Chức năng này đang được phát triển.")
+
     def process_login(self):
         """Xử lý đăng nhập"""
-        email = self.ui.lineEdit_username.text().strip()
-        password = self.ui.lineEdit_password.text().strip()
+        email = self.lineEdit_username.text().strip()
+        password = self.lineEdit_password.text().strip()
 
         print(f"📌 [DEBUG] Email nhập: {email}, Password nhập: {password}")  # Debug
 
-        # Kiểm tra xem user có nhập dữ liệu không
         if not email or not password:
             print("⚠️ [DEBUG] Thiếu email hoặc password!")
-            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập Email và Mật khẩu!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Vui lòng nhập Email và Mật khẩu!")
             return
 
         role, user_info = self.data_connector.login(email, password)  # Kiểm tra đăng nhập
-        print(f"🔍 [DEBUG] Role nhận được: {role}, User Info: {user_info}")  # Debug dữ liệu từ DB
+        print(f"🔍 [DEBUG] Role nhận được: {role}, User Info: {user_info}")  # Debug
+
+        if user_info is None:
+            print("❌ [DEBUG] Không lấy được thông tin user!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Thông tin đăng nhập không hợp lệ!")
+            return
 
         if role in ["student", "teacher"]:
-            QMessageBox.information(self, "Đăng nhập thành công",
+            QMessageBox.information(self.MainWindow, "Đăng nhập thành công",
                                     f"Xin chào {getattr(user_info, 'fullname', 'Người dùng')}!")
 
             self.open_user_interface(role, user_info)
         else:
-            QMessageBox.warning(self, "Đăng nhập thất bại", "Sai Email hoặc Mật khẩu.")
+            QMessageBox.warning(self.MainWindow, "Đăng nhập thất bại", "Sai Email hoặc Mật khẩu.")
 
     def open_user_interface(self, role, user):
         """Mở giao diện theo vai trò"""
-        if role == "student":
-            print(f"📌 Mở giao diện học sinh: {getattr(user, 'fullname', 'Không có tên')}")
+        fullname = getattr(user, 'fullname', 'Không có tên')
+        print(f"📌 Mở giao diện {role}: {fullname}")
 
-            self.student_window = QMainWindow()  # Tạo cửa sổ mới
-            self.student_ui = StudentMainWindow()
-            self.student_ui.setupUi(self.student_window)
+        if role == "student":
+            if self.student_window is None:
+                self.student_window = QMainWindow()
+                self.student_ui = StudentMainWindow()
+                self.student_ui.setupUi(self.student_window)
+                self.student_window.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose, False)
+
             self.student_window.show()
-            self.student_window.activateWindow()  # Đảm bảo cửa sổ được kích hoạt
+            self.student_window.activateWindow()
 
         elif role == "teacher":
-            print(f"📌 Mở giao diện giáo viên: {getattr(user, 'fullname', 'Không có tên')}")
-            self.teacher_window = QMainWindow()
-            self.teacher_ui = TeacherMainWindow()
-            self.teacher_ui.setupUi(self.teacher_window)
+            if self.teacher_window is None:
+                self.teacher_window = QMainWindow()
+                self.teacher_ui = TeacherMainWindow()
+                self.teacher_ui.setupUi(self.teacher_window)
+
             self.teacher_window.show()
             self.teacher_window.activateWindow()
 
-        self.close()  # Ẩn cửa sổ đăng nhập thay vì đóng luôn
+        self.MainWindow.close()  # Ẩn cửa sổ đăng nhập thay vì đóng hẳn

@@ -10,9 +10,6 @@ class TeacherMainWindowExt(Ui_MainWindow):
         MainWindow.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
-        MainWindow.setStyleSheet("""
-            background-color: rgba(0,32,96,150);
-        """)
 
     def showWindow(self):
         self.MainWindow.show()

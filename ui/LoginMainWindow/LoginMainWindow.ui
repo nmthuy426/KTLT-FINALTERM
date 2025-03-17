@@ -33,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png</pixmap>
+     <pixmap>D:/Documents/KTLT/FinalTerm/image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -148,7 +148,8 @@ QPushButton:pressed {
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 255, 255,0);
 font: 2000 10pt &quot;Arial Rounded MT Bold&quot;;
-color: rgb(255,255,255)</string>
+color: rgb(255,255,255);
+border:none;</string>
     </property>
     <property name="text">
      <string>Forget password?</string>

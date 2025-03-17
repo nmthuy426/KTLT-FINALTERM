@@ -29,7 +29,8 @@ class Ui_MainWindow(object):
 "\n"
 "")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../../../../Downloads/55656.png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../image/55656.png"))
+        self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.scrollArea = QtWidgets.QScrollArea(parent=self.centralwidget)
         self.scrollArea.setGeometry(QtCore.QRect(52, 56, 895, 600))

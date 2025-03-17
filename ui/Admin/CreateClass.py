@@ -16,7 +16,7 @@ class Ui_AddClassDialog(object):
         self.label = QtWidgets.QLabel(parent=AddClassDialog)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=AddClassDialog)

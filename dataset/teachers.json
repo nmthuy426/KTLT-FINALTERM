@@ -2,7 +2,7 @@
     {
         "user_id": "T001",
         "fullname": "Nguyễn Văn A",
-        "birthday": "1980-05-20",
+        "birthday": "20/5/1980",
         "gender": "Male",
         "email": "anv@uel.edu.vn",
         "password": "abc123",
@@ -16,7 +16,7 @@
     {
         "user_id": "T002",
         "fullname": "Trần Thị B",
-        "birthday": "1985-09-12",
+        "birthday": "12/09/1985",
         "gender": "Female",
         "email": "btt@uel.edu.vn",
         "password": "xyz789",

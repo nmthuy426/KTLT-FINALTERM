@@ -24,3 +24,4 @@ class CreateClassExt(Ui_AddClassDialog):
     def setupSignalAndSlot(self):
         self.pushButton_SaveClass.clicked.connect(self.process_save_class)
         self.pushButton_Back.textChanged.connect(self.back_process)
+

@@ -16,7 +16,7 @@ class Ui_Dialog(object):
         self.label = QtWidgets.QLabel(parent=Dialog)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
@@ -59,6 +59,7 @@ class Ui_Dialog(object):
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
 "    border-bottom-left-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
 "    padding: 4px; /* Khoảng cách giữa chữ và viền */\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
 "    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
@@ -76,30 +77,6 @@ class Ui_Dialog(object):
 "}")
         self.pushButton_Home.setObjectName("pushButton_Home")
         self.horizontalLayout.addWidget(self.pushButton_Home)
-        self.pushButton_AssignStudent = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_AssignStudent.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_AssignStudent.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
-"    border-bottom-right-radius: 20px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
-"}")
-        self.pushButton_AssignStudent.setObjectName("pushButton_AssignStudent")
-        self.horizontalLayout.addWidget(self.pushButton_AssignStudent)
         self.verticalLayout.addLayout(self.horizontalLayout)
 
         self.retranslateUi(Dialog)
@@ -110,4 +87,3 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "List of Students"))
         self.label_3.setText(_translate("Dialog", "LIST OF STUDENTS"))
         self.pushButton_Home.setText(_translate("Dialog", "BACK"))
-        self.pushButton_AssignStudent.setText(_translate("Dialog", "SAVE"))

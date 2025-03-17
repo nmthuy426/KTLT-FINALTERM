@@ -1,36 +1,8 @@
 [
     {
         "user_id": "S001",
-        "fullname": "Nguyễn Văn A",
-        "birthday": "2004-01-15",
-        "gender": "Male",
-        "email": "anv@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24411",
-        "major": "Thương mại điện tử",
-        "course": "2024",
-        "advisor": "TS. Nguyễn Văn B",
-        "registered_classes": [],
-        "grades": {}
-    },
-    {
-        "user_id": "S002",
-        "fullname": "Trần Thị B",
-        "birthday": "2004-02-20",
-        "gender": "Female",
-        "email": "btt@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24411E",
-        "major": "Thương mại điện tử",
-        "course": "2024",
-        "advisor": "TS. Lê Văn C",
-        "registered_classes": [],
-        "grades": {}
-    },
-    {
-        "user_id": "S003",
         "fullname": "Lê Văn C",
-        "birthday": "2004-03-10",
+        "birthday": "10/03/2004",
         "gender": "Male",
         "email": "clv@st.uel.edu.vn",
         "password": "12345",
@@ -42,9 +14,9 @@
         "grades": {}
     },
     {
-        "user_id": "S004",
+        "user_id": "S002",
         "fullname": "Phạm Thị D",
-        "birthday": "2004-04-30",
+        "birthday": "30/04/2004",
         "gender": "Female",
         "email": "dpt@st.uel.edu.vn",
         "password": "12345",
@@ -56,9 +28,9 @@
         "grades": {}
     },
     {
-        "user_id": "S005",
+        "user_id": "S003",
         "fullname": "Hoàng Văn E",
-        "birthday": "2004-05-15",
+        "birthday": "15/05/2004",
         "gender": "Male",
         "email": "ehv@st.uel.edu.vn",
         "password": "12345",
@@ -70,9 +42,9 @@
         "grades": {}
     },
     {
-        "user_id": "S006",
+        "user_id": "S004",
         "fullname": "Vũ Thị F",
-        "birthday": "2004-06-25",
+        "birthday": "25/06/2004",
         "gender": "Female",
         "email": "fvt@st.uel.edu.vn",
         "password": "12345",
@@ -84,11 +56,11 @@
         "grades": {}
     },
     {
-        "user_id": "S007",
+        "user_id": "S005",
         "fullname": "Đinh Văn G",
-        "birthday": "2004-07-12",
+        "birthday": "12/07/2004",
         "gender": "Male",
-        "email": "gđv@st.uel.edu.vn",
+        "email": "gdv@st.uel.edu.vn",
         "password": "12345",
         "student_class": "K24416",
         "major": "AI và Trí tuệ nhân tạo",
@@ -98,9 +70,9 @@
         "grades": {}
     },
     {
-        "user_id": "S008",
+        "user_id": "S006",
         "fullname": "Ngô Thị H",
-        "birthday": "2004-08-05",
+        "birthday": "05/08/2004",
         "gender": "Female",
         "email": "hnt@st.uel.edu.vn",
         "password": "12345",
@@ -112,9 +84,9 @@
         "grades": {}
     },
     {
-        "user_id": "S009",
+        "user_id": "S007",
         "fullname": "Bùi Văn I",
-        "birthday": "2004-09-18",
+        "birthday": "18/09/2004",
         "gender": "Male",
         "email": "ibv@st.uel.edu.vn",
         "password": "12345",
@@ -126,9 +98,9 @@
         "grades": {}
     },
     {
-        "user_id": "S010",
+        "user_id": "S008",
         "fullname": "Tạ Thị J",
-        "birthday": "2004-10-22",
+        "birthday": "22/10/2004",
         "gender": "Female",
         "email": "jtt@st.uel.edu.vn",
         "password": "12345",
@@ -140,9 +112,9 @@
         "grades": {}
     },
     {
-        "user_id": "S011",
+        "user_id": "S009",
         "fullname": "Dương Văn K",
-        "birthday": "2004-11-14",
+        "birthday": "14/11/2004",
         "gender": "Male",
         "email": "kdv@st.uel.edu.vn",
         "password": "12345",
@@ -154,9 +126,9 @@
         "grades": {}
     },
     {
-        "user_id": "S012",
+        "user_id": "S010",
         "fullname": "Tống Thị L",
-        "birthday": "2004-12-19",
+        "birthday": "19/12/2004",
         "gender": "Female",
         "email": "ltt@st.uel.edu.vn",
         "password": "12345",
@@ -168,9 +140,9 @@
         "grades": {}
     },
     {
-        "user_id": "S013",
+        "user_id": "S011",
         "fullname": "Chu Văn M",
-        "birthday": "2004-01-27",
+        "birthday": "27/01/2004",
         "gender": "Male",
         "email": "mcv@st.uel.edu.vn",
         "password": "12345",
@@ -182,9 +154,9 @@
         "grades": {}
     },
     {
-        "user_id": "S014",
+        "user_id": "S012",
         "fullname": "Phùng Thị N",
-        "birthday": "2004-02-28",
+        "birthday": "28/02/2004",
         "gender": "Female",
         "email": "npt@st.uel.edu.vn",
         "password": "12345",
@@ -196,9 +168,9 @@
         "grades": {}
     },
     {
-        "user_id": "S015",
+        "user_id": "S013",
         "fullname": "Cao Văn O",
-        "birthday": "2004-03-09",
+        "birthday": "09/03/2004",
         "gender": "Male",
         "email": "ocv@st.uel.edu.vn",
         "password": "12345",
@@ -210,11 +182,11 @@
         "grades": {}
     },
     {
-        "user_id": "S016",
+        "user_id": "S014",
         "fullname": "Đoàn Thị P",
-        "birthday": "2004-04-25",
+        "birthday": "25/04/2004",
         "gender": "Female",
-        "email": "pđt@st.uel.edu.vn",
+        "email": "pdt@st.uel.edu.vn",
         "password": "12345",
         "student_class": "K24406",
         "major": "Hệ thống thông tin quản lý",
@@ -224,9 +196,9 @@
         "grades": {}
     },
     {
-        "user_id": "S017",
+        "user_id": "S015",
         "fullname": "Hà Văn Q",
-        "birthday": "2004-05-30",
+        "birthday": "30/05/2004",
         "gender": "Male",
         "email": "qhv@st.uel.edu.vn",
         "password": "12345",
@@ -238,9 +210,9 @@
         "grades": {}
     },
     {
-        "user_id": "S018",
+        "user_id": "S016",
         "fullname": "Lương Thị R",
-        "birthday": "2004-06-10",
+        "birthday": "10/06/2004",
         "gender": "Female",
         "email": "rlt@st.uel.edu.vn",
         "password": "12345",
@@ -252,9 +224,9 @@
         "grades": {}
     },
     {
-        "user_id": "S019",
+        "user_id": "S017",
         "fullname": "Tô Văn S",
-        "birthday": "2004-07-21",
+        "birthday": "21/07/2004",
         "gender": "Male",
         "email": "stv@st.uel.edu.vn",
         "password": "12345",
@@ -266,9 +238,9 @@
         "grades": {}
     },
     {
-        "user_id": "S020",
+        "user_id": "S018",
         "fullname": "Giang Thị T",
-        "birthday": "2004-08-15",
+        "birthday": "15/08/2004",
         "gender": "Female",
         "email": "tgt@st.uel.edu.vn",
         "password": "12345",
@@ -276,34 +248,6 @@
         "major": "Hệ thống thông tin quản lý",
         "course": "2024",
         "advisor": "TS. Lê Văn U",
-        "registered_classes": [],
-        "grades": {}
-    },
-    {
-        "user_id": "K24411181",
-        "fullname": "Ngô Minh Thùy",
-        "birthday": "1/1/2000",
-        "gender": "Male",
-        "email": "thùynm@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24411E",
-        "major": "Thương mại điện tử",
-        "course": "2024",
-        "advisor": "Trần Thị B",
-        "registered_classes": [],
-        "grades": {}
-    },
-    {
-        "user_id": "k244111473",
-        "fullname": "bùi lê hạnh nguyên",
-        "birthday": "1/1/2000",
-        "gender": "Male",
-        "email": "nguyênblh@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24402",
-        "major": "TMĐT",
-        "course": "1900",
-        "advisor": "Trần Thị B",
         "registered_classes": [],
         "grades": {}
     }

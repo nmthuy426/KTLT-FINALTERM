@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\LoginMainWindow\\../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:/Documents/KTLT/FinalTerm/image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.pushButton_Login = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -80,7 +80,8 @@ class Ui_MainWindow(object):
         self.pushButton_ForgetPassword.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.pushButton_ForgetPassword.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
 "font: 2000 10pt \"Arial Rounded MT Bold\";\n"
-"color: rgb(255,255,255)")
+"color: rgb(255,255,255);\n"
+"border:none;")
         self.pushButton_ForgetPassword.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_ForgetPassword.setObjectName("pushButton_ForgetPassword")
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)

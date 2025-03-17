@@ -5,7 +5,7 @@ from models.Class import Class
 f = open('../dataset/teachers.json', 'r', encoding='utf-8')
 teachers_data = json.load(f)
 f.close()
-
+#gán id qua fullname
 teachers_dict = {}
 for teacher in teachers_data:
     user_id = teacher['user_id']  # Lấy ID của giáo viên

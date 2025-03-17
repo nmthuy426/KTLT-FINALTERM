@@ -4,7 +4,7 @@ from models.User import User
 class Teacher(User):
     def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str,
                  faculty: str, teacher_class: str,
-                 assigned_classes=None,email=None):
+                 assigned_classes=[],email=None):
         super().__init__(user_id, fullname, birthday, gender, password, "teacher")
         self.faculty = faculty  # Khoa của giáo viên
         self.teacher_class = teacher_class  # Lớp phụ trách

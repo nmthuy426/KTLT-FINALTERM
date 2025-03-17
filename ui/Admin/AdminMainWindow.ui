@@ -52,7 +52,10 @@ QPushButton:pressed {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../Downloads/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png</pixmap>
+     <pixmap>../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px)1111.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QTabWidget" name="tabWidget">
@@ -131,6 +134,462 @@ QTabWidget::pane {
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox_InfoTeacher">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>300</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 2000 12pt &quot;Arial&quot;;
+color: rgb(0,0,90);</string>
+         </property>
+         <property name="title">
+          <string>TEACHER</string>
+         </property>
+         <widget class="QWidget" name="verticalLayoutWidget_5">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>30</y>
+            <width>351</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <property name="spacing">
+            <number>7</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_TeaId">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_TeaFullname">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDateEdit" name="dateEdit_TeaBir">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QDateEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}
+
+QDateEdit::up-button {
+    image: url(image/up-arrow.png);
+    width: 10px;
+    height: 12px;
+    border: none;
+    subcontrol-origin: padding;
+    subcontrol-position: top right; /* Giữ vị trí */
+    margin-right: 10px; /* Giảm khoảng cách */
+    margin-top: 6px;
+}
+
+QDateEdit::down-button {
+    image: url(image/down-arrow.png);
+    width: 10px;
+    height: 12px;
+    border: none;
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right; /* Giữ vị trí */
+    margin-right: 10px; /* Giảm khoảng cách */
+    margin-bottom: 6px;
+}
+
+QDateEdit::drop-down {
+    border: none;
+} 
+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="comboBox_TeaGender">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo tròn cả 4 góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 30px; /* Chừa khoảng trống bên phải */
+}
+
+/* Ẩn nền của nút dropdown để bo góc phải */
+QComboBox::drop-down {
+    border: none;
+    background: transparent; /* Để nền trong suốt */
+    width: 25px;
+    subcontrol-position: right center;
+}
+
+/* Tạo nền bo góc cho dropdown */
+QComboBox::down-arrow {
+    image: url(image/down-arrow.png);
+    width: 10px;
+    height: 12px;
+    margin-right: 5px;
+}
+</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>Male</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Female</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_7">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>121</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <property name="spacing">
+            <number>7</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Teacher ID:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_9">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Full Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_10">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Birthday:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Gender:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_10">
+          <property name="geometry">
+           <rect>
+            <x>510</x>
+            <y>30</y>
+            <width>81</width>
+            <height>191</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_12">
+           <property name="spacing">
+            <number>7</number>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Email:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Faculty:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="styleSheet">
+              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
+             </property>
+             <property name="text">
+              <string>Class:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="verticalLayoutWidget_11">
+          <property name="geometry">
+           <rect>
+            <x>600</x>
+            <y>30</y>
+            <width>371</width>
+            <height>261</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_13">
+           <property name="spacing">
+            <number>7</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_TeaMail">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_TeaFaculty">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_TeaClass">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLineEdit {
+    border: 1px solid gray;
+    border-radius: 15px; /* Bo góc */
+    padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 20px; /* Chừa khoảng trống bên phải */
+}</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_TeaAddInfo">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+border-radius: 15px;
+background-color: rgb(0,0,90);
+font: 2000 12pt &quot;Arial&quot;;</string>
+             </property>
+             <property name="text">
+              <string>ADD TEACHER</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
        <item>
         <widget class="QGroupBox" name="groupBox_InfoStudent">
          <property name="minimumSize">
@@ -474,7 +933,7 @@ QComboBox::down-arrow {
             <x>650</x>
             <y>40</y>
             <width>321</width>
-            <height>271</height>
+            <height>281</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -493,30 +952,108 @@ QComboBox::down-arrow {
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LineEdit_StuMajor">
+            <widget class="QComboBox" name="comboBox_StuMajor">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit {
+              <string notr="true">QComboBox {
     border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
+    border-radius: 15px; /* Bo tròn cả 4 góc */
     padding: 10px;
     font: 500 15px &quot;Cambria&quot;;
     background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
+    padding-right: 30px; /* Chừa khoảng trống bên phải */
+}
+
+/* Ẩn nền của nút dropdown để bo góc phải */
+QComboBox::drop-down {
+    border: none;
+    background: transparent; /* Để nền trong suốt */
+    width: 25px;
+    subcontrol-position: right center;
+}
+
+/* Tạo nền bo góc cho dropdown */
+QComboBox::down-arrow {
+    image: url(image/down-arrow.png);
+    width: 10px;
+    height: 12px;
+    margin-right: 5px;
+}
+</string>
              </property>
+             <item>
+              <property name="text">
+               <string>Thương Mại Điện Tử</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Thương Mại Điện Tử (tiếng anh)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Hệ Thống Thông Tin Quản Lý</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Kinh Doanh Số và Trí Tuệ Nhân Tạo</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="LineEdit_StuClass">
+            <widget class="QComboBox" name="comboBox_StuClass">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>40</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>0</width>
+               <height>10</height>
+              </size>
+             </property>
              <property name="styleSheet">
-              <string notr="true">QLineEdit {
+              <string notr="true">QComboBox {
     border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
+    border-radius: 15px; /* Bo tròn cả 4 góc */
     padding: 10px;
     font: 500 15px &quot;Cambria&quot;;
     background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
+    padding-right: 30px; /* Chừa khoảng trống bên phải */
+}
+
+/* Ẩn nền của nút dropdown để bo góc phải */
+QComboBox::drop-down {
+    border: none;
+    background: transparent; /* Để nền trong suốt */
+    width: 25px;
+    subcontrol-position: right center;
+}
+
+/* Tạo nền bo góc cho dropdown */
+QComboBox::down-arrow {
+    image: url(image/down-arrow.png);
+    width: 10px;
+    height: 12px;
+    margin-right: 5px;
+}
+</string>
              </property>
             </widget>
            </item>
@@ -556,462 +1093,6 @@ font: 2000 12pt &quot;Arial&quot;;</string>
              </property>
              <property name="text">
               <string>ADD STUDENT</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </widget>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="groupBox_InfoTeacher">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>300</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 2000 12pt &quot;Arial&quot;;
-color: rgb(0,0,90);</string>
-         </property>
-         <property name="title">
-          <string>TEACHER</string>
-         </property>
-         <widget class="QWidget" name="verticalLayoutWidget_5">
-          <property name="geometry">
-           <rect>
-            <x>140</x>
-            <y>30</y>
-            <width>351</width>
-            <height>261</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <property name="spacing">
-            <number>7</number>
-           </property>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_TeaId">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_TeaFullname">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QDateEdit" name="dateEdit_TeaBir">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QDateEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}
-
-QDateEdit::up-button {
-    image: url(image/up-arrow.png);
-    width: 10px;
-    height: 12px;
-    border: none;
-    subcontrol-origin: padding;
-    subcontrol-position: top right; /* Giữ vị trí */
-    margin-right: 10px; /* Giảm khoảng cách */
-    margin-top: 6px;
-}
-
-QDateEdit::down-button {
-    image: url(image/down-arrow.png);
-    width: 10px;
-    height: 12px;
-    border: none;
-    subcontrol-origin: padding;
-    subcontrol-position: bottom right; /* Giữ vị trí */
-    margin-right: 10px; /* Giảm khoảng cách */
-    margin-bottom: 6px;
-}
-
-QDateEdit::drop-down {
-    border: none;
-} 
-</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="comboBox_TeaGender">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QComboBox {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo tròn cả 4 góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 30px; /* Chừa khoảng trống bên phải */
-}
-
-/* Ẩn nền của nút dropdown để bo góc phải */
-QComboBox::drop-down {
-    border: none;
-    background: transparent; /* Để nền trong suốt */
-    width: 25px;
-    subcontrol-position: right center;
-}
-
-/* Tạo nền bo góc cho dropdown */
-QComboBox::down-arrow {
-    image: url(image/down-arrow.png);
-    width: 10px;
-    height: 12px;
-    margin-right: 5px;
-}
-</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>Male</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Female</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_7">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>121</width>
-            <height>261</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_9">
-           <property name="spacing">
-            <number>7</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_8">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Teacher ID:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_9">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Full Name:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_10">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Birthday:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_11">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Gender:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_10">
-          <property name="geometry">
-           <rect>
-            <x>510</x>
-            <y>30</y>
-            <width>81</width>
-            <height>201</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_12">
-           <property name="spacing">
-            <number>7</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="label_18">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Email:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_19">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Faculty:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label_20">
-             <property name="styleSheet">
-              <string notr="true">font: 1000 10pt &quot;Cambria&quot;;</string>
-             </property>
-             <property name="text">
-              <string>Class:</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="verticalLayoutWidget_11">
-          <property name="geometry">
-           <rect>
-            <x>600</x>
-            <y>30</y>
-            <width>371</width>
-            <height>261</height>
-           </rect>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_13">
-           <property name="spacing">
-            <number>7</number>
-           </property>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_TeaMail">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_TeaFaculty">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLineEdit" name="lineEdit_TeaClass">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="sizeIncrement">
-              <size>
-               <width>0</width>
-               <height>10</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QLineEdit {
-    border: 1px solid gray;
-    border-radius: 15px; /* Bo góc */
-    padding: 10px;
-    font: 500 15px &quot;Cambria&quot;;
-    background: white;
-    padding-right: 20px; /* Chừa khoảng trống bên phải */
-}</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_TeaAddInfo">
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>40</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>50</height>
-              </size>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">color: rgb(255, 255, 255);
-border-radius: 15px;
-background-color: rgb(0,0,90);
-font: 2000 12pt &quot;Arial&quot;;</string>
-             </property>
-             <property name="text">
-              <string>ADD TEACHER</string>
              </property>
             </widget>
            </item>

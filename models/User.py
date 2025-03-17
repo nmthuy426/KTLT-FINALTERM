@@ -1,3 +1,5 @@
+from unidecode import unidecode
+
 class User:
     def __init__(self, user_id: str, fullname: str, birthday: str, gender: str, password: str, role: str):
         self.user_id = user_id
@@ -9,6 +11,7 @@ class User:
 
     @staticmethod
     def generate_email(fullname: str, role: str) -> str:
+        fullname = unidecode(fullname)  # Loại bỏ dấu
         name_parts = fullname.split()
         first_name = name_parts[-1].lower()  # Lấy tên và viết thường
         initials = "".join(word[0].lower() for word in name_parts[:-1])  # Chữ cái đầu của họ và tên đệm

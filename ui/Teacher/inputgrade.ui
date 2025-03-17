@@ -49,7 +49,10 @@ QHeaderView::section {
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../../../Downloads/55656.png</pixmap>
+     <pixmap>../../image/55656.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QScrollArea" name="scrollArea">
@@ -87,21 +90,49 @@ border: none;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <widget class="QLineEdit" name="lineEdit_class">
+         <widget class="QComboBox" name="comboBox">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
           <property name="styleSheet">
-           <string notr="true">    border: 1px solid gray;
-
-background-color: white;
-color: rgb(0, 0, 90);
-font-weight: bold;
-font: 2000 18pt &quot;Cambria&quot;;
-
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+           <string notr="true">QComboBox {
+    border: 1px solid gray;
+    border-top-right-radius: 20px; /* Bo tròn cả 4 góc */
+	border-top-left-radius:20px;
     padding: 10px;
+    font: 500 15px &quot;Cambria&quot;;
+    background: white;
+    padding-right: 30px; /* Chừa khoảng trống bên phải */
+}
+
+/* Ẩn nền của nút dropdown để bo góc phải */
+QComboBox::drop-down {
+    border: none;
+    background: transparent; /* Để nền trong suốt */
+    width: 25px;
+    subcontrol-position: right center;
+}
+
+/* Tạo nền bo góc cho dropdown */
+QComboBox::down-arrow {
+    image: url(image/down-arrow.png);
+    width: 10px;
+    height: 12px;
+    margin-right: 5px;
+}
 </string>
+          </property>
+          <property name="currentText">
+           <string notr="true"/>
           </property>
          </widget>
         </item>
