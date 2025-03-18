@@ -46,5 +46,17 @@
         "max_students": 60,
         "students": [],
         "grades": {}
+    },
+    {
+        "class_id": "K2333213",
+        "teacher": "Trần Thị B",
+        "room": "B1.101",
+        "schedule": "Thứ 3,5,7 (9:00-10:00)",
+        "subject": "Kinh Tế Học",
+        "major": "Kinh tế",
+        "min_students": 20,
+        "max_students": 40,
+        "students": [],
+        "grades": {}
     }
 ]

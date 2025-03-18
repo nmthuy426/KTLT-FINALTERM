@@ -1,27 +1,123 @@
+import json
 import os
-
+from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from libs.DataConnector import DataConnector
 from libs.JsonFileFactory import JsonFileFactory
-from ui.Admin.CreateClass import Ui_AddClassDialog
+from models.Teacher import Teacher
+from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
+from ui.Admin.CreateClass import Ui_MainWindow
+from ui.Admin.AdminMainWindow import AdminManagement, Ui_AdminManagement  # ✅ Import class AdminManagement
 
+class CreateClassExt(QMainWindow, Ui_MainWindow):  # ✅ Kế thừa từ Ui_MainWindow
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)  # ✅ Gọi setup UI đúng cách
 
-class CreateClassExt(Ui_AddClassDialog):
-    def __init__(self, student_window):
         self.dc = DataConnector()
         self.students = []
         self.teachers = []
-        self.student_window = student_window  # Giữ tham chiếu đến StudentMainWindow
-
-    def setupUi(self, MainWindow):
-        super().setupUi(MainWindow)
-        self.MainWindow = MainWindow
         self.jff = JsonFileFactory()
+        self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
         self.setupSignalAndSlot()
 
-    def showWindow(self):
-        self.MainWindow.show()
+        self.load_teacher_from_json()
 
     def setupSignalAndSlot(self):
+        """Kết nối sự kiện của các nút bấm"""
         self.pushButton_SaveClass.clicked.connect(self.process_save_class)
-        self.pushButton_Back.textChanged.connect(self.back_process)
+        self.pushButton_Back.clicked.connect(self.process_back)
+        self.lineEdit_Subject.textChanged.connect(self.capitalize_each_word_subject)
+        self.lineEdit_ClassId.textChanged.connect(self.capitalize)
+
+    def process_save_class(self):
+        """Xử lý lưu lớp học vào file JSON và giữ cửa sổ mở"""
+        class_id = self.lineEdit_ClassId.text().strip()
+        subject = self.lineEdit_Subject.text().strip()
+        teacher = self.comboBox.currentText().strip() or None
+        schedule = self.lineEdit_Schedule.text().strip()
+        room = self.lineEdit_Room.text().strip()
+        major = self.lineEdit_Major.text().strip()
+        min_students = 20
+        max_students = 40
+
+        if not (class_id and subject and schedule and room and major):
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin bắt buộc!")
+            return
+
+        new_class = {
+            "class_id": class_id,
+            "teacher": teacher,
+            "room": room,
+            "schedule": schedule,
+            "subject": subject,
+            "major": major,
+            "min_students": min_students,
+            "max_students": max_students,
+            "students": [],
+            "grades": {}
+        }
+
+        file_path = self.class_file
+
+        # Đọc dữ liệu hiện có
+        if os.path.exists(file_path):
+            with open(file_path, "r", encoding="utf-8") as file:
+                try:
+                    classes = json.load(file)
+                    if not isinstance(classes, list):
+                        classes = []
+                except json.JSONDecodeError:
+                    classes = []
+        else:
+            classes = []
+
+        # Kiểm tra trùng ID lớp
+        for existing_class in classes:
+            if existing_class["class_id"] == class_id:
+                QMessageBox.warning(self, "Lỗi", "Mã lớp đã tồn tại!")
+                return
+
+        # Thêm lớp mới vào danh sách
+        classes.append(new_class)
+
+        # Ghi dữ liệu vào file
+        with open(file_path, "w", encoding="utf-8") as file:
+            json.dump(classes, file, indent=4, ensure_ascii=False)
+
+        QMessageBox.information(self, "Thành công", "Lớp học đã được lưu thành công!")
+        self.clear()
+
+    def capitalize_each_word_subject(self):
+        text = self.ui.lineEdit_Subject.text()
+        capitalized = text.title()
+        self.ui.lineEdit_Subject.blockSignals(True)
+        self.ui.lineEdit_Subject.setText(capitalized)
+        self.ui.lineEdit_Subject.blockSignals(False)
+
+    def capitalize(self):
+        self.lineEdit_ClassId.setText(self.lineEdit_ClassId.text().upper())
+
+    def clear(self):
+        """✅ Xóa nội dung các ô nhập liệu để tiếp tục nhập lớp mới"""
+        self.lineEdit_ClassId.clear()
+        self.lineEdit_Subject.clear()
+        self.comboBox.setCurrentIndex(0)  # Chọn lại mục đầu tiên
+        self.lineEdit_Schedule.clear()
+        self.lineEdit_Room.clear()
+        self.lineEdit_Major.clear()
+
+    def load_teacher_from_json(self):
+        teachers = self.jff.read_data(self.teacher_file, Teacher) or []
+        list_teachers = list(set(teacher.fullname for teacher in teachers if teacher.fullname))
+
+        self.comboBox.clear()
+        self.comboBox.addItems(list_teachers)
+
+    def process_back(self):
+            self.close()
+            self.admin_window = AdminManagement()  # ✅ Tạo cửa sổ Admin đúng cách
+            self.admin_window_ext = AdminMainWindowExt(self.admin_window)  # ✅ Gắn giao diện vào cửa sổ Admin
+            self.admin_window_ext.setupUi(self.admin_window)  # ✅ Set UI
+            self.admin_window.show()
 

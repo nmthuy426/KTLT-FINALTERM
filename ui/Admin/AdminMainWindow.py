@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QMainWindow
 
 
 class Ui_AdminManagement(object):
@@ -757,3 +758,8 @@ class Ui_AdminManagement(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "LISTS OF ACCOUNTS"))
         self.pushButton_CreateClass.setText(_translate("AdminManagement", "CREATE CLASS"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "MANAGE CLASSES"))
+
+class AdminManagement(QMainWindow, Ui_AdminManagement):
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)  # Thiết lập giao diện

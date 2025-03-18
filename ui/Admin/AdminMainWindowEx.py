@@ -298,6 +298,9 @@ class AdminMainWindowExt(Ui_AdminManagement):
 
             # ✅ Cập nhật danh sách lớp học trong comboBox_StuClass
             self.load_teacher_classes_to_stuclass()
+            #hiển thị giáo viên le combobox của createclass
+            from ui.Admin.CreateClassEx import CreateClassExt
+            CreateClassExt.load_teacher_from_json()
 
         except Exception as e:
             print(f"❌ Lỗi khi ghi file JSON: {e}")

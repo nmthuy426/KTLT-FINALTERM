@@ -9,17 +9,13 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_AddClassDialog(object):
-    def setupUi(self, AddClassDialog):
-        AddClassDialog.setObjectName("AddClassDialog")
-        AddClassDialog.resize(1000, 600)
-        self.label = QtWidgets.QLabel(parent=AddClassDialog)
-        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=AddClassDialog)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1000, 600)
+        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(80, 50, 841, 481))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -114,25 +110,35 @@ class Ui_AddClassDialog(object):
 "}")
         self.lineEdit_Subject.setObjectName("lineEdit_Subject")
         self.verticalLayout_13.addWidget(self.lineEdit_Subject)
-        self.lineEdit_Teacher = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_Teacher.sizePolicy().hasHeightForWidth())
-        self.lineEdit_Teacher.setSizePolicy(sizePolicy)
-        self.lineEdit_Teacher.setMinimumSize(QtCore.QSize(0, 40))
-        self.lineEdit_Teacher.setMaximumSize(QtCore.QSize(16777215, 55))
-        self.lineEdit_Teacher.setSizeIncrement(QtCore.QSize(0, 10))
-        self.lineEdit_Teacher.setStyleSheet("QLineEdit {\n"
+        self.comboBox = QtWidgets.QComboBox(parent=self.verticalLayoutWidget)
+        self.comboBox.setMinimumSize(QtCore.QSize(0, 55))
+        self.comboBox.setStyleSheet("QComboBox {\n"
 "    border: 1px solid gray;\n"
-"    border-radius: 20px; /* Bo góc */\n"
+"    border-radius: 20px; /* Bo tròn cả 4 góc */\n"
 "    padding: 10px;\n"
 "    font: 500 15px \"Cambria\";\n"
 "    background: white;\n"
-"    padding-right: 20px; /* Chừa khoảng trống bên phải */\n"
-"}")
-        self.lineEdit_Teacher.setObjectName("lineEdit_Teacher")
-        self.verticalLayout_13.addWidget(self.lineEdit_Teacher)
+"    padding-right: 30px; /* Chừa khoảng trống bên phải */\n"
+"}\n"
+"\n"
+"/* Ẩn nền của nút dropdown để bo góc phải */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    background: transparent; /* Để nền trong suốt */\n"
+"    width: 25px;\n"
+"    subcontrol-position: right center;\n"
+"}\n"
+"\n"
+"/* Tạo nền bo góc cho dropdown */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(image/down-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"")
+        self.comboBox.setObjectName("comboBox")
+        self.verticalLayout_13.addWidget(self.comboBox)
         self.lineEdit_Schedule = QtWidgets.QLineEdit(parent=self.verticalLayoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -250,25 +256,36 @@ class Ui_AddClassDialog(object):
         self.verticalLayout_13.addLayout(self.horizontalLayout)
         self.horizontalLayout_2.addLayout(self.verticalLayout_13)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.label_25 = QtWidgets.QLabel(parent=AddClassDialog)
+        self.label_25 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_25.setGeometry(QtCore.QRect(290, 580, 75, 55))
         self.label_25.setMaximumSize(QtCore.QSize(16777215, 55))
         self.label_25.setStyleSheet("font: 1000 10pt \"Cambria\";")
         self.label_25.setText("")
         self.label_25.setObjectName("label_25")
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.label.raise_()
+        self.verticalLayoutWidget.raise_()
+        self.label_25.raise_()
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(AddClassDialog)
-        QtCore.QMetaObject.connectSlotsByName(AddClassDialog)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, AddClassDialog):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        AddClassDialog.setWindowTitle(_translate("AddClassDialog", "Create a new class"))
-        self.label_2.setText(_translate("AddClassDialog", "CREATE CLASS"))
-        self.label_18.setText(_translate("AddClassDialog", "Class ID:"))
-        self.label_20.setText(_translate("AddClassDialog", "Subject:"))
-        self.label_22.setText(_translate("AddClassDialog", "Teacher:"))
-        self.label_23.setText(_translate("AddClassDialog", "Schedule:"))
-        self.label_19.setText(_translate("AddClassDialog", "Room:"))
-        self.label_21.setText(_translate("AddClassDialog", "Major:"))
-        self.pushButton_Back.setText(_translate("AddClassDialog", "BACK"))
-        self.pushButton_SaveClass.setText(_translate("AddClassDialog", "SAVE CLASS"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_2.setText(_translate("MainWindow", "CREATE CLASS"))
+        self.label_18.setText(_translate("MainWindow", "Class ID:"))
+        self.label_20.setText(_translate("MainWindow", "Subject:"))
+        self.label_22.setText(_translate("MainWindow", "Teacher:"))
+        self.label_23.setText(_translate("MainWindow", "Schedule:"))
+        self.label_19.setText(_translate("MainWindow", "Room:"))
+        self.label_21.setText(_translate("MainWindow", "Major:"))
+        self.lineEdit_Schedule.setPlaceholderText(_translate("MainWindow", "VD: Thứ 2, 4, 6 (07:30 - 09:30)"))
+        self.pushButton_Back.setText(_translate("MainWindow", "BACK"))
+        self.pushButton_SaveClass.setText(_translate("MainWindow", "SAVE CLASS"))

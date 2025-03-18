@@ -250,5 +250,19 @@
         "advisor": "TS. Lê Văn U",
         "registered_classes": [],
         "grades": {}
+    },
+    {
+        "user_id": "K2445111",
+        "fullname": "Minh Ngọc",
+        "birthday": "01/01/2000",
+        "gender": "Male",
+        "email": "ngocm@st.uel.edu.vn",
+        "password": "12345",
+        "student_class": "K24202",
+        "major": "Thương Mại Điện Tử",
+        "course": "2025",
+        "advisor": "Ngô Minh Thuy",
+        "registered_classes": [],
+        "grades": {}
     }
 ]
