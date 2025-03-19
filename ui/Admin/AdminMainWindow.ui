@@ -79,12 +79,6 @@ QTabBar::tab {
     padding: 6px 12px;
     background: #EAEAEA;
 }
-QTabBar::tab:last {
-    border-top-right-radius: 12px;
-}
-QTabBar::tab:first {
-    border-top-left-radius: 12px;
-}
 
 /* Tab được chọn */
 QTabBar::tab:selected {
@@ -118,7 +112,7 @@ QTabWidget::pane {
 </string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_ManageAccounts">
      <attribute name="title">
@@ -932,7 +926,7 @@ QComboBox::down-arrow {
            <rect>
             <x>650</x>
             <y>40</y>
-            <width>321</width>
+            <width>322</width>
             <height>281</height>
            </rect>
           </property>

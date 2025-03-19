@@ -1,5 +1,6 @@
-from PyQt6.QtWidgets import QMessageBox, QMainWindow, QTableWidgetItem, QPushButton
+from PyQt6.QtWidgets import QMessageBox, QMainWindow, QTableWidgetItem, QPushButton, QApplication
 from PyQt6.QtGui import QIntValidator
+
 from models.Class import Class
 from ui.Admin.AdminMainWindow import Ui_AdminManagement
 from models.Student import Student
@@ -10,23 +11,31 @@ from models.User import User
 import os
 import json
 from PyQt6.QtCore import QDate, Qt
+
 from ui.Admin.ListOfStudentsEx import ListOfStudentsWindow
 
 
-class AdminMainWindowExt(Ui_AdminManagement):
-    def __init__(self, student_window):
+class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
+    def __init__(self, admin_window):
+        super().__init__()  # ✅ Gọi init của QMainWindow
+
         self.dc = DataConnector()
         self.students = []
         self.teachers = []
-        self.student_window = student_window  # Giữ tham chiếu đến StudentMainWindow
+        self.admin_window = admin_window  # ✅ Giữ tham chiếu đến StudentMainWindow
+
+        # ✅ Định nghĩa các biến TRƯỚC KHI gọi setupUi()
         self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
         self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
         self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+
+        self.setupUi(self)  # ✅ Gọi setup UI sau khi đã có biến cần thiết
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.jff = JsonFileFactory()
+        MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
         # setup trước cho giao diện khi mưo rlên
         self.LineEdit_StuCourse.setValidator(QIntValidator(2000, 2100))
@@ -91,6 +100,7 @@ class AdminMainWindowExt(Ui_AdminManagement):
     def setupSignalAndSlot(self):
         self.pushButton_StuAddInfo.clicked.connect(self.process_add_student)
         self.pushButton_TeaAddInfo.clicked.connect(self.process_add_teacher)
+        self.pushButton_CreateClass.clicked.connect(self.open_create_class)
         self.lineEdit_StuFullname.textChanged.connect(self.update_student_email)
         self.lineEdit_TeaFullname.textChanged.connect(self.update_teacher_email)
         self.comboBox_StuClass.currentIndexChanged.connect(self.update_student_advisor)
@@ -103,6 +113,12 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.lineEdit_TeaId.textChanged.connect(self.capitalize_id_and_class)
         self.lineEdit_TeaClass.textChanged.connect(self.capitalize_id_and_class)
 
+    def open_create_class(self):
+        self.close()
+        from ui.Admin.CreateClassEx import CreateClassExt
+        create_class_window = CreateClassExt()
+        create_class_window.show()
+
     def load_teacher_classes_to_stuclass(self):
         teachers = self.jff.read_data(self.teacher_file, Teacher) or []
         classes = list(set(teacher.teacher_class for teacher in teachers if teacher.teacher_class))
@@ -111,8 +127,7 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.comboBox_StuClass.addItems(classes)
 
     def process_add_student(self):
-        print("🔍 Bắt đầu thêm sinh viên...")
-
+        self.clear_student_form()
         # Đọc dữ liệu từ file JSON
         students_data = self.jff.read_data(self.student_file, dict) or []
         print(f"📂 Đọc dữ liệu thành công! Số lượng sinh viên hiện có: {len(students_data)}")
@@ -197,7 +212,6 @@ class AdminMainWindowExt(Ui_AdminManagement):
             QMessageBox.information(self.MainWindow, "Success", "Thêm học sinh mới thành công!")
 
         # 🛠 Ghi file JSON
-        try:
             with open(self.student_file, "w", encoding="utf-8") as file:
                 json.dump(students_data, file, indent=4, ensure_ascii=False)
             print("💾 Dữ liệu đã được ghi vào JSON!")
@@ -207,12 +221,8 @@ class AdminMainWindowExt(Ui_AdminManagement):
             self.tableWidget_Student.setRowCount(0)  # 🔄 Xóa toàn bộ dữ liệu cũ trước khi tải mới
             self.load_students()
 
-        except Exception as e:
-            print(f"❌ Lỗi khi ghi file JSON: {e}")
-            QMessageBox.warning(self.MainWindow, "Error", f"Lỗi khi ghi file: {e}")
-            return
-
     def process_add_teacher(self):
+        self.clear_teacher_form()
         print("🔍 Bắt đầu thêm giảng viên...")
 
         # Đọc dữ liệu từ file JSON
@@ -286,7 +296,6 @@ class AdminMainWindowExt(Ui_AdminManagement):
             QMessageBox.information(self.MainWindow, "Success", "Thêm giảng viên mới thành công!")
 
         # 🛠 Ghi file JSON
-        try:
             with open(self.teacher_file, "w", encoding="utf-8") as file:
                 json.dump(teachers_data, file, indent=4, ensure_ascii=False)
             print("💾 Dữ liệu đã được ghi vào JSON!")
@@ -302,11 +311,6 @@ class AdminMainWindowExt(Ui_AdminManagement):
             from ui.Admin.CreateClassEx import CreateClassExt
             CreateClassExt.load_teacher_from_json()
 
-        except Exception as e:
-            print(f"❌ Lỗi khi ghi file JSON: {e}")
-            QMessageBox.warning(self.MainWindow, "Error", f"Lỗi khi ghi file: {e}")
-            return
-
     def load_students(self):
         students = self.jff.read_data(self.student_file, Student) or []
         self.tableWidget_Student.setRowCount(len(students))
@@ -314,8 +318,15 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.tableWidget_Student.setHorizontalHeaderLabels(
             ["ID", "Name", "Birthday", "Gender", "Email", "Course", "Major", "Class", "Advisor"]
         )
-        self.tableWidget_Student.setColumnWidth(1, 200)  # Tùy chỉnh độ rộng cột
+        self.tableWidget_Student.setColumnWidth(0, 80)
+        self.tableWidget_Student.setColumnWidth(1, 200)
         self.tableWidget_Student.setColumnWidth(2, 150)
+        self.tableWidget_Student.setColumnWidth(3, 100)
+        self.tableWidget_Student.setColumnWidth(4, 250)
+        self.tableWidget_Student.setColumnWidth(5, 100)
+        self.tableWidget_Student.setColumnWidth(6, 300)
+        self.tableWidget_Student.setColumnWidth(7, 150)
+        self.tableWidget_Student.setColumnWidth(8, 200)
 
         for row, student in enumerate(students):
             self.tableWidget_Student.setItem(row, 0, QTableWidgetItem(str(getattr(student, "user_id", ""))))
@@ -337,8 +348,14 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.tableWidget_Teacher.setHorizontalHeaderLabels(
             ["ID", "Name", "Birthday", "Gender", "Email", "Faculty", "Class"]
         )
-        self.tableWidget_Teacher.setColumnWidth(1, 200)  # Điều chỉnh số 200 tùy ý
-        self.tableWidget_Teacher.setColumnWidth(2, 150)  # Điều chỉnh số 200 tùy ý
+
+        self.tableWidget_Teacher.setColumnWidth(0, 80)
+        self.tableWidget_Teacher.setColumnWidth(1, 200)
+        self.tableWidget_Teacher.setColumnWidth(2, 100)
+        self.tableWidget_Teacher.setColumnWidth(3, 100)
+        self.tableWidget_Teacher.setColumnWidth(4, 250)
+        self.tableWidget_Teacher.setColumnWidth(5, 300)
+        self.tableWidget_Teacher.setColumnWidth(6, 100)
 
         for row, teacher in enumerate(teachers):
             self.tableWidget_Teacher.setItem(row, 0, QTableWidgetItem(str(getattr(teacher, "user_id", ""))))
@@ -450,7 +467,7 @@ class AdminMainWindowExt(Ui_AdminManagement):
 
         self.tableWidget_Classes.setColumnWidth(1, 200)  # Subject
         self.tableWidget_Classes.setColumnWidth(2, 100)  # Room
-        self.tableWidget_Classes.setColumnWidth(3, 200)  # Schedule
+        self.tableWidget_Classes.setColumnWidth(3, 266)  # Schedule
         self.tableWidget_Classes.setColumnWidth(4, 100)  # Teacher ID
         self.tableWidget_Classes.setColumnWidth(5, 200)  # List of Students Button
 
@@ -493,7 +510,7 @@ class AdminMainWindowExt(Ui_AdminManagement):
         self.tableWidget_Classes.cellClicked.connect(self.show_teacher_info)
 
     def show_student_list(self, class_id):
-            self.MainWindow.close()
+            self.close()
             # 👉 Luôn mở cửa sổ trước
             self.student_list_window = ListOfStudentsWindow(class_id)
             self.student_list_window.show()

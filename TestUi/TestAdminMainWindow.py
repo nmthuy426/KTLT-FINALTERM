@@ -1,21 +1,12 @@
+import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
-from ui.Student.StudentMainWindowEx import StudentMainWindowExt
+from ui.Admin.AdminMainWindowEx import AdminMainWindowExt  # Đảm bảo đường dẫn đúng
 
-app = QApplication([])
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
 
-# Khởi tạo Student nhưng không mở cửa sổ ngay
-student_window = QMainWindow()
-student_ui = StudentMainWindowExt()
-student_ui.setupUi(student_window)
-
-# Khởi tạo Admin và truyền student_ui vào
-admin_window = QMainWindow()
-admin_ui = AdminMainWindowExt(student_ui)
-admin_ui.setupUi(admin_window)
-
-# Chỉ mở Admin trước, không mở Student
-admin_window.show()
-
-# Chạy app
-app.exec()
+    admin_window = QMainWindow()  # Tạo QMainWindow trước
+    admin_ui = AdminMainWindowExt(admin_window)  # Truyền vào class
+    admin_ui.setupUi(admin_window)
+    admin_ui.show()  # Hiển thị giao diện
+    sys.exit(app.exec())

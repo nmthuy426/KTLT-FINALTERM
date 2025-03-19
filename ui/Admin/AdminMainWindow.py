@@ -7,7 +7,6 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMainWindow
 
 
 class Ui_AdminManagement(object):
@@ -57,12 +56,6 @@ class Ui_AdminManagement(object):
 "    font: 2000 10pt \"Arial\";\n"
 "    padding: 6px 12px;\n"
 "    background: #EAEAEA;\n"
-"}\n"
-"QTabBar::tab:last {\n"
-"    border-top-right-radius: 12px;\n"
-"}\n"
-"QTabBar::tab:first {\n"
-"    border-top-left-radius: 12px;\n"
 "}\n"
 "\n"
 "/* Tab được chọn */\n"
@@ -522,7 +515,7 @@ class Ui_AdminManagement(object):
         self.label_3.setObjectName("label_3")
         self.verticalLayout_8.addWidget(self.label_3)
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 321, 281))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 322, 281))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -718,7 +711,7 @@ class Ui_AdminManagement(object):
         AdminManagement.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminManagement)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminManagement)
 
     def retranslateUi(self, AdminManagement):
@@ -758,8 +751,3 @@ class Ui_AdminManagement(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "LISTS OF ACCOUNTS"))
         self.pushButton_CreateClass.setText(_translate("AdminManagement", "CREATE CLASS"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "MANAGE CLASSES"))
-
-class AdminManagement(QMainWindow, Ui_AdminManagement):
-    def __init__(self):
-        super().__init__()
-        self.setupUi(self)  # Thiết lập giao diện

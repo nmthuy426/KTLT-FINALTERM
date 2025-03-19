@@ -9,17 +9,13 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(1000, 600)
-        self.label = QtWidgets.QLabel(parent=Dialog)
-        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=Dialog)
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1000, 600)
+        self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(60, 50, 881, 501))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
@@ -78,12 +74,21 @@ class Ui_Dialog(object):
         self.pushButton_Home.setObjectName("pushButton_Home")
         self.horizontalLayout.addWidget(self.pushButton_Home)
         self.verticalLayout.addLayout(self.horizontalLayout)
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.label.raise_()
+        self.verticalLayoutWidget.raise_()
+        MainWindow.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "List of Students"))
-        self.label_3.setText(_translate("Dialog", "LIST OF STUDENTS"))
-        self.pushButton_Home.setText(_translate("Dialog", "BACK"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.label_3.setText(_translate("MainWindow", "LIST OF STUDENTS"))
+        self.pushButton_Home.setText(_translate("MainWindow", "BACK"))

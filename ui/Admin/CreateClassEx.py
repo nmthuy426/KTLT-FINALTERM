@@ -5,7 +5,7 @@ from libs.DataConnector import DataConnector
 from libs.JsonFileFactory import JsonFileFactory
 from models.Teacher import Teacher
 from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
-from ui.Admin.AdminMainWindow import AdminManagement  # ✅ Import class
+from ui.Admin.AdminMainWindow import Ui_AdminManagement  # ✅ Import class
 
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtCore import Qt
@@ -131,8 +131,8 @@ class CreateClassExt(QMainWindow, Ui_MainWindow):
 
     def process_back(self):
             self.close()
-            self.admin_window = AdminManagement()  # ✅ Tạo cửa sổ Admin đúng cách
-            self.admin_window_ext = AdminMainWindowExt(self.admin_window)  # ✅ Gắn giao diện vào cửa sổ Admin
-            self.admin_window_ext.setupUi(self.admin_window)  # ✅ Set UI
-            self.admin_window.show()
+            admin_window = QMainWindow()  # Tạo QMainWindow trước
+            admin_ui = AdminMainWindowExt(admin_window)  # Truyền vào class
+            admin_ui.setupUi(admin_window)
+            admin_ui.show()  # Hiển thị giao diện
 
