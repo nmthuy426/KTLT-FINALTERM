@@ -1,10 +1,9 @@
-from PyQt6.QtWidgets import QMessageBox, QMainWindow
+from PyQt6.QtWidgets import QMessageBox, QMainWindow, QApplication
 from PyQt6.QtCore import Qt
 from libs.DataConnector import DataConnector
 from ui.Student.StudentMainWindow import Ui_MainWindow as StudentMainWindow  # UI Student
 from ui.Teacher.TeacherMainWindow import Ui_MainWindow as TeacherMainWindow  # UI Teacher
-from ui.LoginMainWindow.LoginMainWindow import Ui_MainWindow  # UI Login
-
+from ui.LoginMainWindow.LoginMainWindow import Ui_MainWindow
 
 class LoginMainWindowExt(Ui_MainWindow):
     def __init__(self):
@@ -18,6 +17,7 @@ class LoginMainWindowExt(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.setupSignalAndSlot()
+        MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
     def showWindow(self):
         self.MainWindow.show()
@@ -25,6 +25,29 @@ class LoginMainWindowExt(Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.pushButton_Login.clicked.connect(self.process_login)
         self.pushButton_ForgetPassword.clicked.connect(self.forgetpassword)
+        self.pushButton_Exit.clicked.connect(self.process_exit)
+
+    def process_exit(self):
+        print("Button clicked!")
+        print("Type of self:", type(self))
+
+        # Kiểm tra xem self có phải là QWidget hợp lệ không
+        if not isinstance(self, QApplication):
+            print("Warning: self is not a valid QWidget!")
+
+        # Hiển thị hộp thoại xác nhận
+        reply = QMessageBox.question(
+            None,  # Đảm bảo self là một QWidget hợp lệ
+            "Exit Confirmation",
+            "Do you want to exit?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        # Nếu chọn Yes thì thoát chương trình
+        if reply == QMessageBox.StandardButton.Yes:
+            print("Exiting application...")
+            QApplication.quit()
 
     def forgetpassword(self):
         QMessageBox.information(self.MainWindow, "Quên mật khẩu", "Chức năng này đang được phát triển.")

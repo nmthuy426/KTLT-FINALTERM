@@ -26,6 +26,10 @@
    <enum>QTabWidget::Triangular</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">backgound-color: rgba(0,0,0,0);
+</string>
+   </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -34,6 +38,11 @@
       <width>1000</width>
       <height>712</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel:{
+	border-radius: 20px;
+}</string>
     </property>
     <property name="text">
      <string/>
@@ -99,7 +108,7 @@ font: 5000 18pt &quot;Arial&quot;;
       <number>0</number>
      </property>
      <item>
-      <widget class="QPushButton" name="pushButton_exit">
+      <widget class="QPushButton" name="pushButton_Exit">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
          <horstretch>1</horstretch>
@@ -135,7 +144,6 @@ font: 5000 18pt &quot;Arial&quot;;
     border-bottom-right-radius: 0px;
     padding: 8px; /* Khoảng cách giữa chữ và viền */
     border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
 }
 
 QPushButton:hover {
@@ -146,7 +154,6 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
 	color: rgb(255,255,255);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
        </property>
        <property name="text">
@@ -155,7 +162,7 @@ QPushButton:pressed {
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_logout">
+      <widget class="QPushButton" name="pushButton_Logout">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
          <horstretch>1</horstretch>
@@ -184,8 +191,7 @@ QPushButton:pressed {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 	padding: 8px; /* Khoảng cách giữa chữ và viền */
-    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+    border: 4px solid rgba(255, 255,255, 200);
 }
 
 QPushButton:hover {
@@ -196,7 +202,6 @@ QPushButton:hover {
 QPushButton:pressed {
     background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */
 	color: rgb(255,255,255);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
        </property>
        <property name="text">
@@ -242,11 +247,9 @@ QTabBar::tab {
     width: 100px;
     min-height: 20px;
     text-align: center;
+	padding:6px;
     color: #00005A;
     font: 2000 10pt &quot;Arial&quot;;
-    padding: 6px 12px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
     background: #EAEAEA;
 }
 
@@ -316,112 +319,10 @@ QTabBar::tab:middle {
         <x>0</x>
         <y>0</y>
         <width>861</width>
-        <height>381</height>
+        <height>331</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QComboBox" name="ComboBox_semester">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>768</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>956</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>-1</pointsize>
-           <weight>99</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="layoutDirection">
-          <enum>Qt::LeftToRight</enum>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QComboBox {
-    background-color: navy;
-    color: white;
-    font: 2000 14px &quot;Arial&quot;;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}</string>
-         </property>
-         <property name="editable">
-          <bool>false</bool>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 1</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 2</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 3</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 4</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 5</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 6</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 7</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 8</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>     SEMESTER 9</string>
-          </property>
-         </item>
-        </widget>
-       </item>
        <item>
         <widget class="QTableWidget" name="table_grade">
          <property name="sizePolicy">
@@ -438,8 +339,8 @@ QTabBar::tab:middle {
          </property>
          <property name="maximumSize">
           <size>
-           <width>956</width>
-           <height>16777215</height>
+           <width>900</width>
+           <height>500</height>
           </size>
          </property>
          <property name="mouseTracking">
@@ -531,41 +432,62 @@ QTableWidget:{
          </column>
         </widget>
        </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_updatecore">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>768</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>956</width>
-           <height>40</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0,0,90);
-font: 2000 10pt &quot;Arial&quot;;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;</string>
-         </property>
-         <property name="text">
-          <string>UPDATE</string>
-         </property>
-        </widget>
-       </item>
       </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButton_updatescore">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>332</y>
+        <width>861</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>768</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>956</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */
+    color: rgb(0, 85, 0); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+      </property>
+      <property name="text">
+       <string>UPDATE</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_schedule">
@@ -619,7 +541,7 @@ font: 2000 10pt &quot;Arial&quot;;
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QListWidget" name="listWidget_schedule"/>
+          <widget class="QTableWidget" name="tableWidget_schedule"/>
          </item>
         </layout>
        </widget>
@@ -633,9 +555,9 @@ font: 2000 10pt &quot;Arial&quot;;
      <widget class="QScrollArea" name="scrollArea_5">
       <property name="geometry">
        <rect>
-        <x>1</x>
+        <x>0</x>
         <y>0</y>
-        <width>956</width>
+        <width>861</width>
         <height>381</height>
        </rect>
       </property>
@@ -650,7 +572,7 @@ font: 2000 10pt &quot;Arial&quot;;
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>954</width>
+         <width>859</width>
          <height>379</height>
         </rect>
        </property>
@@ -665,7 +587,51 @@ font: 2000 10pt &quot;Arial&quot;;
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QListWidget" name="listWidget_registeclass"/>
+          <widget class="QTableWidget" name="tableWidget_registeclass"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_save">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>1000</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */
+    color: rgb(0, 85, 0); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+	padding: 4px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+           </property>
+           <property name="text">
+            <string>SAVE</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -724,7 +690,7 @@ font: 2000 10pt &quot;Arial&quot;;
           <x>140</x>
           <y>20</y>
           <width>251</width>
-          <height>281</height>
+          <height>341</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -755,6 +721,9 @@ font: 2000 10pt &quot;Arial&quot;;
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item>
@@ -780,6 +749,9 @@ font: 2000 10pt &quot;Arial&quot;;
     background: white;
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -833,6 +805,9 @@ QDateEdit::drop-down {
     border: none;
 } 
 </string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -913,6 +888,9 @@ QComboBox::down-arrow {
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
@@ -923,7 +901,7 @@ QComboBox::down-arrow {
           <x>20</x>
           <y>20</y>
           <width>111</width>
-          <height>281</height>
+          <height>341</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -1023,7 +1001,7 @@ background-color: rgba(0,0,0,0);</string>
           <x>570</x>
           <y>20</y>
           <width>271</width>
-          <height>281</height>
+          <height>341</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1039,6 +1017,9 @@ background-color: rgba(0,0,0,0);</string>
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item>
@@ -1052,6 +1033,9 @@ background-color: rgba(0,0,0,0);</string>
     background: white;
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -1067,6 +1051,9 @@ background-color: rgba(0,0,0,0);</string>
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
          <item>
@@ -1081,40 +1068,12 @@ background-color: rgba(0,0,0,0);</string>
     padding-right: 20px; /* Chừa khoảng trống bên phải */
 }</string>
            </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
-       </widget>
-       <widget class="QPushButton" name="pushButton_StuUpdateinfo">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>310</y>
-          <width>821</width>
-          <height>51</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>40</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>100</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(255, 255, 255);
-border-radius: 15px;
-background-color: rgb(0,0,90);
-font: 2000 14pt &quot;Arial&quot;;</string>
-        </property>
-        <property name="text">
-         <string>UPDATE</string>
-        </property>
        </widget>
        <widget class="QWidget" name="verticalLayoutWidget_2">
         <property name="geometry">
@@ -1122,7 +1081,7 @@ font: 2000 14pt &quot;Arial&quot;;</string>
           <x>410</x>
           <y>20</y>
           <width>147</width>
-          <height>281</height>
+          <height>341</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">

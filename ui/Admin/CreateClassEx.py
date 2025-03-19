@@ -1,27 +1,42 @@
 import json
 import os
-from PyQt6.QtWidgets import QMainWindow, QMessageBox
+from PyQt6.QtWidgets import QMessageBox
 from libs.DataConnector import DataConnector
 from libs.JsonFileFactory import JsonFileFactory
 from models.Teacher import Teacher
 from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
+from ui.Admin.AdminMainWindow import AdminManagement  # ✅ Import class
+
+from PyQt6.QtWidgets import QMainWindow
+from PyQt6.QtCore import Qt
 from ui.Admin.CreateClass import Ui_MainWindow
-from ui.Admin.AdminMainWindow import AdminManagement, Ui_AdminManagement  # ✅ Import class AdminManagement
 
-class CreateClassExt(QMainWindow, Ui_MainWindow):  # ✅ Kế thừa từ Ui_MainWindow
+class CreateClassExt(QMainWindow, Ui_MainWindow):
     def __init__(self):
-        super().__init__()
-        self.setupUi(self)  # ✅ Gọi setup UI đúng cách
+        super().__init__()  # Gọi constructor của QMainWindow
+        self.setupUi(self)  # Gọi setup UI
 
+        # Khởi tạo các biến cần thiết
         self.dc = DataConnector()
         self.students = []
         self.teachers = []
         self.jff = JsonFileFactory()
         self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
         self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
-        self.setupSignalAndSlot()
 
+    def setupUi(self, MainWindow):
+        """Thiết lập giao diện chính cho cửa sổ CreateClass"""
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+
+        MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        self.setupSignalAndSlot()
+        self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+        self.dc = DataConnector()
+        self.jff = JsonFileFactory()
         self.load_teacher_from_json()
+
 
     def setupSignalAndSlot(self):
         """Kết nối sự kiện của các nút bấm"""

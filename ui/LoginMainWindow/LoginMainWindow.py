@@ -24,11 +24,11 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:/Documents/KTLT/FinalTerm/image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\LoginMainWindow\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.pushButton_Login = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_Login.setGeometry(QtCore.QRect(570, 495, 261, 51))
+        self.pushButton_Login.setGeometry(QtCore.QRect(570, 455, 261, 50))
         self.pushButton_Login.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.pushButton_Login.setAutoFillBackground(False)
         self.pushButton_Login.setStyleSheet("QPushButton {\n"
@@ -53,7 +53,7 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_Login.setObjectName("pushButton_Login")
         self.lineEdit_password = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit_password.setGeometry(QtCore.QRect(490, 380, 420, 51))
+        self.lineEdit_password.setGeometry(QtCore.QRect(490, 340, 420, 51))
         self.lineEdit_password.setStyleSheet("QLineEdit {\n"
 "    font: 50 12pt \"Cambria\";\n"
 "    border-radius: 25px; /* Bo góc 10px */\n"
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.lineEdit_password.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.lineEdit_password.setObjectName("lineEdit_password")
         self.lineEdit_username = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit_username.setGeometry(QtCore.QRect(490, 290, 420, 51))
+        self.lineEdit_username.setGeometry(QtCore.QRect(490, 250, 420, 51))
         self.lineEdit_username.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.NoContextMenu)
         self.lineEdit_username.setStyleSheet("QLineEdit {\n"
 "    font: 50 12pt \"Cambria\";\n"
@@ -76,7 +76,7 @@ class Ui_MainWindow(object):
         self.lineEdit_username.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.lineEdit_username.setObjectName("lineEdit_username")
         self.pushButton_ForgetPassword = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton_ForgetPassword.setGeometry(QtCore.QRect(470, 445, 458, 41))
+        self.pushButton_ForgetPassword.setGeometry(QtCore.QRect(470, 405, 458, 41))
         self.pushButton_ForgetPassword.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.pushButton_ForgetPassword.setStyleSheet("background-color: rgba(255, 255, 255,0);\n"
 "font: 2000 10pt \"Arial Rounded MT Bold\";\n"
@@ -85,7 +85,7 @@ class Ui_MainWindow(object):
         self.pushButton_ForgetPassword.setIconSize(QtCore.QSize(20, 20))
         self.pushButton_ForgetPassword.setObjectName("pushButton_ForgetPassword")
         self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(470, 180, 458, 91))
+        self.label_4.setGeometry(QtCore.QRect(470, 140, 458, 91))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -97,19 +97,52 @@ class Ui_MainWindow(object):
         self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(505, 300, 31, 31))
+        self.label_5.setGeometry(QtCore.QRect(505, 260, 31, 31))
         self.label_5.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.label_5.setText("")
         self.label_5.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\LoginMainWindow\\../../image/user.png"))
         self.label_5.setScaledContents(True)
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(505, 390, 31, 31))
+        self.label_6.setGeometry(QtCore.QRect(505, 350, 31, 31))
         self.label_6.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.label_6.setText("")
         self.label_6.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\LoginMainWindow\\../../image/password.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
+        self.pushButton_Exit = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_Exit.setGeometry(QtCore.QRect(570, 520, 261, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(1)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_Exit.sizePolicy().hasHeightForWidth())
+        self.pushButton_Exit.setSizePolicy(sizePolicy)
+        self.pushButton_Exit.setMinimumSize(QtCore.QSize(0, 0))
+        self.pushButton_Exit.setMaximumSize(QtCore.QSize(1000, 60))
+        self.pushButton_Exit.setSizeIncrement(QtCore.QSize(0, 500))
+        self.pushButton_Exit.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
+"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 25px;\n"
+"    border-bottom-left-radius: 25px;\n"
+"    border-top-right-radius: 25px;\n"
+"    border-bottom-right-radius: 25px;\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_Exit.setObjectName("pushButton_Exit")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -122,3 +155,4 @@ class Ui_MainWindow(object):
         self.lineEdit_username.setPlaceholderText(_translate("MainWindow", "Your school email"))
         self.pushButton_ForgetPassword.setText(_translate("MainWindow", "Forget password?"))
         self.label_4.setText(_translate("MainWindow", "LOGIN"))
+        self.pushButton_Exit.setText(_translate("MainWindow", "EXIT"))
