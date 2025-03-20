@@ -5,10 +5,10 @@ from ui.Student.StudentMainWindowEx import StudentMainWindowExt
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    teacher_window = QMainWindow()
-    teacher_ui = StudentMainWindowExt()
-    teacher_ui.setupUi(teacher_window)
-    teacher_ui.showWindow()
+    student_window = QMainWindow()
+    student_ui = StudentMainWindowExt()
+    student_ui.setupUi(student_window)
+    student_ui.showWindow()
 
     sys.exit(app.exec())
 
