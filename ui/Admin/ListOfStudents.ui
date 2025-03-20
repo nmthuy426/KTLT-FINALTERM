@@ -57,32 +57,22 @@ padding: 10px;
       </widget>
      </item>
      <item>
-      <widget class="QListWidget" name="listWidget_Students">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>500</height>
-        </size>
-       </property>
+      <widget class="QTableWidget" name="tableWidget">
        <property name="styleSheet">
-        <string notr="true">    QListWidget {
-        border: 2px solid rgb(255,255,255);
-        background-color: white;
-        padding: 5px;
-    }</string>
+        <string notr="true">    QHeaderView::section {
+        background-color: rgb(0, 0, 90);  /* Màu xanh đậm */
+        color: white;  /* Chữ màu trắng để dễ đọc */
+        font-weight: bold;
+        padding: 4px;
+    }
+</string>
        </property>
       </widget>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton_Home">
+        <widget class="QPushButton" name="pushButton_back">
          <property name="minimumSize">
           <size>
            <width>0</width>

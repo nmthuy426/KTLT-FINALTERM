@@ -8,7 +8,6 @@ if __name__ == "__main__":
     teacher_window = QMainWindow()
     teacher_ui = TeacherMainWindowExt()
     teacher_ui.setupUi(teacher_window)
-
     teacher_ui.showWindow()
 
     sys.exit(app.exec())

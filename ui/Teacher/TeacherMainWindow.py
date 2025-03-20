@@ -23,29 +23,6 @@ class Ui_MainWindow(object):
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../image/55656.png"))
         self.label.setObjectName("label")
-        self.listWidget_Class = QtWidgets.QListWidget(parent=self.centralwidget)
-        self.listWidget_Class.setGeometry(QtCore.QRect(70, 150, 861, 401))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.listWidget_Class.sizePolicy().hasHeightForWidth())
-        self.listWidget_Class.setSizePolicy(sizePolicy)
-        self.listWidget_Class.setMinimumSize(QtCore.QSize(0, 300))
-        self.listWidget_Class.setMaximumSize(QtCore.QSize(956, 600))
-        self.listWidget_Class.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"font: 500 10pt \"Cambria\";\n"
-"color: rgb(0, 0, 0);\n"
-"/* Chỉ bo tròn hai góc trên */\n"
-"    background-color: white;\n"
-"    border-top-left-radius: 25px;\n"
-"    border-top-right-radius: 25px;\n"
-"    border-bottom-left-radius: 25px;\n"
-"    border-bottom-right-radius: 25px;\n"
-"    padding: 10px;\n"
-"border: none;\n"
-"\n"
-"")
-        self.listWidget_Class.setObjectName("listWidget_Class")
         self.layoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(70, 570, 861, 71))
         self.layoutWidget.setObjectName("layoutWidget")
@@ -169,6 +146,24 @@ class Ui_MainWindow(object):
 "")
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
+        self.tableWidget_classes = QtWidgets.QTableWidget(parent=self.centralwidget)
+        self.tableWidget_classes.setGeometry(QtCore.QRect(70, 145, 860, 410))
+        self.tableWidget_classes.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"font: 500 10pt \"Cambria\";\n"
+"color: rgb(0, 0, 0);\n"
+"/* Chỉ bo tròn hai góc trên */\n"
+"    background-color: white;\n"
+"    border-top-left-radius: 25px;\n"
+"    border-top-right-radius: 25px;\n"
+"    border-bottom-left-radius: 25px;\n"
+"    border-bottom-right-radius: 25px;\n"
+"    padding: 10px;\n"
+"border: none;\n"
+"\n"
+"")
+        self.tableWidget_classes.setObjectName("tableWidget_classes")
+        self.tableWidget_classes.setColumnCount(0)
+        self.tableWidget_classes.setRowCount(0)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

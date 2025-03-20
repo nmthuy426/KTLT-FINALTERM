@@ -8,7 +8,10 @@
         "major": "Công nghệ thông tin",
         "min_students": 20,
         "max_students": 30,
-        "students": [],
+        "students": [
+            "S001",
+            "S002"
+        ],
         "grades": {}
     },
     {
@@ -20,7 +23,9 @@
         "major": "Kinh tế",
         "min_students": 30,
         "max_students": 50,
-        "students": [],
+        "students": [
+            "S001"
+        ],
         "grades": {}
     },
     {
@@ -44,7 +49,9 @@
         "major": "Kinh tế",
         "min_students": 40,
         "max_students": 60,
-        "students": [],
+        "students": [
+            "S002"
+        ],
         "grades": {}
     },
     {

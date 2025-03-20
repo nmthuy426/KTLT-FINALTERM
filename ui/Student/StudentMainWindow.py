@@ -17,8 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.setAutoFillBackground(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
-        self.centralwidget.setStyleSheet("backgound-color: rgba(0,0,0,0);\n"
-"")
+        self.centralwidget.setStyleSheet("background-color: rgba(0,0,0,0);")
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
@@ -322,7 +321,7 @@ class Ui_MainWindow(object):
         self.tab_inforstudent.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.tab_inforstudent.setObjectName("tab_inforstudent")
         self.formLayoutWidget = QtWidgets.QWidget(parent=self.tab_inforstudent)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(570, 20, 271, 361))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(570, 20, 271, 331))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.formLayoutWidget)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -545,7 +544,7 @@ class Ui_MainWindow(object):
         self.label_8.setObjectName("label_8")
         self.verticalLayout_8.addWidget(self.label_8)
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.tab_inforstudent)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(410, 20, 147, 361))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(410, 20, 147, 331))
         self.verticalLayoutWidget_2.setObjectName("verticalLayoutWidget_2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -578,7 +577,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.tabWidget.setCurrentIndex(2)
+        self.tabWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

@@ -9,12 +9,12 @@ from ui.Admin.ListOfStudents import Ui_MainWindow  # Import UI từ file .ui đ�
 import json  # Import thêm để đọc file JSON
 
 class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, class_id):
+    def __init__(self, class_id, student_list):
         super().__init__()
         self.setupUi(self)  # Load giao diện từ file .ui
-        self.class_id = class_id  # Lưu class_id để dùng sau
-        self.load_students()  # Tự động load danh sách sinh viên khi mở cửa sổ
-        self.setupSignalAndSlot()
+        self.class_id = class_id
+        self.student_list = student_list  # 🔥 Lưu danh sách sinh viên
+        self.load_students()  # 🔥 Load danh sách sinh viên từ `student_list`
 
     def setupUi(self, MainWindow):
         """Thiết lập giao diện chính cho cửa sổ CreateClass"""
@@ -28,7 +28,7 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
         self.jff = JsonFileFactory()
 
     def setupSignalAndSlot(self):
-        self.pushButton_Home.clicked.connect(self.process_back)
+        self.pushButton_back.clicked.connect(self.process_back)
 
     def showWindow(self):
         self.show()  # ✅ Sửa lỗi exec() -> show()
@@ -40,27 +40,27 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
         self.admin_window.show()
 
     def load_students(self):
-        """Load danh sách sinh viên của lớp vào tableWidget"""
-        try:
-            with open("dataset/students.json", "r", encoding="utf-8") as file:
-                students = json.load(file)  # ✅ Đọc file JSON trực tiếp
-        except FileNotFoundError:
-            QMessageBox.warning(self, "Error", "File students.json not found!")
+        """Hiển thị danh sách sinh viên của lớp lên bảng"""
+        if not self.student_list:
+            QMessageBox.warning(self, "Danh Sách Trống", f"Lớp {self.class_id} chưa có sinh viên đăng ký.")
             return
 
-        class_students = [s for s in students if s.get("student_class") == self.class_id]
+        self.tableWidget.setRowCount(len(self.student_list))
+        self.tableWidget.setColumnCount(6)
+        self.tableWidget.setHorizontalHeaderLabels(["ID", "Full Name", "Birthday", "Email", "Gender", "Major"])
 
-        self.tableWidget_Students.setRowCount(len(class_students))
-        self.tableWidget_Students.setColumnCount(5)
-        self.tableWidget_Students.setHorizontalHeaderLabels(
-            ["ID", "Full Name", "Birthday", "Email", "Gender"]
-        )
+        self.tableWidget.setColumnWidth(1, 200)  # Subject
+        self.tableWidget.setColumnWidth(2, 100)  # Room
+        self.tableWidget.setColumnWidth(3, 300)  # Schedule
+        self.tableWidget.setColumnWidth(4, 100)  # Teacher ID
+        self.tableWidget.setColumnWidth(5, 200)
 
-        for row, student in enumerate(class_students):
-            self.tableWidget_Students.setItem(row, 0, QTableWidgetItem(student.get("user_id", "")))
-            self.tableWidget_Students.setItem(row, 1, QTableWidgetItem(student.get("fullname", "")))
-            self.tableWidget_Students.setItem(row, 2, QTableWidgetItem(student.get("birthday", "")))
-            self.tableWidget_Students.setItem(row, 3, QTableWidgetItem(student.get("email", "")))
-            self.tableWidget_Students.setItem(row, 4, QTableWidgetItem(student.get("gender", "")))
+        for row, student in enumerate(self.student_list):
+            self.tableWidget.setItem(row, 0, QTableWidgetItem(student.get("user_id", "")))
+            self.tableWidget.setItem(row, 1, QTableWidgetItem(student.get("fullname", "")))
+            self.tableWidget.setItem(row, 2, QTableWidgetItem(student.get("birthday", "")))
+            self.tableWidget.setItem(row, 3, QTableWidgetItem(student.get("email", "")))
+            self.tableWidget.setItem(row, 4, QTableWidgetItem(student.get("gender", "")))
+            self.tableWidget.setItem(row, 5, QTableWidgetItem(student.get("major", "")))
 
-        print(f"✅ Loaded {len(class_students)} students for class {self.class_id}")
+        print(f"✅ Loaded {len(self.student_list)} students for class {self.class_id}")

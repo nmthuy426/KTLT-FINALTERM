@@ -27,8 +27,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
-    <string notr="true">backgound-color: rgba(0,0,0,0);
-</string>
+    <string notr="true">background-color: rgba(0,0,0,0);</string>
    </property>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -295,7 +294,7 @@ QTabBar::tab:middle {
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <property name="documentMode">
      <bool>false</bool>
@@ -614,7 +613,7 @@ QPushButton:pressed {
         <x>570</x>
         <y>20</y>
         <width>271</width>
-        <height>361</height>
+        <height>331</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1062,7 +1061,7 @@ background-color: rgba(0,0,0,0);</string>
         <x>410</x>
         <y>20</y>
         <width>147</width>
-        <height>361</height>
+        <height>331</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">

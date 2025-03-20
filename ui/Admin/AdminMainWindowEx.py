@@ -12,8 +12,6 @@ import os
 import json
 from PyQt6.QtCore import QDate, Qt
 
-from ui.Admin.ListOfStudentsEx import ListOfStudentsWindow
-
 class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
     def __init__(self, admin_window):
         super().__init__()  # ✅ Gọi init của QMainWindow
@@ -513,21 +511,40 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
         self.tableWidget_Classes.cellClicked.connect(self.show_teacher_info)
 
     def show_student_list(self, class_id):
-            self.close()
-            # 👉 Luôn mở cửa sổ trước
-            self.student_list_window = ListOfStudentsWindow(class_id)
-            self.student_list_window.show()
+        """Mở danh sách sinh viên của lớp và đóng cửa sổ hiện tại"""
+        from ui.Admin.ListOfStudentsEx import ListOfStudentsWindow
 
-            # 👉 Đọc danh sách sinh viên sau khi cửa sổ đã mở
-            students = self.jff.read_data(self.student_file, Student) or []
-            enrolled_students = [s for s in students if class_id in s.registered_classes]
+        # 🔥 Đọc danh sách sinh viên từ JSON
+        students_data = self.jff.read_data(self.student_file, dict) or []
+        classes_data = self.jff.read_data(self.class_file, dict) or []
 
-            if not enrolled_students:
-                QMessageBox.warning(
-                    self.student_list_window,  # Hiển thị trên cửa sổ danh sách
-                    "Danh Sách Trống",
-                    f"Lớp {class_id} hiện chưa có học sinh đăng ký."
-                )
+        # 🔥 Tìm lớp học theo `class_id`
+        class_info = None
+        for c in classes_data:
+            if c["class_id"] == class_id:
+                class_info = c
+                break
+
+        if not class_info:
+            QMessageBox.warning(self, "Lỗi", f"Không tìm thấy lớp {class_id} trong hệ thống!")
+            return
+
+        # 🔥 Lấy danh sách `user_id` của sinh viên đã đăng ký lớp (Dùng `list` thay vì `set`)
+        student_ids = class_info.get("students", [])  # Dùng `list`, không loại bỏ trùng
+
+        # 🔥 Lọc danh sách sinh viên theo ID
+        enrolled_students = [s for s in students_data if s.get("user_id") in student_ids]
+
+        if not enrolled_students:
+            QMessageBox.warning(self, "Danh Sách Trống", f"Lớp {class_id} hiện chưa có học sinh đăng ký.")
+            return
+
+        self.close()  # 🔥 Đóng cửa sổ hiện tại trước khi mở cửa sổ mới
+
+        self.student_windows = getattr(self, "student_windows", [])  # 🔥 Tạo danh sách lưu cửa sổ
+        self.student_list_window = ListOfStudentsWindow(class_id, enrolled_students)
+        self.student_windows.append(self.student_list_window)  # 🔥 Giữ tham chiếu để không bị xóa
+        self.student_list_window.show()
 
     def show_teacher_info(self, row, column):
         if column == 4:  # Cột Teacher ID

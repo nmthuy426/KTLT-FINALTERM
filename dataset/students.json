@@ -10,7 +10,10 @@
         "major": "AI và Trí tuệ nhân tạo",
         "course": "2024",
         "advisor": "TS. Phạm Văn D",
-        "registered_classes": [],
+        "registered_classes": [
+            "C001",
+            "C002"
+        ],
         "grades": {}
     },
     {
@@ -24,7 +27,10 @@
         "major": "Hệ thống thông tin quản lý",
         "course": "2024",
         "advisor": "TS. Nguyễn Thị E",
-        "registered_classes": [],
+        "registered_classes": [
+            "C001",
+            "C004"
+        ],
         "grades": {}
     },
     {

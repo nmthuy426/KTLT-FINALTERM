@@ -46,22 +46,38 @@ class Ui_MainWindow(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.lineEdit_class = QtWidgets.QLineEdit(parent=self.scrollAreaWidgetContents)
-        self.lineEdit_class.setStyleSheet("    border: 1px solid gray;\n"
-"\n"
-"background-color: white;\n"
-"color: rgb(0, 0, 90);\n"
-"font-weight: bold;\n"
-"font: 2000 18pt \"Cambria\";\n"
-"\n"
-"    border-top-left-radius: 20px;\n"
-"    border-top-right-radius: 20px;\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
+        self.comboBox = QtWidgets.QComboBox(parent=self.scrollAreaWidgetContents)
+        self.comboBox.setMinimumSize(QtCore.QSize(0, 50))
+        self.comboBox.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.comboBox.setStyleSheet("QComboBox {\n"
+"    border: 1px solid gray;\n"
+"    border-top-right-radius: 20px; /* Bo tròn cả 4 góc */\n"
+"    border-top-left-radius:20px;\n"
 "    padding: 10px;\n"
+"    font: 500 15px \"Cambria\";\n"
+"    background: white;\n"
+"    padding-right: 30px; /* Chừa khoảng trống bên phải */\n"
+"}\n"
+"\n"
+"/* Ẩn nền của nút dropdown để bo góc phải */\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    background: transparent; /* Để nền trong suốt */\n"
+"    width: 25px;\n"
+"    subcontrol-position: right center;\n"
+"}\n"
+"\n"
+"/* Tạo nền bo góc cho dropdown */\n"
+"QComboBox::down-arrow {\n"
+"    image: url(image/down-arrow.png);\n"
+"    width: 10px;\n"
+"    height: 12px;\n"
+"    margin-right: 5px;\n"
+"}\n"
 "")
-        self.lineEdit_class.setObjectName("lineEdit_class")
-        self.verticalLayout_3.addWidget(self.lineEdit_class)
+        self.comboBox.setCurrentText("")
+        self.comboBox.setObjectName("comboBox")
+        self.verticalLayout_3.addWidget(self.comboBox)
         self.tableWidget_grade = QtWidgets.QTableWidget(parent=self.scrollAreaWidgetContents)
         self.tableWidget_grade.setMaximumSize(QtCore.QSize(16777215, 550))
         self.tableWidget_grade.setStyleSheet("/* === Bảng chính (QTableWidget) === */\n"
@@ -170,16 +186,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setContentsMargins(0, 0, -1, -1)
         self.horizontalLayout.setSpacing(5)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton_home = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
+        self.pushButton_back = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_home.sizePolicy().hasHeightForWidth())
-        self.pushButton_home.setSizePolicy(sizePolicy)
-        self.pushButton_home.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_home.setMaximumSize(QtCore.QSize(300, 60))
-        self.pushButton_home.setSizeIncrement(QtCore.QSize(0, 500))
-        self.pushButton_home.setStyleSheet("QPushButton {\n"
+        sizePolicy.setHeightForWidth(self.pushButton_back.sizePolicy().hasHeightForWidth())
+        self.pushButton_back.setSizePolicy(sizePolicy)
+        self.pushButton_back.setMinimumSize(QtCore.QSize(0, 50))
+        self.pushButton_back.setMaximumSize(QtCore.QSize(300, 60))
+        self.pushButton_back.setSizeIncrement(QtCore.QSize(0, 500))
+        self.pushButton_back.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
@@ -202,8 +218,8 @@ class Ui_MainWindow(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_home.setObjectName("pushButton_home")
-        self.horizontalLayout.addWidget(self.pushButton_home)
+        self.pushButton_back.setObjectName("pushButton_back")
+        self.horizontalLayout.addWidget(self.pushButton_back)
         self.pushButton_save = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -295,6 +311,6 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "FINALTERM"))
         item = self.tableWidget_grade.horizontalHeaderItem(6)
         item.setText(_translate("MainWindow", "AVERAGE"))
-        self.pushButton_home.setText(_translate("MainWindow", "HOME"))
+        self.pushButton_back.setText(_translate("MainWindow", "BACK"))
         self.pushButton_save.setText(_translate("MainWindow", "SAVE"))
         self.pushButton_logout.setText(_translate("MainWindow", "LOGOUT"))

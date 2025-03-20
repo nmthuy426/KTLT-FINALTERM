@@ -287,7 +287,7 @@ QScrollBar::corner {
            <number>0</number>
           </property>
           <item>
-           <widget class="QPushButton" name="pushButton_home">
+           <widget class="QPushButton" name="pushButton_back">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
               <horstretch>1</horstretch>
@@ -338,7 +338,7 @@ QPushButton:pressed {
 }</string>
             </property>
             <property name="text">
-             <string>HOME</string>
+             <string>BACK</string>
             </property>
            </widget>
           </item>

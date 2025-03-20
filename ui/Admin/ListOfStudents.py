@@ -35,22 +35,24 @@ class Ui_MainWindow(object):
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
-        self.listWidget_Students = QtWidgets.QListWidget(parent=self.verticalLayoutWidget)
-        self.listWidget_Students.setMinimumSize(QtCore.QSize(0, 0))
-        self.listWidget_Students.setMaximumSize(QtCore.QSize(16777215, 500))
-        self.listWidget_Students.setStyleSheet("    QListWidget {\n"
-"        border: 2px solid rgb(255,255,255);\n"
-"        background-color: white;\n"
-"        padding: 5px;\n"
-"    }")
-        self.listWidget_Students.setObjectName("listWidget_Students")
-        self.verticalLayout.addWidget(self.listWidget_Students)
+        self.tableWidget = QtWidgets.QTableWidget(parent=self.verticalLayoutWidget)
+        self.tableWidget.setStyleSheet("    QHeaderView::section {\n"
+"        background-color: rgb(0, 0, 90);  /* Màu xanh đậm */\n"
+"        color: white;  /* Chữ màu trắng để dễ đọc */\n"
+"        font-weight: bold;\n"
+"        padding: 4px;\n"
+"    }\n"
+"")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
+        self.verticalLayout.addWidget(self.tableWidget)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.pushButton_Home = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        self.pushButton_Home.setMinimumSize(QtCore.QSize(0, 35))
-        self.pushButton_Home.setMaximumSize(QtCore.QSize(16777215, 50))
-        self.pushButton_Home.setStyleSheet("QPushButton {\n"
+        self.pushButton_back = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_back.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_back.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_back.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
@@ -71,8 +73,8 @@ class Ui_MainWindow(object):
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_Home.setObjectName("pushButton_Home")
-        self.horizontalLayout.addWidget(self.pushButton_Home)
+        self.pushButton_back.setObjectName("pushButton_back")
+        self.horizontalLayout.addWidget(self.pushButton_back)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
@@ -91,4 +93,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "LIST OF STUDENTS"))
-        self.pushButton_Home.setText(_translate("MainWindow", "BACK"))
+        self.pushButton_back.setText(_translate("MainWindow", "BACK"))

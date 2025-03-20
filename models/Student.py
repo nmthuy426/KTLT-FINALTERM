@@ -12,6 +12,21 @@ class Student(User):
         self.registered_classes = registered_classes if registered_classes is not None else []  # 👈 Xử lý mặc định
         self.grades = grades if grades is not None else {}  # 👈 Xử lý mặc định
 
+    def to_dict(self):
+        return {
+            "user_id": self.user_id,
+            "fullname": self.fullname,
+            "birthday": self.birthday,
+            "gender": self.gender,
+            "email": getattr(self, "email", "N/A"),
+            "password": self.password,  # Nếu cần
+            "student_class": self.student_class,
+            "major": self.major,
+            "course": self.course,
+            "advisor": self.advisor,
+            "registered_classes": self.registered_classes,
+            "grades": self.grades
+        }
 
     def register_class(self, classroom: 'Classroom'):
         if classroom.add_student(self):

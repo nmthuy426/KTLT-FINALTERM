@@ -2,11 +2,11 @@ from PyQt6.QtCore import Qt, QDate
 from PyQt6.QtWidgets import  QMessageBox, QTableWidgetItem,QCheckBox,QHeaderView,QTableWidget
 
 from ui.Student.StudentMainWindow import Ui_MainWindow
-import json
 from libs.JsonFileFactory import JsonFileFactory
 from models.Student import Student
 from models.Class import Class
 import os
+import json
 
 class StudentMainWindowExt(Ui_MainWindow):
     def __init__(self):
@@ -14,30 +14,25 @@ class StudentMainWindowExt(Ui_MainWindow):
         self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
         self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
 
-
-
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.jff = JsonFileFactory()
         self.setupSignalAndSlot()
 
-        self.show_classes_ui()
+        self.show_classes_to_stu_ui()
 
-        # Kích hoạt hiệu ứng nền trong suốt
-        MainWindow.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+        self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
+
         MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
-
-        MainWindow.setStyleSheet("""
-            background-color: rgba(0,32,96,150);
-            border-radius: 10px;  /* Bo tròn góc cho đẹp hơn */
-        """)
 
     def showWindow(self):
         self.MainWindow.show()
 
     def setupSignalAndSlot(self):
         self.pushButton_save.clicked.connect(self.save_selected_classes)
+        self.pushButton_Exit.clicked.connect(self.process_exit)
 
     def load_student_info(self, email):  # Tab Personal Information
         try:
@@ -84,7 +79,7 @@ class StudentMainWindowExt(Ui_MainWindow):
 
         print(f"📌 [DEBUG] Dữ liệu students_data từ JSON: {students_data}")
 
-    def show_classes_ui(self):  # Tab Register
+    def show_classes_to_stu_ui(self):  # Tab Register
         """Đọc dữ liệu từ file JSON và hiển thị lên bảng"""
         classes_data = self.jff.read_data(self.class_file, Class) or []
 
@@ -114,82 +109,117 @@ class StudentMainWindowExt(Ui_MainWindow):
         print(f"📌 [DEBUG] Dữ liệu classes: {classes_data}")
 
     def save_selected_classes(self):
-        """Lưu các lớp đã chọn trực tiếp vào students.json và classes.json"""
-        student_email = self.lineEdit_StuMail.text().strip()  # Lấy email sinh viên từ giao diện
+        student_email = self.lineEdit_StuMail.text().strip()
         if not student_email:
             print("❌ Không có email sinh viên!")
             return
 
+        selected_classes = []
         for row in range(self.tableWidget_registeclass.rowCount()):
             checkbox = self.tableWidget_registeclass.cellWidget(row, 4)
-            if checkbox and checkbox.isChecked():  # Nếu checkbox được chọn
+            if checkbox and checkbox.isChecked():
                 class_id = self.tableWidget_registeclass.item(row, 0).text()
+                selected_classes.append(class_id)
 
-                # Gọi hàm `save_student_registration` để cập nhật vào students.json và classes.json
-                self.save_student_registration(student_email, class_id)
+        if not selected_classes:
+            print("⚠️ Không có lớp nào được chọn!")
+            return
 
-        print("✅ Đã cập nhật danh sách lớp vào students.json và classes.json")
+        # 🔥 Đọc dữ liệu sinh viên từ JSON
+        students_data = self.read_json_file(self.student_file)
+        classes_data = self.read_json_file(self.class_file)
 
-    def save_student_registration(self, student_email, class_id):
-        'nhỏ này đ có chạy dc, có j nghía xuống cái note t để ở dưới thấy code dễ hiểu hơn'
-        """Lưu đăng ký lớp học trực tiếp vào students.json và classes.json"""
+
+        # 🔥 Tìm sinh viên theo email
+        student = next((s for s in students_data if s.get("email", "").strip().lower() == student_email.lower()), None)
+        if not student:
+            print(f"⚠️ Không tìm thấy sinh viên: {student_email}")
+            return
+
+        # 🔥 Ghi đè danh sách lớp: Xóa hết lớp cũ, chỉ lưu lớp mới
+        student["registered_classes"] = selected_classes
+
+        # 🔥 Cập nhật danh sách sinh viên trong từng lớp
+        for class_obj in classes_data:
+            if class_obj["class_id"] in selected_classes:
+                if student["user_id"] not in class_obj["students"]:  # Tránh trùng lặp
+                    class_obj["students"].append(student["user_id"])
+            else:
+                if student["user_id"] in class_obj["students"]:  # Xóa nếu lớp không còn được chọn
+                    class_obj["students"].remove(student["user_id"])
+
+        # 🔥 Ghi lại dữ liệu vào files
+        self.write_data(self.student_file, students_data)
+        self.write_data(self.class_file, classes_data)
+
+        print(f"✅ Đã cập nhật danh sách lớp cho sinh viên {student_email}")
+        QMessageBox.information(self.MainWindow, "Thành công", "Danh sách lớp của bạn đã được cập nhật!")
+
+    def write_data(self, file_path, arr_data):
+        """ Ghi dữ liệu vào JSON một cách an toàn """
         try:
-            students_data = self.jff.read_data(self.student_file, Student) or []
-            classes_data = self.jff.read_data(self.class_file, Class) or []
+            if not isinstance(arr_data, list):
+                raise ValueError("❌ Dữ liệu đầu vào phải là danh sách!")
 
-            # Chuyển students_data từ list[dict] → list[Student]
-            if isinstance(students_data, list) and all(isinstance(s, dict) for s in students_data):
-                students_data = [Student(**s) for s in students_data]
+            # 🔥 Chuyển tất cả object thành dict nếu cần
+            data_to_write = [obj.__dict__ if hasattr(obj, "__dict__") else obj for obj in arr_data]
 
-            # Chuyển classes_data từ list[dict] → list[Class]
-            if isinstance(classes_data, list) and all(isinstance(c, dict) for c in classes_data):
-                classes_data = [Class(**c) for c in classes_data]
-
-            # Tìm sinh viên theo email
-            student = next((s for s in students_data if s.email.strip().lower() == student_email.lower()), None)
-            if not student:
-                print("⚠️ Không tìm thấy sinh viên:", student_email)
-                return False
-
-            # Tìm lớp học theo class_id
-            class_info = next((c for c in classes_data if c.class_id == class_id), None)
-            if not class_info:
-                print("⚠️ Không tìm thấy lớp:", class_id)
-                return False
-
-            # Nếu sinh viên chưa có danh sách lớp đăng ký thì tạo mới
-            if not hasattr(student, "registered_classes") or not isinstance(student.registered_classes, list):
-                student.registered_classes = []
-
-            # Nếu lớp chưa được đăng ký thì thêm vào
-            if class_id not in student.registered_classes:
-                student.registered_classes.append(class_id)
-
-            # Xử lý danh sách sinh viên của lớp
-            if not hasattr(class_info, "students") or not isinstance(class_info.students, list):
-                class_info.students = []
-
-            # Nếu danh sách students là list chứa dict, chỉ lấy fullname
-            elif all(isinstance(s, dict) for s in class_info.students):
-                class_info.students = [s.get("fullname", "Unknown") for s in class_info.students]
-
-            student_name = student.fullname
-            if student_name not in class_info.students:
-                class_info.students.append(student_name)
-
-            # Kiểm tra data trước khi ghi file
-            print(f"📌 [DEBUG] students_data trước khi lưu: {students_data}")
-            print(f"📌 [DEBUG] classes_data trước khi lưu: {classes_data}")
-
-            # Ghi lại dữ liệu vào file JSON
-            self.jff.write_data(self.student_file, [s.to_dict() for s in students_data])
-            self.jff.write_data(self.class_file, [c.to_dict() for c in classes_data])
-
-            print(f"✅ Đã lưu đăng ký lớp {class_id} cho sinh viên {student_name}")
-            QMessageBox.information(self.MainWindow, "Success", "Đăng kí học phần thành công!")
-
-            return True
+            # 🔥 Ghi file an toàn
+            with open(file_path, "w", encoding="utf-8") as file:
+                json.dump(data_to_write, file, indent=4, ensure_ascii=False)
 
         except Exception as e:
-            print(f"❌ Lỗi khi lưu đăng ký: {e}")
-            return False
+            print(f"❌ Lỗi khi ghi file {file_path}: {e}")
+
+    def read_json_file(self, file_path):
+        """ Đọc file JSON một cách an toàn """
+        try:
+            with open(file_path, "r", encoding="utf-8") as file:
+                data = json.load(file)
+                if isinstance(data, list):
+                    return data
+                else:
+                    print("❌ Lỗi: Dữ liệu JSON không đúng format!")
+                    return []
+        except FileNotFoundError:
+            print(f"⚠️ File {file_path} không tồn tại, sẽ tạo mới!")
+            return []
+        except json.JSONDecodeError:
+            print(f"❌ Lỗi: File {file_path} bị hỏng, không thể đọc JSON!")
+            return []
+        except Exception as e:
+            print(f"❌ Lỗi khi đọc file {file_path}: {e}")
+            return []
+
+    def load_registered_classes(self, student_email):
+        """ Tự động check checkbox các lớp đã đăng ký khi đăng nhập """
+        students_data = self.read_json_file(self.student_file)
+
+        # 🔥 Tìm sinh viên theo email
+        student = next((s for s in students_data if s.get("email", "").strip().lower() == student_email.lower()), None)
+        if not student:
+            print(f"⚠️ Không tìm thấy sinh viên: {student_email}")
+            return
+
+        registered_classes = set(student.get("registered_classes", []))  # Chuyển về set để so sánh nhanh
+
+        # 🔥 Duyệt qua bảng và check checkbox nếu lớp đã đăng ký
+        for row in range(self.tableWidget_registeclass.rowCount()):
+            class_id = self.tableWidget_registeclass.item(row, 0).text()  # Lấy ID lớp
+            checkbox = self.tableWidget_registeclass.cellWidget(row, 4)  # Lấy checkbox
+
+            if checkbox:
+                checkbox.setChecked(class_id in registered_classes)  # Check nếu lớp đã đăng ký
+
+    def process_exit(self):
+        reply = QMessageBox.question(
+            self.MainWindow,  # ✅ Đảm bảo hộp thoại thuộc về cửa sổ chính
+            "Exit Confirmation",
+            "Do you want to exit?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.Yes:
+            print("Exiting application...")
+            self.MainWindow.close()

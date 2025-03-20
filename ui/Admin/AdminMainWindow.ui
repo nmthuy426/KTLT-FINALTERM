@@ -1259,10 +1259,12 @@ QPushButton:pressed {
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">QTableWidget {
-    background: white;
-}
-</string>
+          <string notr="true">    QHeaderView::section {
+        background-color: rgb(0, 0, 90);  /* 🔥 Màu xanh đậm */
+        color: white;  /* 🔥 Chữ màu trắng để dễ đọc */
+        font-weight: bold;
+        padding: 4px;
+    }</string>
          </property>
         </widget>
        </item>

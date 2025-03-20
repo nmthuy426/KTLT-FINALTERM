@@ -701,10 +701,12 @@ class Ui_AdminManagement(object):
         self.tableWidget_Classes = QtWidgets.QTableWidget(parent=self.verticalLayoutWidget_2)
         self.tableWidget_Classes.setMinimumSize(QtCore.QSize(0, 560))
         self.tableWidget_Classes.setMaximumSize(QtCore.QSize(16777215, 580))
-        self.tableWidget_Classes.setStyleSheet("QTableWidget {\n"
-"    background: white;\n"
-"}\n"
-"")
+        self.tableWidget_Classes.setStyleSheet("    QHeaderView::section {\n"
+"        background-color: rgb(0, 0, 90);  /* 🔥 Màu xanh đậm */\n"
+"        color: white;  /* 🔥 Chữ màu trắng để dễ đọc */\n"
+"        font-weight: bold;\n"
+"        padding: 4px;\n"
+"    }")
         self.tableWidget_Classes.setObjectName("tableWidget_Classes")
         self.tableWidget_Classes.setColumnCount(0)
         self.tableWidget_Classes.setRowCount(0)
