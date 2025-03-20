@@ -14,29 +14,7 @@
    <string>Admin Management</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
-    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
-    color: rgb(255,255,255); /* Màu chữ trắng */
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    padding: 8px; /* Khoảng cách giữa chữ và viền */
-    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
-}
-
-QPushButton:hover {
-    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
-	color: rgb(255,255,255);
-}
-
-QPushButton:pressed {
-    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
-	color: rgb(255,255,255);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
-}</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -64,7 +42,7 @@ QPushButton:pressed {
       <x>0</x>
       <y>0</y>
       <width>1000</width>
-      <height>712</height>
+      <height>721</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -112,7 +90,7 @@ QTabWidget::pane {
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_ManageAccounts">
      <attribute name="title">
@@ -155,7 +133,7 @@ color: rgb(0,0,90);</string>
             <x>140</x>
             <y>30</y>
             <width>351</width>
-            <height>261</height>
+            <height>241</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
@@ -352,7 +330,7 @@ QComboBox::down-arrow {
             <x>10</x>
             <y>30</y>
             <width>121</width>
-            <height>261</height>
+            <height>231</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_9">
@@ -407,7 +385,7 @@ QComboBox::down-arrow {
             <x>510</x>
             <y>30</y>
             <width>81</width>
-            <height>191</height>
+            <height>181</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_12">
@@ -452,7 +430,7 @@ QComboBox::down-arrow {
             <x>600</x>
             <y>30</y>
             <width>371</width>
-            <height>261</height>
+            <height>241</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_13">
@@ -611,7 +589,7 @@ color: rgb(0,0,90);</string>
             <x>490</x>
             <y>40</y>
             <width>151</width>
-            <height>201</height>
+            <height>191</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -663,7 +641,7 @@ color: rgb(0,0,90);</string>
             <x>140</x>
             <y>40</y>
             <width>331</width>
-            <height>271</height>
+            <height>251</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -862,7 +840,7 @@ QComboBox::down-arrow {
             <x>10</x>
             <y>40</y>
             <width>121</width>
-            <height>271</height>
+            <height>251</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -927,7 +905,7 @@ QComboBox::down-arrow {
             <x>650</x>
             <y>40</y>
             <width>322</width>
-            <height>281</height>
+            <height>251</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -1094,6 +1072,44 @@ font: 2000 12pt &quot;Arial&quot;;</string>
          </widget>
         </widget>
        </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_exit">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font: 5000 16pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
+    color: rgb(255,255,255); /* Màu chữ trắng */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+         </property>
+         <property name="text">
+          <string>EXIT</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </widget>
@@ -1129,7 +1145,7 @@ color: rgb(0,0,90);</string>
             <x>10</x>
             <y>30</y>
             <width>961</width>
-            <height>281</height>
+            <height>251</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1160,7 +1176,7 @@ color: rgb(0,0,90);</string>
             <x>10</x>
             <y>30</y>
             <width>961</width>
-            <height>281</height>
+            <height>251</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -1171,6 +1187,44 @@ color: rgb(0,0,90);</string>
 </string>
           </property>
          </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_exit_2">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font: 5000 16pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
+    color: rgb(255,255,255); /* Màu chữ trắng */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+         </property>
+         <property name="text">
+          <string>EXIT</string>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1206,7 +1260,6 @@ color: rgb(0,0,90);</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QTableWidget {
-    border-radius: 25px; /* Bo góc cả 4 góc */
     background: white;
 }
 </string>
@@ -1222,10 +1275,10 @@ color: rgb(0,0,90);</string>
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
     color: rgb(0,0,90); /* Màu chữ trắng */
-    border-top-left-radius: 25px;
+    border-top-left-radius: 0px;
     border-bottom-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 	padding: 8px; /* Khoảng cách giữa chữ và viền */
     border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
@@ -1244,6 +1297,44 @@ QPushButton:pressed {
            </property>
            <property name="text">
             <string>CREATE CLASS</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_exit_3">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>54</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+    font: 5000 16pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
+    color: rgb(255,255,255); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 25px;
+    padding: 8px; /* Khoảng cách giữa chữ và viền */
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+           </property>
+           <property name="text">
+            <string>EXIT</string>
            </property>
           </widget>
          </item>

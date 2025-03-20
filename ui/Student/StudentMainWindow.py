@@ -17,10 +17,14 @@ class Ui_MainWindow(object):
         MainWindow.setAutoFillBackground(True)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Triangular)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
-        self.centralwidget.setStyleSheet("background-color: rgba(255, 255, 255,0);")
+        self.centralwidget.setStyleSheet("backgound-color: rgba(0,0,0,0);\n"
+"")
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 712))
+        self.label.setStyleSheet("QLabel:{\n"
+"    border-radius: 20px;\n"
+"}")
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Student\\../../image/55656.png"))
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)

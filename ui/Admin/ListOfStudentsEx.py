@@ -1,4 +1,10 @@
+import os
+
+from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QMessageBox, QTableWidgetItem
+
+from libs.DataConnector import DataConnector
+from libs.JsonFileFactory import JsonFileFactory
 from ui.Admin.ListOfStudents import Ui_MainWindow  # Import UI từ file .ui đã convert
 import json  # Import thêm để đọc file JSON
 
@@ -6,11 +12,20 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, class_id):
         super().__init__()
         self.setupUi(self)  # Load giao diện từ file .ui
-
         self.class_id = class_id  # Lưu class_id để dùng sau
         self.load_students()  # Tự động load danh sách sinh viên khi mở cửa sổ
-
         self.setupSignalAndSlot()
+
+    def setupUi(self, MainWindow):
+        """Thiết lập giao diện chính cho cửa sổ CreateClass"""
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        self.setupSignalAndSlot()
+        self.teacher_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/teachers.json"))
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+        self.dc = DataConnector()
+        self.jff = JsonFileFactory()
 
     def setupSignalAndSlot(self):
         self.pushButton_Home.clicked.connect(self.process_back)

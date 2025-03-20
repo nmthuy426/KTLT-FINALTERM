@@ -14,7 +14,6 @@ from PyQt6.QtCore import QDate, Qt
 
 from ui.Admin.ListOfStudentsEx import ListOfStudentsWindow
 
-
 class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
     def __init__(self, admin_window):
         super().__init__()  # ✅ Gọi init của QMainWindow
@@ -112,6 +111,10 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
         self.comboBox_StuClass.currentTextChanged.connect(self.capitalize_id_and_class)
         self.lineEdit_TeaId.textChanged.connect(self.capitalize_id_and_class)
         self.lineEdit_TeaClass.textChanged.connect(self.capitalize_id_and_class)
+        #exit
+        self.pushButton_exit.clicked.connect(self.process_exit)
+        self.pushButton_exit_2.clicked.connect(self.process_exit)
+        self.pushButton_exit_3.clicked.connect(self.process_exit)
 
     def open_create_class(self):
         self.close()
@@ -541,3 +544,16 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
                     f"Khoa: {teacher_info.faculty}\n"
                     f"Email: {teacher_info.email}\n"
                 )
+
+    def process_exit(self):
+        reply = QMessageBox.question(
+            self.MainWindow,  # ✅ Đảm bảo hộp thoại thuộc về cửa sổ chính
+            "Exit Confirmation",
+            "Do you want to exit?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.Yes:
+            print("Exiting application...")
+            self.close()

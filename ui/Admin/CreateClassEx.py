@@ -37,7 +37,6 @@ class CreateClassExt(QMainWindow, Ui_MainWindow):
         self.jff = JsonFileFactory()
         self.load_teacher_from_json()
 
-
     def setupSignalAndSlot(self):
         """Kết nối sự kiện của các nút bấm"""
         self.pushButton_SaveClass.clicked.connect(self.process_save_class)
@@ -104,11 +103,11 @@ class CreateClassExt(QMainWindow, Ui_MainWindow):
         self.clear()
 
     def capitalize_each_word_subject(self):
-        text = self.ui.lineEdit_Subject.text()
+        text = self.lineEdit_Subject.text()
         capitalized = text.title()
-        self.ui.lineEdit_Subject.blockSignals(True)
-        self.ui.lineEdit_Subject.setText(capitalized)
-        self.ui.lineEdit_Subject.blockSignals(False)
+        self.lineEdit_Subject.blockSignals(True)
+        self.lineEdit_Subject.setText(capitalized)
+        self.lineEdit_Subject.blockSignals(False)
 
     def capitalize(self):
         self.lineEdit_ClassId.setText(self.lineEdit_ClassId.text().upper())
@@ -125,7 +124,6 @@ class CreateClassExt(QMainWindow, Ui_MainWindow):
     def load_teacher_from_json(self):
         teachers = self.jff.read_data(self.teacher_file, Teacher) or []
         list_teachers = list(set(teacher.fullname for teacher in teachers if teacher.fullname))
-
         self.comboBox.clear()
         self.comboBox.addItems(list_teachers)
 

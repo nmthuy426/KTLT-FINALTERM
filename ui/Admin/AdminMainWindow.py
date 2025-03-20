@@ -13,29 +13,7 @@ class Ui_AdminManagement(object):
     def setupUi(self, AdminManagement):
         AdminManagement.setObjectName("AdminManagement")
         AdminManagement.resize(1000, 712)
-        AdminManagement.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
-"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 20px;\n"
-"    border-bottom-left-radius: 20px;\n"
-"    border-top-right-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
-"}")
+        AdminManagement.setStyleSheet("")
         self.centralwidget = QtWidgets.QWidget(parent=AdminManagement)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
@@ -45,7 +23,7 @@ class Ui_AdminManagement(object):
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.tabWidget = QtWidgets.QTabWidget(parent=self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1000, 712))
+        self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1000, 721))
         self.tabWidget.setStyleSheet("/* Tab chưa được chọn */\n"
 "QTabBar::tab {\n"
 "    width: 100px;\n"
@@ -104,7 +82,7 @@ class Ui_AdminManagement(object):
 "color: rgb(0,0,90);")
         self.groupBox_InfoTeacher.setObjectName("groupBox_InfoTeacher")
         self.verticalLayoutWidget_5 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 351, 261))
+        self.verticalLayoutWidget_5.setGeometry(QtCore.QRect(140, 30, 351, 241))
         self.verticalLayoutWidget_5.setObjectName("verticalLayoutWidget_5")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_5)
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
@@ -229,7 +207,7 @@ class Ui_AdminManagement(object):
         self.comboBox_TeaGender.addItem("")
         self.verticalLayout_7.addWidget(self.comboBox_TeaGender)
         self.verticalLayoutWidget_7 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(10, 30, 121, 261))
+        self.verticalLayoutWidget_7.setGeometry(QtCore.QRect(10, 30, 121, 231))
         self.verticalLayoutWidget_7.setObjectName("verticalLayoutWidget_7")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_7)
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
@@ -252,7 +230,7 @@ class Ui_AdminManagement(object):
         self.label_11.setObjectName("label_11")
         self.verticalLayout_9.addWidget(self.label_11)
         self.verticalLayoutWidget_10 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(510, 30, 81, 191))
+        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(510, 30, 81, 181))
         self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
         self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
@@ -271,7 +249,7 @@ class Ui_AdminManagement(object):
         self.label_20.setObjectName("label_20")
         self.verticalLayout_12.addWidget(self.label_20)
         self.verticalLayoutWidget_11 = QtWidgets.QWidget(parent=self.groupBox_InfoTeacher)
-        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 371, 261))
+        self.verticalLayoutWidget_11.setGeometry(QtCore.QRect(600, 30, 371, 241))
         self.verticalLayoutWidget_11.setObjectName("verticalLayoutWidget_11")
         self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_11)
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
@@ -348,7 +326,7 @@ class Ui_AdminManagement(object):
 "color: rgb(0,0,90);")
         self.groupBox_InfoStudent.setObjectName("groupBox_InfoStudent")
         self.formLayoutWidget = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(490, 40, 151, 201))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(490, 40, 151, 191))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.formLayoutWidget)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -370,7 +348,7 @@ class Ui_AdminManagement(object):
         self.cVNHCTPLabel.setObjectName("cVNHCTPLabel")
         self.verticalLayout_4.addWidget(self.cVNHCTPLabel)
         self.verticalLayoutWidget_4 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(140, 40, 331, 271))
+        self.verticalLayoutWidget_4.setGeometry(QtCore.QRect(140, 40, 331, 251))
         self.verticalLayoutWidget_4.setObjectName("verticalLayoutWidget_4")
         self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_4)
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
@@ -488,7 +466,7 @@ class Ui_AdminManagement(object):
         self.lineEdit_StuMail.setObjectName("lineEdit_StuMail")
         self.verticalLayout_6.addWidget(self.lineEdit_StuMail)
         self.verticalLayoutWidget_6 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(10, 40, 121, 271))
+        self.verticalLayoutWidget_6.setGeometry(QtCore.QRect(10, 40, 121, 251))
         self.verticalLayoutWidget_6.setObjectName("verticalLayoutWidget_6")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_6)
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -515,7 +493,7 @@ class Ui_AdminManagement(object):
         self.label_3.setObjectName("label_3")
         self.verticalLayout_8.addWidget(self.label_3)
         self.verticalLayoutWidget_3 = QtWidgets.QWidget(parent=self.groupBox_InfoStudent)
-        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 322, 281))
+        self.verticalLayoutWidget_3.setGeometry(QtCore.QRect(650, 40, 322, 251))
         self.verticalLayoutWidget_3.setObjectName("verticalLayoutWidget_3")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_3)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -616,6 +594,33 @@ class Ui_AdminManagement(object):
         self.pushButton_StuAddInfo.setObjectName("pushButton_StuAddInfo")
         self.verticalLayout_3.addWidget(self.pushButton_StuAddInfo)
         self.verticalLayout.addWidget(self.groupBox_InfoStudent)
+        self.pushButton_exit = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_exit.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_exit.setStyleSheet("QPushButton {\n"
+"    font: 5000 16pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
+"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 20px;\n"
+"    border-bottom-left-radius: 20px;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    padding: 0px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_exit.setObjectName("pushButton_exit")
+        self.verticalLayout.addWidget(self.pushButton_exit)
         self.tabWidget.addTab(self.tab_ManageAccounts, "")
         self.tab_ListAccounts = QtWidgets.QWidget()
         self.tab_ListAccounts.setObjectName("tab_ListAccounts")
@@ -631,7 +636,7 @@ class Ui_AdminManagement(object):
         self.groupBox_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupBox_3.setObjectName("groupBox_3")
         self.tableWidget_Student = QtWidgets.QTableWidget(parent=self.groupBox_3)
-        self.tableWidget_Student.setGeometry(QtCore.QRect(10, 30, 961, 281))
+        self.tableWidget_Student.setGeometry(QtCore.QRect(10, 30, 961, 251))
         self.tableWidget_Student.setStyleSheet("QTableWidget {\n"
 "    border-radius: 25px; /* Bo góc cả 4 góc */\n"
 "    background: white;\n"
@@ -647,7 +652,7 @@ class Ui_AdminManagement(object):
         self.groupBox_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.groupBox_4.setObjectName("groupBox_4")
         self.tableWidget_Teacher = QtWidgets.QTableWidget(parent=self.groupBox_4)
-        self.tableWidget_Teacher.setGeometry(QtCore.QRect(10, 30, 961, 281))
+        self.tableWidget_Teacher.setGeometry(QtCore.QRect(10, 30, 961, 251))
         self.tableWidget_Teacher.setStyleSheet("QTableWidget {\n"
 "    border-radius: 25px; /* Bo góc cả 4 góc */\n"
 "    background: white;\n"
@@ -657,6 +662,33 @@ class Ui_AdminManagement(object):
         self.tableWidget_Teacher.setColumnCount(0)
         self.tableWidget_Teacher.setRowCount(0)
         self.verticalLayout_5.addWidget(self.groupBox_4)
+        self.pushButton_exit_2 = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_8)
+        self.pushButton_exit_2.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_exit_2.setStyleSheet("QPushButton {\n"
+"    font: 5000 16pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
+"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 20px;\n"
+"    border-bottom-left-radius: 20px;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    padding: 0px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_exit_2.setObjectName("pushButton_exit_2")
+        self.verticalLayout_5.addWidget(self.pushButton_exit_2)
         self.tabWidget.addTab(self.tab_ListAccounts, "")
         self.tab_ManageClasses = QtWidgets.QWidget()
         self.tab_ManageClasses.setObjectName("tab_ManageClasses")
@@ -670,7 +702,6 @@ class Ui_AdminManagement(object):
         self.tableWidget_Classes.setMinimumSize(QtCore.QSize(0, 560))
         self.tableWidget_Classes.setMaximumSize(QtCore.QSize(16777215, 580))
         self.tableWidget_Classes.setStyleSheet("QTableWidget {\n"
-"    border-radius: 25px; /* Bo góc cả 4 góc */\n"
 "    background: white;\n"
 "}\n"
 "")
@@ -685,10 +716,10 @@ class Ui_AdminManagement(object):
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
 "    color: rgb(0,0,90); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 25px;\n"
+"    border-top-left-radius: 0px;\n"
 "    border-bottom-left-radius: 25px;\n"
-"    border-top-right-radius: 25px;\n"
-"    border-bottom-right-radius: 25px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
 "    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
 "    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
@@ -706,12 +737,39 @@ class Ui_AdminManagement(object):
 "}")
         self.pushButton_CreateClass.setObjectName("pushButton_CreateClass")
         self.horizontalLayout_2.addWidget(self.pushButton_CreateClass)
+        self.pushButton_exit_3 = QtWidgets.QPushButton(parent=self.verticalLayoutWidget_2)
+        self.pushButton_exit_3.setMaximumSize(QtCore.QSize(16777215, 54))
+        self.pushButton_exit_3.setStyleSheet("QPushButton {\n"
+"    font: 5000 16pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
+"    color: rgb(255,255,255); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 25px;\n"
+"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(170,0,0); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(112,0,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_exit_3.setObjectName("pushButton_exit_3")
+        self.horizontalLayout_2.addWidget(self.pushButton_exit_3)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
         self.tabWidget.addTab(self.tab_ManageClasses, "")
         AdminManagement.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(AdminManagement)
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(AdminManagement)
 
     def retranslateUi(self, AdminManagement):
@@ -745,9 +803,12 @@ class Ui_AdminManagement(object):
         self.comboBox_StuMajor.setItemText(2, _translate("AdminManagement", "Hệ Thống Thông Tin Quản Lý"))
         self.comboBox_StuMajor.setItemText(3, _translate("AdminManagement", "Kinh Doanh Số và Trí Tuệ Nhân Tạo"))
         self.pushButton_StuAddInfo.setText(_translate("AdminManagement", "ADD STUDENT"))
+        self.pushButton_exit.setText(_translate("AdminManagement", "EXIT"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageAccounts), _translate("AdminManagement", "CREATE ACCOUNTS"))
         self.groupBox_3.setTitle(_translate("AdminManagement", "STUDENT"))
         self.groupBox_4.setTitle(_translate("AdminManagement", "TEACHER"))
+        self.pushButton_exit_2.setText(_translate("AdminManagement", "EXIT"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ListAccounts), _translate("AdminManagement", "LISTS OF ACCOUNTS"))
         self.pushButton_CreateClass.setText(_translate("AdminManagement", "CREATE CLASS"))
+        self.pushButton_exit_3.setText(_translate("AdminManagement", "EXIT"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_ManageClasses), _translate("AdminManagement", "MANAGE CLASSES"))
