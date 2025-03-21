@@ -5,6 +5,5 @@ from models.Student import Student
 jff=JsonFileFactory()
 filename= "../dataset/Teacher.json"
 eas=jff.read_data(filename,Student)
-print("Danh sách phân công quản lý tài sản đọc từ file:")
 for e in eas:
    print(e)

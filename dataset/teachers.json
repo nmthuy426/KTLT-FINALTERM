@@ -23,17 +23,8 @@
         "faculty": "Kinh tế",
         "teacher_class": "K24402",
         "assigned_classes": [
+            "Kinh tế vi mô",
+            "Marketing căn bản"
         ]
-    },
-    {
-        "user_id": "K20222",
-        "fullname": "Ngô Minh Thuy",
-        "birthday": "01/01/2000",
-        "gender": "Male",
-        "email": "thuynm@uel.edu.vn",
-        "password": "12345",
-        "faculty": "kinh tế",
-        "teacher_class": "K24202",
-        "assigned_classes": []
     }
 ]

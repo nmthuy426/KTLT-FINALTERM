@@ -1,73 +1,49 @@
 [
     {
         "class_id": "C001",
-        "teacher": "T001",
+        "teacher": "Trần Thị B",
         "room": "Phòng A101",
         "schedule": "Thứ 2, 4, 6 (07:30 - 09:30)",
         "subject": "Lập trình Python",
         "major": "Công nghệ thông tin",
-        "min_students": 5,
+        "min_students": 20,
         "max_students": 30,
-        "students": [
-            "S001",
-            "S002",
-            "S003",
-            "S004",
-            "S005"
-        ],
+        "students": [],
         "grades": {}
     },
     {
         "class_id": "C002",
-        "teacher": "T002",
+        "teacher": "Nguyễn Văn A",
         "room": "Phòng B202",
         "schedule": "Thứ 3, 5 (13:00 - 15:00)",
         "subject": "Kinh tế vi mô",
         "major": "Kinh tế",
         "min_students": 30,
         "max_students": 50,
-        "students": [
-            "S003"
-        ],
+        "students": [],
         "grades": {}
     },
     {
         "class_id": "C003",
-        "teacher": "T001",
+        "teacher": "Nguyễn Văn A",
         "room": "Phòng C303",
         "schedule": "Thứ 2, 4 (09:30 - 11:30)",
         "subject": "Cấu trúc dữ liệu",
         "major": "Công nghệ thông tin",
         "min_students": 20,
         "max_students": 40,
-        "students": [
-            "S001"
-        ],
+        "students": [],
         "grades": {}
     },
     {
         "class_id": "C004",
-        "teacher": "T002",
+        "teacher": "Trần Thị B",
         "room": "Phòng D404",
         "schedule": "Thứ 7 (08:00 - 12:00)",
         "subject": "Marketing căn bản",
         "major": "Kinh tế",
         "min_students": 40,
         "max_students": 60,
-        "students": [
-            "S002"
-        ],
-        "grades": {}
-    },
-    {
-        "class_id": "K2333213",
-        "teacher": "Trần Thị B",
-        "room": "B1.101",
-        "schedule": "Thứ 3,5,7 (9:00-10:00)",
-        "subject": "Kinh Tế Học",
-        "major": "Kinh tế",
-        "min_students": 20,
-        "max_students": 40,
         "students": [],
         "grades": {}
     }
