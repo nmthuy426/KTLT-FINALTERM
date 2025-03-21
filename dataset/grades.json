@@ -1,12 +1,12 @@
 [
     {
         "student_id": "S001",
-        "class_id": "C001",
-        "formative1": 7.0,
-        "formative2": 8.0,
-        "midterm": 9.0,
-        "finalterm": 10.0,
-        "average": 9.0
+        "class_id": "C004",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 4.0,
+        "average": 1.71
     },
     {
         "student_id": "S002",

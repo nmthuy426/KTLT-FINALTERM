@@ -1,0 +1,56 @@
+[
+    {
+        "student_id": "S001",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 0.0,
+        "average": 0.0
+    },
+    {
+        "student_id": "S002",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 5.0,
+        "average": 2.14
+    },
+    {
+        "student_id": "S003",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 0.0,
+        "average": 0.0
+    },
+    {
+        "student_id": "S005",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 0.0,
+        "average": 0.0
+    },
+    {
+        "student_id": "S006",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 0.0,
+        "average": 0.0
+    },
+    {
+        "student_id": "S008",
+        "class_id": "C001",
+        "formative1": 0.0,
+        "formative2": 0.0,
+        "midterm": 0.0,
+        "finalterm": 0.0,
+        "average": 0.0
+    }
+]

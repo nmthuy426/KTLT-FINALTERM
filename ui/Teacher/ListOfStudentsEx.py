@@ -133,12 +133,6 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
     def write_to_file(self, new_grades):
         """Ghi danh sách điểm vào file grades.json"""
         grades_file = "../dataset/grades.json"
-        dataset_dir = "dataset"
-
-        # ✅ Kiểm tra thư mục `dataset/` có tồn tại không
-        if not os.path.exists(dataset_dir):
-            print(f"⚠ DEBUG: Thư mục {dataset_dir} không tồn tại! Đang tạo mới...")
-            os.makedirs(dataset_dir)
 
         # ✅ Kiểm tra file `grades.json` có tồn tại không, nếu không thì tạo file rỗng
         if not os.path.exists(grades_file):
