@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_exit.sizePolicy().hasHeightForWidth())
         self.pushButton_exit.setSizePolicy(sizePolicy)
         self.pushButton_exit.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_exit.setMaximumSize(QtCore.QSize(300, 60))
+        self.pushButton_exit.setMaximumSize(QtCore.QSize(600, 60))
         self.pushButton_exit.setSizeIncrement(QtCore.QSize(0, 0))
         self.pushButton_exit.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
@@ -64,38 +64,6 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_exit.setObjectName("pushButton_exit")
         self.horizontalLayout.addWidget(self.pushButton_exit)
-        self.pushButton_InputGrade = QtWidgets.QPushButton(parent=self.layoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_InputGrade.sizePolicy().hasHeightForWidth())
-        self.pushButton_InputGrade.setSizePolicy(sizePolicy)
-        self.pushButton_InputGrade.setMaximumSize(QtCore.QSize(1000, 60))
-        self.pushButton_InputGrade.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 0px;\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-top-right-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
-"}")
-        self.pushButton_InputGrade.setObjectName("pushButton_InputGrade")
-        self.horizontalLayout.addWidget(self.pushButton_InputGrade)
         self.pushButton_logout = QtWidgets.QPushButton(parent=self.layoutWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
@@ -103,7 +71,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_logout.sizePolicy().hasHeightForWidth())
         self.pushButton_logout.setSizePolicy(sizePolicy)
         self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_logout.setMaximumSize(QtCore.QSize(300, 60))
+        self.pushButton_logout.setMaximumSize(QtCore.QSize(600, 60))
         self.pushButton_logout.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
@@ -168,6 +136,5 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton_exit.setText(_translate("MainWindow", "EXIT"))
-        self.pushButton_InputGrade.setText(_translate("MainWindow", "INPUT GRADE"))
         self.pushButton_logout.setText(_translate("MainWindow", "LOGOUT"))
         self.label_3.setText(_translate("MainWindow", "TEACHER"))
