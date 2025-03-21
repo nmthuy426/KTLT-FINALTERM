@@ -72,7 +72,9 @@ class LoginMainWindowExt(Ui_MainWindow):
 
             self.student_window.show()
             self.student_window.activateWindow()
-            self.student_ui.load_student_info(getattr(user,"email"))  # Truyền email để load đúng data
+            self.student_ui.load_student_info(getattr(user,"email"))
+            self.student_ui.load_registered_classes(getattr(user, "email"))
+            self.student_ui.show_classes_with_enough_students(getattr(user, "email"))
 
         elif role == "teacher":
             if self.teacher_window is None:

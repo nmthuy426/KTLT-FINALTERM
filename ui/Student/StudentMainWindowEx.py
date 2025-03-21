@@ -223,3 +223,51 @@ class StudentMainWindowExt(Ui_MainWindow):
         if reply == QMessageBox.StandardButton.Yes:
             print("Exiting application...")
             self.MainWindow.close()
+
+    def show_classes_with_enough_students(self, student_email):
+        """
+        Chỉ hiển thị lịch học của các lớp mà sinh viên đã đăng ký
+        và chỉ nếu lớp đó đạt số lượng sinh viên tối thiểu (lấy từ classes.json).
+        """
+        # 🔥 Đọc danh sách lớp và danh sách sinh viên
+        classes_data = self.read_json_file(self.class_file)
+        students_data = self.read_json_file(self.student_file)
+
+        # 🔥 Tìm sinh viên theo email
+        student = next((s for s in students_data if s.get("email", "").strip().lower() == student_email.lower()), None)
+        if not student:
+            print(f"⚠️ [DEBUG] Không tìm thấy sinh viên: {student_email}")
+            return
+
+        registered_classes = set(student.get("registered_classes", []))  # Lớp mà sinh viên đã đăng ký
+        print(f"📌 [DEBUG] Sinh viên {student_email} đã đăng ký các lớp: {registered_classes}")
+
+        # 🔥 Lọc các lớp đạt yêu cầu
+        valid_classes = []
+        for class_obj in classes_data:
+            class_id = class_obj["class_id"]
+            num_students = len(class_obj.get("students", []))  # Số lượng SV hiện tại
+            min_students = class_obj.get("min_students", 5)  # Lấy số lượng tối thiểu (mặc định 5 nếu không có)
+
+            print(f"📌 [DEBUG] Lớp {class_id} có {num_students} SV, yêu cầu tối thiểu {min_students} SV")
+
+            if num_students >= min_students and class_id in registered_classes:
+                valid_classes.append(class_obj)  # Chỉ thêm lớp nếu đủ điều kiện
+
+        # 🔥 Hiển thị lên bảng table_scheduel
+        self.tableWidget_schedule.setRowCount(len(valid_classes))
+        self.tableWidget_schedule.setColumnCount(4)
+        self.tableWidget_schedule.setHorizontalHeaderLabels(["ID_CLASS", "SUBJECT", "ROOM", "SCHEDULE"])
+
+        self.tableWidget_schedule.setColumnWidth(1, 200)  # Subject
+        self.tableWidget_schedule.setColumnWidth(2, 200)  # Room
+        self.tableWidget_schedule.setColumnWidth(3, 300)  # Schedule
+
+        for row, c in enumerate(valid_classes):
+            print(f"✅ [DEBUG] Hiển thị lịch lớp {c['class_id']} (đạt min {c['min_students']} SV)")
+            self.tableWidget_schedule.setItem(row, 0, QTableWidgetItem(c["class_id"]))
+            self.tableWidget_schedule.setItem(row, 1, QTableWidgetItem(c["subject"]))
+            self.tableWidget_schedule.setItem(row, 2, QTableWidgetItem(c["room"]))
+            self.tableWidget_schedule.setItem(row, 3, QTableWidgetItem(c["schedule"]))
+
+        print(f"✅ [DEBUG] Hiển thị {len(valid_classes)} lớp của sinh viên lên bảng thời khóa biểu")
