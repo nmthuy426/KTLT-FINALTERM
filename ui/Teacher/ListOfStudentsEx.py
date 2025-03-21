@@ -1,8 +1,13 @@
-import os
 import json
+import numpy as np
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QMainWindow, QMessageBox, QTableWidgetItem
+from PyQt6.QtWidgets import QMainWindow, QMessageBox, QTableWidgetItem, QFileDialog
+from matplotlib import pyplot as plt
+
 from ui.Teacher.ListOfStudents import Ui_MainWindow_2  # Import UI từ file .ui đã convert
+import pandas as pd  # Đảm bảo bạn đã import pandas
+import os
+import subprocess
 
 class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
     def __init__(self, class_id, student_list):
@@ -13,8 +18,8 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
         self.student_list = student_list  # 🔥 Lưu danh sách sinh viên
         self.grades_file = "../dataset/grades.json"  # Đường dẫn file lưu điểm
 
-        self.setupSignalAndSlot()  # Kết nối các sự kiện
-        self.load_students()  # 🔥 Load danh sách sinh viên từ `student_list`
+        self.load_students()  # ⚠️ Load danh sách học sinh trước
+        self.reload_saved_grades()  # 🔥 Sau đó, nạp điểm vào bảng
 
     def setupUi(self, MainWindow):
         """Thiết lập giao diện chính cho cửa sổ danh sách sinh viên"""
@@ -27,6 +32,8 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
         """Kết nối các signal & slot"""
         self.pushButton_back.clicked.connect(self.process_back)
         self.pushButton_save.clicked.connect(self.save_grades)
+        self.pushButton_excel.clicked.connect(self.export_to_excel)
+        self.pushButton_chart.clicked.connect(self.show_chart)
 
     def showWindow(self):
         """Hiển thị cửa sổ danh sách sinh viên"""
@@ -182,3 +189,113 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
 
         except Exception as e:
             print(f"❌ ERROR: Failed to write file → {e}")
+
+        self.reload_saved_grades()
+
+    def reload_saved_grades(self):
+        """Tải lại điểm từ file JSON để cập nhật bảng"""
+        try:
+            with open(self.grades_file, "r", encoding="utf-8") as file:
+                grades = json.load(file)
+
+            for row in range(self.tableWidget.rowCount()):
+                student_id = self.tableWidget.item(row, 0).text()
+                student_grade = next(
+                    (g for g in grades if g["student_id"] == student_id and g["class_id"] == self.class_id), None)
+
+                if student_grade:
+                    self.tableWidget.setItem(row, 2, QTableWidgetItem(str(student_grade["formative1"])))
+                    self.tableWidget.setItem(row, 3, QTableWidgetItem(str(student_grade["formative2"])))
+                    self.tableWidget.setItem(row, 4, QTableWidgetItem(str(student_grade["midterm"])))
+                    self.tableWidget.setItem(row, 5, QTableWidgetItem(str(student_grade["finalterm"])))
+                    self.tableWidget.setItem(row, 6, QTableWidgetItem(str(student_grade["average"])))
+
+            print(f"✅ DEBUG: Reloaded grades from {self.grades_file}")
+
+        except Exception as e:
+            print(f"❌ ERROR: Could not reload grades → {e}")
+
+    def export_to_excel(self):
+        print("📌 DEBUG: Bắt đầu xuất file Excel")
+
+        # ✅ Đảm bảo thư mục lưu file tồn tại
+        save_dir = "../excel/"
+        os.makedirs(save_dir, exist_ok=True)
+
+        # ✅ Đặt tên file theo class_id
+        file_path = os.path.join(save_dir, f"Class_{self.class_id}.xlsx")
+
+        rows = self.tableWidget.rowCount()
+        cols = self.tableWidget.columnCount()
+
+        if rows == 0 or cols == 0:
+            QMessageBox.warning(self, "Lỗi", "Không có dữ liệu để xuất!")
+            return
+
+        # ✅ Lấy dữ liệu từ bảng
+        data = []
+        headers = [self.tableWidget.horizontalHeaderItem(i).text() if self.tableWidget.horizontalHeaderItem(
+            i) else f"Column {i}" for i in range(cols)]
+
+        for row in range(rows):
+            row_data = [self.tableWidget.item(row, col).text() if self.tableWidget.item(row, col) else "" for col in
+                        range(cols)]
+            data.append(row_data)
+
+        try:
+            # ✅ Xuất ra file Excel
+            df = pd.DataFrame(data, columns=headers)
+            df.to_excel(file_path, index=False)
+            QMessageBox.information(self, "Thành Công", f"File Excel đã lưu tại:\n{file_path}")
+            print(f"✅ DEBUG: Xuất file Excel thành công tại {file_path}")
+
+            # ✅ MỞ FILE EXCEL NGAY SAU KHI XUẤT
+            if os.name == "nt":  # Windows
+                subprocess.run(["start", file_path], shell=True)
+            elif os.name == "posix":  # Linux & macOS
+                subprocess.run(["xdg-open", file_path])
+
+        except Exception as e:
+            QMessageBox.critical(self, "Lỗi", f"Không thể xuất file Excel:\n{str(e)}")
+            print(f"❌ ERROR: {str(e)}")
+
+    def show_chart(self):
+        print("📌 DEBUG: Đang vẽ biểu đồ điểm")
+
+        rows = self.tableWidget.rowCount()
+        if rows == 0:
+            QMessageBox.warning(self, "Lỗi", "Không có dữ liệu để hiển thị biểu đồ!")
+            return
+
+        # Lấy danh sách sinh viên và điểm trung bình
+        student_names = []
+        averages = []
+
+        for row in range(rows):
+            name_item = self.tableWidget.item(row, 1)  # Cột Full Name
+            avg_item = self.tableWidget.item(row, 6)  # Cột Average
+
+            if name_item and avg_item:
+                student_names.append(name_item.text())
+                try:
+                    averages.append(float(avg_item.text()))
+                except ValueError:
+                    averages.append(0.0)  # Nếu có lỗi, mặc định điểm là 0
+
+        # 🔥 Đảm bảo không bị nhân đôi biểu đồ
+        plt.close('all')
+
+        # Vẽ biểu đồ cột
+        plt.figure(figsize=(10, 6))
+        y_pos = np.arange(len(student_names))
+        plt.bar(y_pos, averages, color='skyblue')
+
+        # Gán nhãn
+        plt.xticks(y_pos, student_names, rotation=45, ha="right")
+        plt.ylabel("Điểm Trung Bình")
+        plt.xlabel("Sinh Viên")
+        plt.title("Thống kê điểm trung bình")
+
+        # Hiển thị biểu đồ (gọi duy nhất một lần)
+        plt.tight_layout()
+        plt.show()
