@@ -115,7 +115,7 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
         QMessageBox.information(self, "Thành Công", "Lưu điểm thành công!")
 
     def get_float_value(self, row, col):
-        """Lấy giá trị điểm từ bảng, đảm bảo kiểu float"""
+        """Lấy giá trị điểm từ bảng, đảm bảo kiểu float, không nhỏ hơn 0 và không lớn hơn 10"""
         item = self.tableWidget.item(row, col)
         if item:
             text_value = item.text().strip()
@@ -124,9 +124,22 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
             if text_value:
                 try:
                     value = float(text_value)
+
+                    # 🔥 Giới hạn điểm trong khoảng [0, 10]
+                    if value < 0:
+                        QMessageBox.warning(self, "Lỗi",
+                                            f"Điểm của sinh viên {self.tableWidget.item(row, 0).text()} không thể nhỏ hơn 0!")
+                        return 0.0
+
+                    if value > 10:
+                        QMessageBox.warning(self, "Lỗi",
+                                            f"Điểm của sinh viên {self.tableWidget.item(row, 0).text()} không thể lớn hơn 10!")
+                        return 10.0
+
                     return value
                 except ValueError:
-                    QMessageBox.warning(self, "Lỗi", f"Điểm của sinh viên {self.tableWidget.item(row, 0).text()} không hợp lệ!")
+                    QMessageBox.warning(self, "Lỗi",
+                                        f"Điểm của sinh viên {self.tableWidget.item(row, 0).text()} không hợp lệ!")
                     return 0.0
         return 0.0
 

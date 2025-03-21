@@ -13,17 +13,18 @@ class StudentMainWindowExt(Ui_MainWindow):
         super().__init__()
         self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
         self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
+        self.grades_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/grades.json"))
 
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow
         self.jff = JsonFileFactory()
         self.setupSignalAndSlot()
-
         self.show_classes_to_stu_ui()
 
         self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
         self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
+        self.grades_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/grades.json"))
 
         MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
@@ -296,4 +297,88 @@ class StudentMainWindowExt(Ui_MainWindow):
             self.login_ui.showWindow()
 
             self.MainWindow.close()  # Đóng cửa sổ hiện tại
+
+    def load_student_grades(self, email):
+        """📌 Load điểm của sinh viên từ `grades.json` bằng email"""
+        print(f"📌 DEBUG: Đang tìm điểm của sinh viên với email {email}")
+
+        try:
+            # 📂 Đọc danh sách sinh viên để lấy `student_id`
+            with open(self.student_file, "r", encoding="utf-8") as file:
+                students_data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("❌ ERROR: Không thể đọc file sinh viên!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Không thể đọc dữ liệu sinh viên!")
+            return
+
+        # 🔍 Tìm sinh viên theo email
+        student_info = next((s for s in students_data if s.get("email", "").strip().lower() == email.lower()), None)
+
+        if not student_info:
+            print(f"⚠️ Không tìm thấy sinh viên với email: {email}")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Không tìm thấy thông tin sinh viên!")
+            return
+
+        student_id = student_info.get("user_id", "")
+        print(f"📌 DEBUG: Student ID được lấy từ email: {student_id}")
+
+        try:
+            # 📂 Đọc danh sách điểm từ `grades.json`
+            with open(self.grades_file, "r", encoding="utf-8") as file:
+                grades_data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("❌ ERROR: Không thể đọc file điểm!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Không thể đọc dữ liệu điểm!")
+            return
+
+        # 🔍 Lọc ra điểm của sinh viên theo `student_id`
+        student_grades = [g for g in grades_data if g["student_id"] == student_id]
+
+        if not student_grades:
+            print(f"⚠ DEBUG: Không tìm thấy điểm cho sinh viên {student_id}")
+            QMessageBox.information(self.MainWindow, "Thông báo", "Chưa có điểm của bạn trong hệ thống.")
+            return
+
+        # 📂 Đọc danh sách lớp từ `classes.json` để tra cứu `subject`
+        try:
+            with open(self.class_file, "r", encoding="utf-8") as file:
+                classes_data = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("❌ ERROR: Không thể đọc file lớp học!")
+            QMessageBox.warning(self.MainWindow, "Lỗi", "Không thể đọc dữ liệu lớp học!")
+            return
+
+        # 🔄 Tạo mapping từ `class_id` → `subject`
+        class_subject_map = {c["class_id"]: c["subject"] for c in classes_data}
+
+        # 🔄 Hiển thị lên bảng `table_grade`
+        self.table_grade.setRowCount(len(student_grades))
+        self.table_grade.setColumnCount(7)  # Class ID, Subject, 4 loại điểm, Average
+        self.table_grade.setHorizontalHeaderLabels(
+            ["Class ID", "Subject", "Formative 1", "Formative 2", "Midterm", "Finalterm", "Average"]
+        )
+
+        self.table_grade.setColumnWidth(1, 200)
+        self.table_grade.setColumnWidth(2, 200)
+        self.table_grade.setColumnWidth(3, 200)
+        self.table_grade.setColumnWidth(4, 150)
+        self.table_grade.setColumnWidth(5, 150)
+        self.table_grade.setColumnWidth(6, 150)
+
+        for row, grade in enumerate(student_grades):
+            class_id = grade["class_id"]
+            subject_name = class_subject_map.get(class_id, "Unknown")  # 🔥 Lấy subject từ class_id
+
+            print(f"📌 DEBUG: Hiển thị điểm - Class ID: {class_id}, Subject: {subject_name}")
+
+            self.table_grade.setItem(row, 0, QTableWidgetItem(class_id))
+            self.table_grade.setItem(row, 1, QTableWidgetItem(subject_name))  # 🔥 Điền Subject
+            self.table_grade.setItem(row, 2, QTableWidgetItem(str(grade["formative1"])))
+            self.table_grade.setItem(row, 3, QTableWidgetItem(str(grade["formative2"])))
+            self.table_grade.setItem(row, 4, QTableWidgetItem(str(grade["midterm"])))
+            self.table_grade.setItem(row, 5, QTableWidgetItem(str(grade["finalterm"])))
+            self.table_grade.setItem(row, 6, QTableWidgetItem(str(grade["average"])))
+
+        self.table_grade.resizeColumnsToContents()
+        print(f"✅ DEBUG: Hiển thị {len(student_grades)} bản ghi điểm thành công!")
 

@@ -67,25 +67,26 @@ class LoginMainWindowExt(Ui_MainWindow):
         if role == "student":
             if self.student_window is None:
                 self.student_window = QMainWindow()
-                self.student_ui = StudentMainWindowExt()
-                self.student_ui.setupUi(self.student_window)
+                self.MainWindow.student_ui = StudentMainWindowExt()
+                self.MainWindow.student_ui.setupUi(self.student_window)
                 self.student_window.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose, False)
 
             self.student_window.show()
             self.student_window.activateWindow()
-            self.student_ui.load_student_info(getattr(user,"email"))
-            self.student_ui.load_registered_classes(getattr(user, "email"))
-            self.student_ui.show_classes_with_enough_students(getattr(user, "email"))
+            self.MainWindow.student_ui.load_student_info(getattr(user,"email"))
+            self.MainWindow.student_ui.load_registered_classes(getattr(user, "email"))
+            self.MainWindow.student_ui.show_classes_with_enough_students(getattr(user, "email"))
+            self.MainWindow.student_ui.load_student_grades(getattr(user, "email"))
 
         elif role == "teacher":
             if self.teacher_window is None:
                 self.teacher_window = QMainWindow()
-                self.teacher_ui = TeacherMainWindowExt()
-                self.teacher_ui.setupUi(self.teacher_window)
+                self.MainWindow.teacher_ui = TeacherMainWindowExt()
+                self.MainWindow.teacher_ui.setupUi(self.teacher_window)
 
             self.teacher_window.show()
             self.teacher_window.activateWindow()
-            self.teacher_ui.load_assigned_classes(getattr(user, "email"))
+            self.MainWindow.teacher_ui.load_assigned_classes(getattr(user, "email"))
 
         self.MainWindow.close()  # Ẩn cửa sổ đăng nhập thay vì đóng hẳn
 
