@@ -1,9 +1,8 @@
 from TestReadWrite.TestWriteTeacher import Teacher
 from libs.JsonFileFactory import JsonFileFactory
-from models.Student import Student
 # Dữ liệu sinh viên mẫu
 jff=JsonFileFactory()
-filename= "../dataset/Teacher.json"
-eas=jff.read_data(filename,Student)
+filename= "../dataset/teachers.json"
+eas=jff.read_data(filename,Teacher)
 for e in eas:
    print(e)

@@ -10,8 +10,6 @@ import json
 from ui.Teacher.inputgradeEx import inputgradeExt
 
 class TeacherMainWindowExt(Ui_MainWindow):
-    import os
-
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow = MainWindow

@@ -6,9 +6,16 @@
         "schedule": "Thứ 2, 4, 6 (07:30 - 09:30)",
         "subject": "Lập trình Python",
         "major": "Công nghệ thông tin",
-        "min_students": 20,
-        "max_students": 30,
-        "students": [],
+        "min_students": 5,
+        "max_students": 6,
+        "students": [
+            "S002",
+            "S003",
+            "S005",
+            "S006",
+            "S001",
+            "S008"
+        ],
         "grades": {}
     },
     {
@@ -20,7 +27,13 @@
         "major": "Kinh tế",
         "min_students": 30,
         "max_students": 50,
-        "students": [],
+        "students": [
+            "S001",
+            "S002",
+            "S003",
+            "S005",
+            "S006"
+        ],
         "grades": {}
     },
     {
@@ -32,7 +45,9 @@
         "major": "Công nghệ thông tin",
         "min_students": 20,
         "max_students": 40,
-        "students": [],
+        "students": [
+            "S001"
+        ],
         "grades": {}
     },
     {
@@ -44,7 +59,9 @@
         "major": "Kinh tế",
         "min_students": 40,
         "max_students": 60,
-        "students": [],
+        "students": [
+            "S001"
+        ],
         "grades": {}
     }
 ]

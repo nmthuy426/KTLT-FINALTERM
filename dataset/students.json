@@ -12,7 +12,9 @@
         "advisor": "TS. Phạm Văn D",
         "registered_classes": [
             "C001",
-            "C003"
+            "C002",
+            "C003",
+            "C004"
         ],
         "grades": {}
     },
@@ -29,7 +31,7 @@
         "advisor": "TS. Nguyễn Thị E",
         "registered_classes": [
             "C001",
-            "C004"
+            "C002"
         ],
         "grades": {}
     },
@@ -61,9 +63,7 @@
         "major": "Thương mại điện tử",
         "course": "2024",
         "advisor": "TS. Lê Thị G",
-        "registered_classes": [
-            "C001"
-        ],
+        "registered_classes": [],
         "grades": {}
     },
     {
@@ -78,7 +78,8 @@
         "course": "2024",
         "advisor": "TS. Phạm Văn H",
         "registered_classes": [
-            "C001"
+            "C001",
+            "C002"
         ],
         "grades": {}
     },
@@ -93,7 +94,10 @@
         "major": "Hệ thống thông tin quản lý",
         "course": "2024",
         "advisor": "TS. Nguyễn Văn I",
-        "registered_classes": [],
+        "registered_classes": [
+            "C001",
+            "C002"
+        ],
         "grades": {}
     },
     {
@@ -121,7 +125,9 @@
         "major": "Thương mại điện tử",
         "course": "2024",
         "advisor": "TS. Hoàng Văn K",
-        "registered_classes": [],
+        "registered_classes": [
+            "C001"
+        ],
         "grades": {}
     },
     {
@@ -261,20 +267,6 @@
         "major": "Hệ thống thông tin quản lý",
         "course": "2024",
         "advisor": "TS. Lê Văn U",
-        "registered_classes": [],
-        "grades": {}
-    },
-    {
-        "user_id": "K2445111",
-        "fullname": "Minh Ngọc",
-        "birthday": "01/01/2000",
-        "gender": "Male",
-        "email": "ngocm@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24202",
-        "major": "Thương Mại Điện Tử",
-        "course": "2025",
-        "advisor": "Ngô Minh Thuy",
         "registered_classes": [],
         "grades": {}
     }

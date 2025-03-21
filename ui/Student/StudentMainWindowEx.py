@@ -81,22 +81,30 @@ class StudentMainWindowExt(Ui_MainWindow):
         print(f"📌 [DEBUG] Dữ liệu students_data từ JSON: {students_data}")
 
     def show_classes_to_stu_ui(self):  # Tab Register
-        """Đọc dữ liệu từ file JSON và hiển thị lên bảng"""
+        """Đọc dữ liệu từ file JSON và hiển thị lên bảng, bỏ qua các lớp đã đầy."""
         classes_data = self.jff.read_data(self.class_file, Class) or []
 
         print(f"📌 [DEBUG] Kiểu dữ liệu classes_data: {type(classes_data)}")
+
+        # 🔥 Lọc bỏ các lớp đã đầy (đã đủ số lượng sinh viên tối đa)
+        available_classes = [
+            c for c in classes_data
+            if len(getattr(c, "students", [])) < getattr(c, "max_students", 30)  # Mặc định max = 30 nếu không có
+        ]
+
+        print(f"📌 [DEBUG] Số lớp còn trống: {len(available_classes)} / {len(classes_data)}")
 
         self.tableWidget_registeclass.setColumnCount(5)  # Khai báo số cột trước
         self.tableWidget_registeclass.setHorizontalHeaderLabels(
             ["Class ID", "Subject", "Room", "Schedule", "Select"])
 
-        self.tableWidget_registeclass.setRowCount(len(classes_data))
+        self.tableWidget_registeclass.setRowCount(len(available_classes))
         self.tableWidget_registeclass.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
-        for row, item in enumerate(classes_data):
+        for row, item in enumerate(available_classes):
             self.tableWidget_registeclass.setItem(row, 0, QTableWidgetItem(getattr(item, "class_id", "")))
-            self.tableWidget_registeclass.setItem(row, 1, QTableWidgetItem(getattr(item,"subject", "")))
-            self.tableWidget_registeclass.setItem(row, 2, QTableWidgetItem(getattr(item,"room", "")))
+            self.tableWidget_registeclass.setItem(row, 1, QTableWidgetItem(getattr(item, "subject", "")))
+            self.tableWidget_registeclass.setItem(row, 2, QTableWidgetItem(getattr(item, "room", "")))
             self.tableWidget_registeclass.setItem(row, 3, QTableWidgetItem(getattr(item, "schedule", "")))
 
             # Thêm checkbox vào cột cuối
@@ -104,10 +112,8 @@ class StudentMainWindowExt(Ui_MainWindow):
             checkbox.setStyleSheet("margin-left:50%;")
             self.tableWidget_registeclass.setCellWidget(row, 4, checkbox)
 
-        print("📌 [DEBUG] Đang chạy show_classes_ui()...")
-        classes_data = self.jff.read_data(self.class_file, Class) or []
-
-        print(f"📌 [DEBUG] Dữ liệu classes: {classes_data}")
+        print("📌 [DEBUG] Đang chạy show_classes_to_stu_ui()...")
+        print(f"📌 [DEBUG] Các lớp còn hiển thị: {[c.class_id for c in available_classes]}")
 
     def save_selected_classes(self):
         student_email = self.lineEdit_StuMail.text().strip()
@@ -152,7 +158,7 @@ class StudentMainWindowExt(Ui_MainWindow):
         # 🔥 Ghi lại dữ liệu vào files
         self.write_data(self.student_file, students_data)
         self.write_data(self.class_file, classes_data)
-
+        self.show_classes_with_enough_students(student_email)
         print(f"✅ Đã cập nhật danh sách lớp cho sinh viên {student_email}")
         QMessageBox.information(self.MainWindow, "Thành công", "Danh sách lớp của bạn đã được cập nhật!")
 

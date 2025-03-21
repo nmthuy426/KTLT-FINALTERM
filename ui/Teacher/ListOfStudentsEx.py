@@ -5,10 +5,10 @@ from PyQt6.QtWidgets import QMainWindow, QMessageBox, QTableWidgetItem
 
 from libs.DataConnector import DataConnector
 from libs.JsonFileFactory import JsonFileFactory
-from ui.Teacher.ListOfStudents import Ui_MainWindow  # Import UI từ file .ui đã convert
+from ui.Teacher.ListOfStudents import Ui_MainWindow_2  # Import UI từ file .ui đã convert
 import json  # Import thêm để đọc file JSON
 
-class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
+class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
     def __init__(self, class_id, student_list):
         super().__init__()
         self.setupUi(self)  # Load giao diện từ file .ui
@@ -34,10 +34,10 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow):
         self.show()  # ✅ Sửa lỗi exec() -> show()
 
     def process_back(self):
-        from ui.Admin.AdminMainWindowEx import AdminMainWindowExt
+        from ui.Teacher.TeacherMainWindowEx import TeacherMainWindowExt
         self.close()
-        self.admin_window = AdminMainWindowExt(self)  # ✅ Tạo cửa sổ Admin đúng cách
-        self.admin_window.show()
+        teacher_ui = TeacherMainWindowExt()
+        teacher_ui.showWindow()
 
     def load_students(self):
         """Hiển thị danh sách sinh viên của lớp lên bảng"""

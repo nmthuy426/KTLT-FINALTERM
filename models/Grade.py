@@ -3,7 +3,7 @@ import os
 
 
 class Grade:
-    def __init__(self, student_id, class_id, formative1=0, formative2=0, midterm=0, finalterm=0):
+    def __init__(self, student_id, class_id, formative1=0, formative2=0, midterm=0, finalterm=0, average=float):
         self.student_id = student_id
         self.class_id = class_id
         self.formative1 = float(formative1) if formative1 is not None else 0.0
@@ -16,17 +16,6 @@ class Grade:
         """Tính điểm trung bình có trọng số."""
         return round((self.formative1 + self.formative2 + self.midterm * 2 + self.finalterm * 3) / 7, 2)
 
-    def to_dict(self):
-        """Chuyển dữ liệu thành dict để lưu vào file."""
-        return {
-            "student_id": self.student_id,
-            "class_id": self.class_id,
-            "formative1": self.formative1,
-            "formative2": self.formative2,
-            "midterm": self.midterm,
-            "finalterm": self.finalterm,
-            "average": self.average
-        }
 
     @staticmethod
     def save_to_file(grades, filename="grades.json"):
@@ -59,3 +48,8 @@ class Grade:
                 return [Grade(**item) for item in data]
         except (json.JSONDecodeError, FileNotFoundError):
             return []
+
+    def __str__(self):
+        return (f"SV: {self.student_id} | Lớp: {self.class_id} | "
+                f"Điểm: {self.formative1}, {self.formative2}, {self.midterm}, {self.finalterm} | "
+                f"TB: {self.average}")

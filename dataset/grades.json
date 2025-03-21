@@ -1,1 +1,38 @@
-[]
+[
+    {
+        "student_id": "S001",
+        "class_id": "C001",
+        "formative1": 7.0,
+        "formative2": 8.0,
+        "midterm": 9.0,
+        "finalterm": 10.0,
+        "average": 9.0
+    },
+    {
+        "student_id": "S002",
+        "class_id": "C001",
+        "formative1": 6.0,
+        "formative2": 7.0,
+        "midterm": 8.0,
+        "finalterm": 9.0,
+        "average": 8.0
+    },
+    {
+        "student_id": "S003",
+        "class_id": "C002",
+        "formative1": 5.0,
+        "formative2": 6.0,
+        "midterm": 7.0,
+        "finalterm": 8.0,
+        "average": 7.0
+    },
+    {
+        "student_id": "S004",
+        "class_id": "C002",
+        "formative1": 8.0,
+        "formative2": 7.0,
+        "midterm": 9.0,
+        "finalterm": 10.0,
+        "average": 9.0
+    }
+]
