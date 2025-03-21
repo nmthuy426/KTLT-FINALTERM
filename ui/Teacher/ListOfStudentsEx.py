@@ -34,10 +34,8 @@ class ListOfStudentsWindow(QMainWindow, Ui_MainWindow_2):
         self.show()  # ✅ Sửa lỗi exec() -> show()
 
     def process_back(self):
-        from ui.Teacher.TeacherMainWindowEx import TeacherMainWindowExt
         self.close()
-        teacher_ui = TeacherMainWindowExt()
-        teacher_ui.showWindow()
+
 
     def load_students(self):
         """Hiển thị danh sách sinh viên của lớp lên bảng"""

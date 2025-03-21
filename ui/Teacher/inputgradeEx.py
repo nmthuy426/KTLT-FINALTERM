@@ -27,10 +27,7 @@ class inputgradeExt(Ui_MainWindow):
         self.MainWindow.show()
 
     def process_back(self):
-        from ui.Teacher.TeacherMainWindowEx import TeacherMainWindowExt
         self.MainWindow.close()
-        teacher_ui = TeacherMainWindowExt()
-        teacher_ui.showWindow()
 
     def load_teacher_classes(self):
         """Load danh sách lớp của giáo viên vào combobox"""

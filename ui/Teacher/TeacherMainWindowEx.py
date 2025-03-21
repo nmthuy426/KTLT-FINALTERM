@@ -74,7 +74,6 @@ class TeacherMainWindowExt(Ui_MainWindow):
         self.grade_ui = inputgradeExt()
         self.grade_ui.setupUi(self.grade_window)
         self.grade_ui.showWindow()
-        self.MainWindow.close()
 
     def load_assigned_classes(self, user_email):
         """Load danh sách lớp học được phân công của giáo viên và cập nhật vào bảng"""
@@ -203,8 +202,6 @@ class TeacherMainWindowExt(Ui_MainWindow):
         if not enrolled_students:
             QMessageBox.warning(self.MainWindow, "Danh Sách Trống", f"Lớp {class_id} hiện chưa có học sinh đăng ký.")
             return
-
-        self.MainWindow.close()  # 🔥 Đóng cửa sổ hiện tại trước khi mở cửa sổ mới
 
         self.student_windows = getattr(self, "student_windows", [])  # 🔥 Tạo danh sách lưu cửa sổ
         self.student_list_window = ListOfStudentsWindow(class_id, enrolled_students)
