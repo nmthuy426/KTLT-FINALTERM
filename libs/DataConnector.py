@@ -117,3 +117,40 @@ class DataConnector:
                 json.dump(all_grades, file, ensure_ascii=False, indent=4)
         except Exception as e:
             print(f"Lỗi khi lưu điểm: {e}")
+
+    def get_students_by_registered_class(self,class_id):
+        """Lấy danh sách học sinh đã đăng ký vào một lớp cụ thể"""
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+        class_file = os.path.join(base_dir, "dataset", "classes.json")
+        student_file = os.path.join(base_dir, "dataset", "students.json")
+
+        if not os.path.exists(class_file) or not os.path.exists(student_file):
+            print("⚠ Lỗi: Không tìm thấy file dữ liệu!")
+            return []
+
+        try:
+            # Đọc danh sách lớp
+            with open(class_file, "r", encoding="utf-8") as file:
+                classes_data = json.load(file)
+
+            # Tìm lớp có `class_id`
+            class_info = next((c for c in classes_data if c["class_id"] == class_id), None)
+            if not class_info:
+                print(f"⚠ Lỗi: Không tìm thấy lớp {class_id}!")
+                return []
+
+            student_ids = class_info.get("students", [])  # Danh sách `user_id` học sinh
+
+            # Đọc danh sách học sinh
+            with open(student_file, "r", encoding="utf-8") as file:
+                students_data = json.load(file)
+
+            # Lọc học sinh có trong danh sách `student_ids`
+            enrolled_students = [s for s in students_data if s["user_id"] in student_ids]
+
+            print(f"✅ {len(enrolled_students)} học sinh được tìm thấy trong lớp {class_id}")
+            return enrolled_students
+
+        except Exception as e:
+            print(f"❌ Lỗi khi đọc dữ liệu: {e}")
+            return []

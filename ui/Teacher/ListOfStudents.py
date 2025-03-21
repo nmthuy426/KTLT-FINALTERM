@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Admin\ListOfStudents.ui'
+# Form implementation generated from reading ui file 'D:\Documents\KTLT\FinalTerm\ui\Teacher\ListOfStudents.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -47,6 +47,37 @@ class Ui_MainWindow_2(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.verticalLayout.addWidget(self.tableWidget)
+        self.pushButton_save = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_save.sizePolicy().hasHeightForWidth())
+        self.pushButton_save.setSizePolicy(sizePolicy)
+        self.pushButton_save.setMinimumSize(QtCore.QSize(430, 0))
+        self.pushButton_save.setMaximumSize(QtCore.QSize(10000, 40))
+        self.pushButton_save.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_save.setObjectName("pushButton_save")
+        self.verticalLayout.addWidget(self.pushButton_save)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.pushButton_back = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
@@ -79,7 +110,7 @@ class Ui_MainWindow_2(object):
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Admin\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
+        self.label.setPixmap(QtGui.QPixmap("D:\\Documents\\KTLT\\FinalTerm\\ui\\Teacher\\../../image/Purple and White Modern Login and Sign-up Website Page UI Desktop Prototype (1000 x 710 px) (1000 x 710 px) (1000 x 712 px) (1000 x 600 px).png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label.raise_()
@@ -93,4 +124,5 @@ class Ui_MainWindow_2(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "LIST OF STUDENTS"))
+        self.pushButton_save.setText(_translate("MainWindow", "SAVE"))
         self.pushButton_back.setText(_translate("MainWindow", "BACK"))

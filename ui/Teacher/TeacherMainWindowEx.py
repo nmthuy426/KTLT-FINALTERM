@@ -7,8 +7,6 @@ from libs.JsonFileFactory import JsonFileFactory
 import os
 import json
 
-from ui.Teacher.inputgradeEx import inputgradeExt
-
 class TeacherMainWindowExt(Ui_MainWindow):
     def setupUi(self, MainWindow):
         super().setupUi(MainWindow)
@@ -35,7 +33,6 @@ class TeacherMainWindowExt(Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.pushButton_exit.clicked.connect(self.process_exit)
         self.pushButton_logout.clicked.connect(self.process_logout)
-        self.pushButton_InputGrade.clicked.connect(self.open_input_grade)
 
     def process_logout(self):
         reply = QMessageBox.question(
@@ -67,13 +64,6 @@ class TeacherMainWindowExt(Ui_MainWindow):
         if reply == QMessageBox.StandardButton.Yes:
             print("Exiting application...")
             self.MainWindow.close()
-
-    def open_input_grade(self):
-
-        self.grade_window = QMainWindow()  # Lưu vào self để không bị hủy ngay lập tức
-        self.grade_ui = inputgradeExt()
-        self.grade_ui.setupUi(self.grade_window)
-        self.grade_ui.showWindow()
 
     def load_assigned_classes(self, user_email):
         """Load danh sách lớp học được phân công của giáo viên và cập nhật vào bảng"""
