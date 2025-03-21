@@ -192,8 +192,8 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_back.sizePolicy().hasHeightForWidth())
         self.pushButton_back.setSizePolicy(sizePolicy)
-        self.pushButton_back.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_back.setMaximumSize(QtCore.QSize(300, 60))
+        self.pushButton_back.setMinimumSize(QtCore.QSize(430, 50))
+        self.pushButton_back.setMaximumSize(QtCore.QSize(432, 60))
         self.pushButton_back.setSizeIncrement(QtCore.QSize(0, 500))
         self.pushButton_back.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
@@ -226,15 +226,16 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_save.sizePolicy().hasHeightForWidth())
         self.pushButton_save.setSizePolicy(sizePolicy)
-        self.pushButton_save.setMaximumSize(QtCore.QSize(1000, 60))
+        self.pushButton_save.setMinimumSize(QtCore.QSize(430, 0))
+        self.pushButton_save.setMaximumSize(QtCore.QSize(430, 60))
         self.pushButton_save.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
 "    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
 "    border-top-left-radius: 0px;\n"
 "    border-bottom-left-radius: 0px;\n"
-"    border-top-right-radius: 0px;\n"
-"    border-bottom-right-radius: 0px;\n"
+"    border-top-right-radius: 20px;\n"
+"    border-bottom-right-radius: 20px;\n"
 "    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
 "    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
@@ -252,40 +253,6 @@ class Ui_MainWindow(object):
 "}")
         self.pushButton_save.setObjectName("pushButton_save")
         self.horizontalLayout.addWidget(self.pushButton_save)
-        self.pushButton_logout = QtWidgets.QPushButton(parent=self.scrollAreaWidgetContents)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Maximum)
-        sizePolicy.setHorizontalStretch(1)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_logout.sizePolicy().hasHeightForWidth())
-        self.pushButton_logout.setSizePolicy(sizePolicy)
-        self.pushButton_logout.setMinimumSize(QtCore.QSize(0, 50))
-        self.pushButton_logout.setMaximumSize(QtCore.QSize(300, 60))
-        self.pushButton_logout.setStyleSheet("QPushButton {\n"
-"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 0px;\n"
-"    border-bottom-left-radius: 0px;\n"
-"    border-top-right-radius: 20px;\n"
-"    border-bottom-right-radius: 20px;\n"
-"    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
-"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
-"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
-"    color: rgb(255,255,255);\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
-"    color: rgb(255,255,255);\n"
-"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
-"}")
-        self.pushButton_logout.setIconSize(QtCore.QSize(50, 20))
-        self.pushButton_logout.setObjectName("pushButton_logout")
-        self.horizontalLayout.addWidget(self.pushButton_logout)
         self.verticalLayout_3.addLayout(self.horizontalLayout)
         self.verticalLayout.addLayout(self.verticalLayout_3)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -313,4 +280,3 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "AVERAGE"))
         self.pushButton_back.setText(_translate("MainWindow", "BACK"))
         self.pushButton_save.setText(_translate("MainWindow", "SAVE"))
-        self.pushButton_logout.setText(_translate("MainWindow", "LOGOUT"))

@@ -123,9 +123,15 @@ class CreateClassExt(QMainWindow, Ui_MainWindow):
 
     def load_teacher_from_json(self):
         teachers = self.jff.read_data(self.teacher_file, Teacher) or []
-        list_teachers = list(set(teacher.fullname for teacher in teachers if teacher.fullname))
+
+        # Tạo dictionary lưu teacher_id theo fullname
+        self.teacher_map = {teacher.fullname: teacher.teacher_id for teacher in teachers if teacher.fullname}
+
+        # Hiển thị danh sách tên giáo viên trong comboBox
         self.comboBox.clear()
-        self.comboBox.addItems(list_teachers)
+        self.comboBox.addItems(self.teacher_map.keys())
+
+        print(f"📌 [DEBUG] Danh sách giáo viên: {self.teacher_map}")
 
     def process_back(self):
             self.close()

@@ -92,7 +92,7 @@
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
     background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
     color: rgb(255,255,255); /* Màu chữ trắng */
-    border-top-left-radius: 20px;
+    border-top-left-radius: 0px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -188,7 +188,7 @@ QPushButton:pressed {
     color: rgb(0,0,90); /* Màu chữ trắng */
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-top-right-radius: 20px;
+    border-top-right-radius: 0px;
     border-bottom-right-radius: 20px;
 	padding: 8px; /* Khoảng cách giữa chữ và viền */
     border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
@@ -247,8 +247,8 @@ font-weight: bold;
 font: 5000 18pt &quot;Arial&quot;;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     padding: 10px;
 </string>
     </property>
@@ -265,7 +265,7 @@ font: 5000 18pt &quot;Arial&quot;;
       <x>70</x>
       <y>145</y>
       <width>860</width>
-      <height>410</height>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -274,11 +274,6 @@ font: 500 10pt &quot;Cambria&quot;;
 color: rgb(0, 0, 0);
 /* Chỉ bo tròn hai góc trên */
     background-color: white;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 10px;
 border: none;
 
 </string>

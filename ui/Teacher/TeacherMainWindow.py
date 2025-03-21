@@ -43,7 +43,7 @@ class Ui_MainWindow(object):
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
-"    border-top-left-radius: 20px;\n"
+"    border-top-left-radius: 0px;\n"
 "    border-bottom-left-radius: 20px;\n"
 "    border-top-right-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
 "    color: rgb(0,0,90); /* Màu chữ trắng */\n"
 "    border-top-left-radius: 0px;\n"
 "    border-bottom-left-radius: 0px;\n"
-"    border-top-right-radius: 20px;\n"
+"    border-top-right-radius: 0px;\n"
 "    border-bottom-right-radius: 20px;\n"
 "    padding: 8px; /* Khoảng cách giữa chữ và viền */\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
@@ -140,24 +140,19 @@ class Ui_MainWindow(object):
 "font: 5000 18pt \"Arial\";\n"
 "    border-top-left-radius: 25px;\n"
 "    border-top-right-radius: 25px;\n"
-"    border-bottom-left-radius: 25px;\n"
-"    border-bottom-right-radius: 25px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
 "    padding: 10px;\n"
 "")
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.tableWidget_classes = QtWidgets.QTableWidget(parent=self.centralwidget)
-        self.tableWidget_classes.setGeometry(QtCore.QRect(70, 145, 860, 410))
+        self.tableWidget_classes.setGeometry(QtCore.QRect(70, 145, 860, 411))
         self.tableWidget_classes.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "font: 500 10pt \"Cambria\";\n"
 "color: rgb(0, 0, 0);\n"
 "/* Chỉ bo tròn hai góc trên */\n"
 "    background-color: white;\n"
-"    border-top-left-radius: 25px;\n"
-"    border-top-right-radius: 25px;\n"
-"    border-bottom-left-radius: 25px;\n"
-"    border-bottom-right-radius: 25px;\n"
-"    padding: 10px;\n"
 "border: none;\n"
 "\n"
 "")
