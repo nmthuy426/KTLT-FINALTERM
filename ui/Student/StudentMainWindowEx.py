@@ -1,5 +1,5 @@
 from PyQt6.QtCore import Qt, QDate
-from PyQt6.QtWidgets import  QMessageBox, QTableWidgetItem,QCheckBox,QHeaderView,QTableWidget
+from PyQt6.QtWidgets import QMessageBox, QTableWidgetItem, QCheckBox, QHeaderView, QTableWidget, QMainWindow
 
 from ui.Student.StudentMainWindow import Ui_MainWindow
 from libs.JsonFileFactory import JsonFileFactory
@@ -33,6 +33,7 @@ class StudentMainWindowExt(Ui_MainWindow):
     def setupSignalAndSlot(self):
         self.pushButton_save.clicked.connect(self.save_selected_classes)
         self.pushButton_Exit.clicked.connect(self.process_exit)
+        self.pushButton_Logout.clicked.connect(self.process_logout)
 
     def load_student_info(self, email):  # Tab Personal Information
         try:
@@ -271,3 +272,22 @@ class StudentMainWindowExt(Ui_MainWindow):
             self.tableWidget_schedule.setItem(row, 3, QTableWidgetItem(c["schedule"]))
 
         print(f"✅ [DEBUG] Hiển thị {len(valid_classes)} lớp của sinh viên lên bảng thời khóa biểu")
+
+    def process_logout(self):
+        reply = QMessageBox.question(
+            self.MainWindow,
+            "Logout Confirmation",
+            "Are you sure you want to return to the login page?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+        from ui.LoginMainWindow.LoginMainWindowEx import LoginMainWindowExt
+
+        if reply == QMessageBox.StandardButton.Yes:
+            self.login_window = QMainWindow()  # Lưu vào self để không bị hủy ngay lập tức
+            self.login_ui = LoginMainWindowExt()
+            self.login_ui.setupUi(self.login_window)
+            self.login_ui.showWindow()
+
+            self.MainWindow.close()  # Đóng cửa sổ hiện tại
+

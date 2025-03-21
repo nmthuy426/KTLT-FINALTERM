@@ -5,82 +5,116 @@ from ui.Teacher.TeacherMainWindow import Ui_MainWindow  # Import UI giao diện 
 
 
 class TeacherMainWindowEx(QMainWindow, Ui_MainWindow):
-    def __init__(self, email):
+    def __init__(self):
         super().__init__()
-        self.email = email  # Nhận email từ hệ thống đăng nhập
-        print(f"📌 [DEBUG] Email nhận vào: {self.email}")
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+        self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
 
-        self.user_id = self.get_teacher_id_by_email(email)  # Lấy user_id từ email
-        print(f"📌 [DEBUG] User ID tìm được: {self.user_id}")
+    def setupUi(self, MainWindow):
+        super().setupUi(MainWindow)
+        self.MainWindow = MainWindow
+        self.jff = JsonFileFactory()
+        self.setupSignalAndSlot()
 
-        if self.user_id is None:
-            QMessageBox.critical(self, "Lỗi", "Không tìm thấy giáo viên với email này!")
-            print("❌ [DEBUG] Không tìm thấy giáo viên!")
-            self.close()
-            return
+        self.show_classes_to_stu_ui()
 
-        self.setupUi(self)  # Khởi tạo giao diện
-        self.load_classes()  # Load danh sách lớp khi mở giao diện
-        self.pushButton_logout.clicked.connect(self.logout)  # Xử lý đăng xuất
+        self.class_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/classes.json"))
+        self.student_file = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../dataset/students.json"))
 
-    def get_teacher_id_by_email(self, email):
-        """ Tìm teacher_id dựa vào email trong file teachers.json """
-        try:
-            print("📌 [DEBUG] Đang mở file teachers.json...")
-            with open("dataset/teachers.json", "r", encoding="utf-8") as f:
-                teachers = json.load(f)
+        MainWindow.setWindowFlags(Qt.WindowType.FramelessWindowHint)
 
-            print(f"📌 [DEBUG] Số lượng giáo viên trong file: {len(teachers)}")
+    def showWindow(self):
+        self.MainWindow.show()
 
-            for teacher in teachers:
-                print(f"🔍 [DEBUG] Kiểm tra giáo viên: {teacher['email']} - ID: {teacher['teacher_id']}")
-                if teacher["email"] == email:
-                    print(f"✅ [DEBUG] Tìm thấy teacher_id: {teacher['teacher_id']}")
-                    return teacher["teacher_id"]
+    def setupSignalAndSlot(self):
+        self.pushButton_save.clicked.connect(self.save_selected_classes)
+        self.pushButton_Exit.clicked.connect(self.process_exit)
 
-        except Exception as e:
-            QMessageBox.critical(self, "Lỗi", f"Lỗi khi đọc teachers.json: {e}")
-            print(f"❌ [DEBUG] Lỗi khi đọc teachers.json: {e}")
-
-        return None  # Không tìm thấy giáo viên
 
     def load_classes(self):
-        """ Đọc danh sách lớp từ classes.json và hiển thị lên bảng """
-        try:
-            print("📌 [DEBUG] Đang mở file classes.json...")
-            with open("dataset/classes.json", "r", encoding="utf-8") as f:
-                classes = json.load(f)
+        classes = self.jff.read_data(self.class_file, Class) or []
+        self.tableWidget_Classes.setRowCount(len(classes))
+        self.tableWidget_Classes.setColumnCount(6)  # Thêm cột "List of Students"
+        self.tableWidget_Classes.setHorizontalHeaderLabels(
+            ["Class ID", "Subject", "Room", "Schedule", "Teacher", "List of Students"]
+        )
 
-            print(f"📌 [DEBUG] Số lượng lớp trong file: {len(classes)}")
+        self.tableWidget_Classes.setColumnWidth(1, 200)  # Subject
+        self.tableWidget_Classes.setColumnWidth(2, 100)  # Room
+        self.tableWidget_Classes.setColumnWidth(3, 266)  # Schedule
+        self.tableWidget_Classes.setColumnWidth(4, 100)  # Teacher ID
+        self.tableWidget_Classes.setColumnWidth(5, 200)  # List of Students Button
 
-            # Lọc ra các lớp do giáo viên này giảng dạy
-            teacher_classes = [c for c in classes if c["teacher_id"] == self.user_id]
+        for row, cls in enumerate(classes):
+            self.tableWidget_Classes.setItem(row, 0, QTableWidgetItem(cls.class_id))
+            self.tableWidget_Classes.setItem(row, 1, QTableWidgetItem(cls.subject))
+            self.tableWidget_Classes.setItem(row, 2, QTableWidgetItem(cls.room))
+            self.tableWidget_Classes.setItem(row, 3, QTableWidgetItem(cls.schedule))
 
-            print(f"📌 [DEBUG] Số lớp dạy của giáo viên {self.user_id}: {len(teacher_classes)}")
+            teacher_id_item = QTableWidgetItem(cls.teacher)
+            self.tableWidget_Classes.setItem(row, 4, teacher_id_item)
+            teacher_id_item.setFlags(teacher_id_item.flags() & ~Qt.ItemFlag.ItemIsEditable)
+            teacher_id_item.setData(Qt.ItemDataRole.UserRole, cls.teacher)
 
-            if not teacher_classes:
-                QMessageBox.information(self, "Thông báo", "Bạn không có lớp nào được phân công.")
-                print("⚠️ [DEBUG] Giáo viên không có lớp nào!")
-                return
+            # 👉 Thêm nút "List of Students"
+            btn = QPushButton("List of Students")
+            btn.setStyleSheet("""
+                QPushButton {
+                    font: 800 12pt "Cambria";
+                    background-color: rgba(0,0,90,100);
+                    color: rgb(0,0,90);
+                    padding: 3px; /* Khoảng cách giữa chữ và viền */
+                    border: 1px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+                }
 
-            # Hiển thị danh sách lớp vào bảng
-            self.tableWidget_classes.setRowCount(len(teacher_classes))
-            self.tableWidget_classes.setColumnCount(2)
-            self.tableWidget_classes.setHorizontalHeaderLabels(["Mã lớp", "Tên lớp"])
+                QPushButton:hover {
+                    background-color: rgb(0,0,90); 
+                    color: rgb(255,255,255);
+                }
 
-            for row, c in enumerate(teacher_classes):
-                print(f"📌 [DEBUG] Thêm vào bảng: {c['class_id']} - {c['class_name']}")
-                self.tableWidget_classes.setItem(row, 0, QTableWidgetItem(c["class_id"]))
-                self.tableWidget_classes.setItem(row, 1, QTableWidgetItem(c["class_name"]))
+                QPushButton:pressed {
+                    background-color: rgb(0, 0,9);
+                    color: rgb(255,255,255);
+                }
+            """)
+            btn.setFixedSize(200, 30)  # Đặt chiều rộng và cao hợp lý
+            btn.clicked.connect(lambda _, cid=cls.class_id: self.show_student_list(cid))
+            self.tableWidget_Classes.setCellWidget(row, 5, btn)
 
-            print("✅ [DEBUG] Load lớp học hoàn tất!")
+        self.tableWidget_Classes.cellClicked.connect(self.show_teacher_info)
 
-        except Exception as e:
-            QMessageBox.critical(self, "Lỗi", f"Lỗi khi tải danh sách lớp: {e}")
-            print(f"❌ [DEBUG] Lỗi khi tải danh sách lớp: {e}")
+    def show_student_list(self, class_id):
+        """Mở danh sách sinh viên của lớp và đóng cửa sổ hiện tại"""
+        from ui.Admin.ListOfStudentsEx import ListOfStudentsWindow
 
-    def logout(self):
-        """ Xử lý đăng xuất """
-        print("📌 [DEBUG] Giáo viên đang đăng xuất...")
-        self.close()  # Đóng giao diện giáo viên
-        QMessageBox.information(self, "Đăng xuất", "Bạn đã đăng xuất thành công!")
+        # 🔥 Đọc danh sách sinh viên từ JSON
+        students_data = self.jff.read_data(self.student_file, dict) or []
+        classes_data = self.jff.read_data(self.class_file, dict) or []
+
+        # 🔥 Tìm lớp học theo `class_id`
+        class_info = None
+        for c in classes_data:
+            if c["class_id"] == class_id:
+                class_info = c
+                break
+
+        if not class_info:
+            QMessageBox.warning(self, "Lỗi", f"Không tìm thấy lớp {class_id} trong hệ thống!")
+            return
+
+        # 🔥 Lấy danh sách `user_id` của sinh viên đã đăng ký lớp (Dùng `list` thay vì `set`)
+        student_ids = class_info.get("students", [])  # Dùng `list`, không loại bỏ trùng
+
+        # 🔥 Lọc danh sách sinh viên theo ID
+        enrolled_students = [s for s in students_data if s.get("user_id") in student_ids]
+
+        if not enrolled_students:
+            QMessageBox.warning(self, "Danh Sách Trống", f"Lớp {class_id} hiện chưa có học sinh đăng ký.")
+            return
+
+        self.close()  # 🔥 Đóng cửa sổ hiện tại trước khi mở cửa sổ mới
+
+        self.student_windows = getattr(self, "student_windows", [])  # 🔥 Tạo danh sách lưu cửa sổ
+        self.student_list_window = ListOfStudentsWindow(class_id, enrolled_students)
+        self.student_windows.append(self.student_list_window)  # 🔥 Giữ tham chiếu để không bị xóa
+        self.student_list_window.show()
