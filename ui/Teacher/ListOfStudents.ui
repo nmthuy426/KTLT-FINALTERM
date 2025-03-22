@@ -70,52 +70,100 @@ padding: 10px;
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_save">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>430</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>10000</width>
-         <height>40</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="pushButton_excel">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
     font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
-    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */
-    color: rgb(0, 85, 0); /* Màu chữ trắng */
+    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
+    color: rgb(0,0,90); /* Màu chữ trắng */
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
 }
 
 QPushButton:hover {
-    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */
+    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */
 	color: rgb(255,255,255);
 }
 
 QPushButton:pressed {
-    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */
+    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */
 	color: rgb(255,255,255);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
 }</string>
-       </property>
-       <property name="text">
-        <string>SAVE</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>EXCEL</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_chart">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>430</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>10000</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */
+    color: rgb(0,0,90); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
+}
+
+QPushButton:hover {
+    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+         </property>
+         <property name="text">
+          <string>CHART</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -139,7 +187,6 @@ QPushButton:pressed {
     background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */
     color: rgb(255,255,255); /* Màu chữ trắng */
     border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     padding: 4px; /* Khoảng cách giữa chữ và viền */
     border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */
@@ -158,6 +205,54 @@ QPushButton:pressed {
          </property>
          <property name="text">
           <string>BACK</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_save">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>430</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>10000</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    font: 5000 14pt &quot;Arial&quot;; /* Font Arial Black, size 12 */
+    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */
+    color: rgb(0, 85, 0); /* Màu chữ trắng */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */
+}
+
+QPushButton:hover {
+    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */
+	color: rgb(255,255,255);
+}
+
+QPushButton:pressed {
+    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */
+	color: rgb(255,255,255);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */
+}</string>
+         </property>
+         <property name="text">
+          <string>SAVE</string>
          </property>
         </widget>
        </item>

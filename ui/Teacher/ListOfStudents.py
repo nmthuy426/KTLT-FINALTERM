@@ -47,37 +47,68 @@ class Ui_MainWindow_2(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.verticalLayout.addWidget(self.tableWidget)
-        self.pushButton_save = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton_save.sizePolicy().hasHeightForWidth())
-        self.pushButton_save.setSizePolicy(sizePolicy)
-        self.pushButton_save.setMinimumSize(QtCore.QSize(430, 0))
-        self.pushButton_save.setMaximumSize(QtCore.QSize(10000, 40))
-        self.pushButton_save.setStyleSheet("QPushButton {\n"
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.pushButton_excel = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        self.pushButton_excel.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_excel.setMaximumSize(QtCore.QSize(16777215, 50))
+        self.pushButton_excel.setStyleSheet("QPushButton {\n"
 "    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
-"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
-"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
+"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
 "    border-top-left-radius: 0px;\n"
 "    border-bottom-left-radius: 0px;\n"
 "    border-top-right-radius: 0px;\n"
 "    border-bottom-right-radius: 0px;\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
-"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
+"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
 "    color: rgb(255,255,255);\n"
 "}\n"
 "\n"
 "QPushButton:pressed {\n"
-"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
+"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
 "    color: rgb(255,255,255);\n"
 "    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
 "}")
-        self.pushButton_save.setObjectName("pushButton_save")
-        self.verticalLayout.addWidget(self.pushButton_save)
+        self.pushButton_excel.setObjectName("pushButton_excel")
+        self.horizontalLayout_2.addWidget(self.pushButton_excel)
+        self.pushButton_chart = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_chart.sizePolicy().hasHeightForWidth())
+        self.pushButton_chart.setSizePolicy(sizePolicy)
+        self.pushButton_chart.setMinimumSize(QtCore.QSize(430, 0))
+        self.pushButton_chart.setMaximumSize(QtCore.QSize(10000, 40))
+        self.pushButton_chart.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(255,255,255,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0,0,90); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 0px;\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(0,0,90); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(0, 0,9); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_chart.setObjectName("pushButton_chart")
+        self.horizontalLayout_2.addWidget(self.pushButton_chart)
+        self.verticalLayout.addLayout(self.horizontalLayout_2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.pushButton_back = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
@@ -88,7 +119,6 @@ class Ui_MainWindow_2(object):
 "    background-color: rgba(170,0,0,150); /* Màu nền đỏ đậm */\n"
 "    color: rgb(255,255,255); /* Màu chữ trắng */\n"
 "    border-bottom-left-radius: 20px;\n"
-"    border-bottom-right-radius: 20px;\n"
 "    padding: 4px; /* Khoảng cách giữa chữ và viền */\n"
 "    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
 "    box-shadow: 3px 3px 8px rgba(0, 0, 0, 100); /* Đổ bóng */\n"
@@ -106,6 +136,37 @@ class Ui_MainWindow_2(object):
 "}")
         self.pushButton_back.setObjectName("pushButton_back")
         self.horizontalLayout.addWidget(self.pushButton_back)
+        self.pushButton_save = QtWidgets.QPushButton(parent=self.verticalLayoutWidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.pushButton_save.sizePolicy().hasHeightForWidth())
+        self.pushButton_save.setSizePolicy(sizePolicy)
+        self.pushButton_save.setMinimumSize(QtCore.QSize(430, 0))
+        self.pushButton_save.setMaximumSize(QtCore.QSize(10000, 40))
+        self.pushButton_save.setStyleSheet("QPushButton {\n"
+"    font: 5000 14pt \"Arial\"; /* Font Arial Black, size 12 */\n"
+"    background-color: rgba(0,85,0,100); /* Màu nền đỏ đậm */\n"
+"    color: rgb(0, 85, 0); /* Màu chữ trắng */\n"
+"    border-top-left-radius: 0px;\n"
+"    border-bottom-left-radius: 0px;\n"
+"    border-top-right-radius: 0px;\n"
+"    border-bottom-right-radius: 20px;\n"
+"    border: 4px solid rgba(255, 255,255, 200); /* Viền đỏ đậm */\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color:  rgb(0, 109, 80); /* Màu sáng hơn khi hover */\n"
+"    color: rgb(255,255,255);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(0,85,0); /* Màu tối hơn khi nhấn */\n"
+"    color: rgb(255,255,255);\n"
+"    box-shadow: 1px 1px 5px rgba(0, 0, 0, 150); /* Giảm bóng khi nhấn */\n"
+"}")
+        self.pushButton_save.setObjectName("pushButton_save")
+        self.horizontalLayout.addWidget(self.pushButton_save)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 1000, 600))
@@ -124,5 +185,7 @@ class Ui_MainWindow_2(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "LIST OF STUDENTS"))
-        self.pushButton_save.setText(_translate("MainWindow", "SAVE"))
+        self.pushButton_excel.setText(_translate("MainWindow", "EXCEL"))
+        self.pushButton_chart.setText(_translate("MainWindow", "CHART"))
         self.pushButton_back.setText(_translate("MainWindow", "BACK"))
+        self.pushButton_save.setText(_translate("MainWindow", "SAVE"))
