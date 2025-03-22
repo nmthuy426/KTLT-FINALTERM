@@ -128,7 +128,6 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
         self.comboBox_StuClass.addItems(classes)
 
     def process_add_student(self):
-        self.clear_student_form()
         # Đọc dữ liệu từ file JSON
         students_data = self.jff.read_data(self.student_file, dict) or []
         print(f"📂 Đọc dữ liệu thành công! Số lượng sinh viên hiện có: {len(students_data)}")
@@ -223,7 +222,6 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
             self.load_students()
 
     def process_add_teacher(self):
-        self.clear_teacher_form()
         print("🔍 Bắt đầu thêm giảng viên...")
 
         # Đọc dữ liệu từ file JSON
@@ -241,7 +239,7 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
 
         print(f"📋 Dữ liệu nhập: {teaid}, {name}, {birthday}, {gender}, {email}, {faculty}, {cl}")
 
-        if not all([teaid, name, birthday, gender, email, faculty, cl]):
+        if not all([teaid, name, birthday, gender, email, faculty]):
             print("❌ Lỗi: Dữ liệu không đầy đủ!")
             QMessageBox.warning(self.MainWindow, "Error", "Vui lòng điền đầy đủ thông tin giảng viên!")
             return
@@ -311,61 +309,6 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
             #hiển thị giáo viên le combobox của createclass
             from ui.Admin.CreateClassEx import CreateClassExt
             CreateClassExt.load_teacher_from_json()
-
-    def load_students(self):
-        students = self.jff.read_data(self.student_file, Student) or []
-        self.tableWidget_Student.setRowCount(len(students))
-        self.tableWidget_Student.setColumnCount(9)
-        self.tableWidget_Student.setHorizontalHeaderLabels(
-            ["ID", "Name", "Birthday", "Gender", "Email", "Course", "Major", "Class", "Advisor"]
-        )
-        self.tableWidget_Student.setColumnWidth(0, 80)
-        self.tableWidget_Student.setColumnWidth(1, 200)
-        self.tableWidget_Student.setColumnWidth(2, 150)
-        self.tableWidget_Student.setColumnWidth(3, 100)
-        self.tableWidget_Student.setColumnWidth(4, 250)
-        self.tableWidget_Student.setColumnWidth(5, 100)
-        self.tableWidget_Student.setColumnWidth(6, 300)
-        self.tableWidget_Student.setColumnWidth(7, 150)
-        self.tableWidget_Student.setColumnWidth(8, 200)
-
-        for row, student in enumerate(students):
-            self.tableWidget_Student.setItem(row, 0, QTableWidgetItem(str(getattr(student, "user_id", ""))))
-            self.tableWidget_Student.setItem(row, 1, QTableWidgetItem(str(getattr(student, "fullname", ""))))
-            self.tableWidget_Student.setItem(row, 2, QTableWidgetItem(str(getattr(student, "birthday", ""))))
-            self.tableWidget_Student.setItem(row, 3, QTableWidgetItem(str(getattr(student, "gender", ""))))
-            self.tableWidget_Student.setItem(row, 4, QTableWidgetItem(str(getattr(student, "email", ""))))
-            self.tableWidget_Student.setItem(row, 5, QTableWidgetItem(str(getattr(student, "course", ""))))
-            self.tableWidget_Student.setItem(row, 6, QTableWidgetItem(str(getattr(student, "major", ""))))
-            self.tableWidget_Student.setItem(row, 7, QTableWidgetItem(str(getattr(student, "student_class", ""))))
-            self.tableWidget_Student.setItem(row, 8, QTableWidgetItem(str(getattr(student, "advisor", ""))))
-
-        print(f"✅ Tải danh sách sinh viên thành công! Số lượng: {len(students)}")
-
-    def load_teachers(self):
-        teachers = self.jff.read_data(self.teacher_file, Teacher) or []
-        self.tableWidget_Teacher.setRowCount(len(teachers))
-        self.tableWidget_Teacher.setColumnCount(7)
-        self.tableWidget_Teacher.setHorizontalHeaderLabels(
-            ["ID", "Name", "Birthday", "Gender", "Email", "Faculty", "Class"]
-        )
-
-        self.tableWidget_Teacher.setColumnWidth(0, 80)
-        self.tableWidget_Teacher.setColumnWidth(1, 200)
-        self.tableWidget_Teacher.setColumnWidth(2, 100)
-        self.tableWidget_Teacher.setColumnWidth(3, 100)
-        self.tableWidget_Teacher.setColumnWidth(4, 250)
-        self.tableWidget_Teacher.setColumnWidth(5, 300)
-        self.tableWidget_Teacher.setColumnWidth(6, 100)
-
-        for row, teacher in enumerate(teachers):
-            self.tableWidget_Teacher.setItem(row, 0, QTableWidgetItem(str(getattr(teacher, "user_id", ""))))
-            self.tableWidget_Teacher.setItem(row, 1, QTableWidgetItem(str(getattr(teacher, "fullname", ""))))
-            self.tableWidget_Teacher.setItem(row, 2, QTableWidgetItem(str(getattr(teacher, "birthday", ""))))
-            self.tableWidget_Teacher.setItem(row, 3, QTableWidgetItem(str(getattr(teacher, "gender", ""))))
-            self.tableWidget_Teacher.setItem(row, 4, QTableWidgetItem(str(getattr(teacher, "email", ""))))
-            self.tableWidget_Teacher.setItem(row, 5, QTableWidgetItem(str(getattr(teacher, "faculty", ""))))
-            self.tableWidget_Teacher.setItem(row, 6, QTableWidgetItem(str(getattr(teacher, "teacher_class", ""))))
 
     def clear_student_form(self):
         self.lineEdit_StuId.clear()
@@ -458,6 +401,63 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
         teacher_names = [teacher.fullname for teacher in teachers]
         return advisor_name in teacher_names
 
+#quản lý ta khoản  hsinh gv
+    def load_students(self):
+        students = self.jff.read_data(self.student_file, Student) or []
+        self.tableWidget_Student.setRowCount(len(students))
+        self.tableWidget_Student.setColumnCount(9)
+        self.tableWidget_Student.setHorizontalHeaderLabels(
+            ["ID", "Name", "Birthday", "Gender", "Email", "Course", "Major", "Class", "Advisor"]
+        )
+        self.tableWidget_Student.setColumnWidth(0, 80)
+        self.tableWidget_Student.setColumnWidth(1, 200)
+        self.tableWidget_Student.setColumnWidth(2, 150)
+        self.tableWidget_Student.setColumnWidth(3, 100)
+        self.tableWidget_Student.setColumnWidth(4, 250)
+        self.tableWidget_Student.setColumnWidth(5, 100)
+        self.tableWidget_Student.setColumnWidth(6, 300)
+        self.tableWidget_Student.setColumnWidth(7, 150)
+        self.tableWidget_Student.setColumnWidth(8, 200)
+
+        for row, student in enumerate(students):
+            self.tableWidget_Student.setItem(row, 0, QTableWidgetItem(str(getattr(student, "user_id", ""))))
+            self.tableWidget_Student.setItem(row, 1, QTableWidgetItem(str(getattr(student, "fullname", ""))))
+            self.tableWidget_Student.setItem(row, 2, QTableWidgetItem(str(getattr(student, "birthday", ""))))
+            self.tableWidget_Student.setItem(row, 3, QTableWidgetItem(str(getattr(student, "gender", ""))))
+            self.tableWidget_Student.setItem(row, 4, QTableWidgetItem(str(getattr(student, "email", ""))))
+            self.tableWidget_Student.setItem(row, 5, QTableWidgetItem(str(getattr(student, "course", ""))))
+            self.tableWidget_Student.setItem(row, 6, QTableWidgetItem(str(getattr(student, "major", ""))))
+            self.tableWidget_Student.setItem(row, 7, QTableWidgetItem(str(getattr(student, "student_class", ""))))
+            self.tableWidget_Student.setItem(row, 8, QTableWidgetItem(str(getattr(student, "advisor", ""))))
+
+        print(f"✅ Tải danh sách sinh viên thành công! Số lượng: {len(students)}")
+
+    def load_teachers(self):
+        teachers = self.jff.read_data(self.teacher_file, Teacher) or []
+        self.tableWidget_Teacher.setRowCount(len(teachers))
+        self.tableWidget_Teacher.setColumnCount(7)
+        self.tableWidget_Teacher.setHorizontalHeaderLabels(
+            ["ID", "Name", "Birthday", "Gender", "Email", "Faculty", "Class"]
+        )
+
+        self.tableWidget_Teacher.setColumnWidth(0, 80)
+        self.tableWidget_Teacher.setColumnWidth(1, 200)
+        self.tableWidget_Teacher.setColumnWidth(2, 100)
+        self.tableWidget_Teacher.setColumnWidth(3, 100)
+        self.tableWidget_Teacher.setColumnWidth(4, 250)
+        self.tableWidget_Teacher.setColumnWidth(5, 300)
+        self.tableWidget_Teacher.setColumnWidth(6, 100)
+
+        for row, teacher in enumerate(teachers):
+            self.tableWidget_Teacher.setItem(row, 0, QTableWidgetItem(str(getattr(teacher, "user_id", ""))))
+            self.tableWidget_Teacher.setItem(row, 1, QTableWidgetItem(str(getattr(teacher, "fullname", ""))))
+            self.tableWidget_Teacher.setItem(row, 2, QTableWidgetItem(str(getattr(teacher, "birthday", ""))))
+            self.tableWidget_Teacher.setItem(row, 3, QTableWidgetItem(str(getattr(teacher, "gender", ""))))
+            self.tableWidget_Teacher.setItem(row, 4, QTableWidgetItem(str(getattr(teacher, "email", ""))))
+            self.tableWidget_Teacher.setItem(row, 5, QTableWidgetItem(str(getattr(teacher, "faculty", ""))))
+            self.tableWidget_Teacher.setItem(row, 6, QTableWidgetItem(str(getattr(teacher, "teacher_class", ""))))
+
+#quản lý lớp
     def load_classes(self):
         classes = self.jff.read_data(self.class_file, Class) or []
         self.tableWidget_Classes.setRowCount(len(classes))
