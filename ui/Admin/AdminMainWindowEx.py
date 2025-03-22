@@ -127,7 +127,7 @@ class AdminMainWindowExt(QMainWindow, Ui_AdminManagement):
         self.comboBox_StuClass.clear()
         self.comboBox_StuClass.addItems(classes)
 
-    def process_add_student(self):
+    def process_add_student(self):git
         # Đọc dữ liệu từ file JSON
         students_data = self.jff.read_data(self.student_file, dict) or []
         print(f"📂 Đọc dữ liệu thành công! Số lượng sinh viên hiện có: {len(students_data)}")
