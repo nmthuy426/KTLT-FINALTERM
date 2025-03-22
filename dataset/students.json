@@ -269,19 +269,5 @@
         "advisor": "TS. Lê Văn U",
         "registered_classes": [],
         "grades": {}
-    },
-    {
-        "user_id": "333",
-        "fullname": "Thùy",
-        "birthday": "01/01/2000",
-        "gender": "Male",
-        "email": "thuy@st.uel.edu.vn",
-        "password": "12345",
-        "student_class": "K24402",
-        "major": "Thương Mại Điện Tử",
-        "course": "2022",
-        "advisor": "Trần Thị B",
-        "registered_classes": [],
-        "grades": {}
     }
 ]

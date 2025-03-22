@@ -25,8 +25,8 @@
         "schedule": "Thứ 3, 5 (13:00 - 15:00)",
         "subject": "Kinh tế vi mô",
         "major": "Kinh tế",
-        "min_students": 30,
-        "max_students": 50,
+        "min_students": 3,
+        "max_students": 5,
         "students": [
             "S001",
             "S002",
